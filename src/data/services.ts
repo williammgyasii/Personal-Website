@@ -11,7 +11,7 @@ export const services: Service[] = [
     id: "fullstack",
     title: "Full-Stack Engineering",
     description:
-      "I don't hand off at the API boundary. React/Next.js frontends, Node.js or .NET backends, PostgreSQL schemas, and CI/CD pipelines—one engineer, one coherent product, zero integration gaps.",
+      "I do not hand off at the API boundary. React and Next.js frontends, Node.js or .NET backends, PostgreSQL schemas, and CI/CD pipelines. One engineer, one coherent product, zero integration gaps.",
     items: [
       "Next.js & React SPAs",
       "REST & tRPC APIs",
@@ -24,7 +24,7 @@ export const services: Service[] = [
     id: "ai",
     title: "AI Systems Integration",
     description:
-      "LLM pipelines that ship in production—not slide decks. Document processing, qualification scoring, RAG workflows, and prompt pipelines embedded into real products with rate limits, cost controls, and human review gates.",
+      "LLM pipelines that ship in production, not slide decks. Document processing, qualification scoring, RAG workflows, and prompt pipelines embedded into real products with rate limits, cost controls, and human review gates.",
     items: [
       "OpenAI & LLM APIs",
       "Prompt engineering & evals",
@@ -37,7 +37,7 @@ export const services: Service[] = [
     id: "mobile",
     title: "Mobile Development",
     description:
-      "Cross-platform apps that feel native. React Native + Expo with calendar sync, push notifications, offline-first caching, and App Store–ready release engineering—not a web view in a wrapper.",
+      "Cross platform apps that feel native. React Native and Expo with calendar sync, push notifications, offline first caching, and App Store ready release engineering, not a web view in a wrapper.",
     items: [
       "React Native & Expo",
       "Native calendar & push",
@@ -50,7 +50,7 @@ export const services: Service[] = [
     id: "saas",
     title: "SaaS & Product Architecture",
     description:
-      "Multi-tenant from day one. Stripe billing, role-based access, org/workspace isolation, and marketplace dynamics—architected so your MVP doesn't become a rewrite at 1,000 users.",
+      "Multi tenant from day one. Stripe billing, role based access, org and workspace isolation, and marketplace dynamics, architected so your MVP does not become a rewrite at 1,000 users.",
     items: [
       "Stripe subscriptions",
       "Multi-tenant data models",
