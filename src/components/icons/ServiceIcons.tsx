@@ -8,17 +8,12 @@ const iconPaths: Record<ServiceIconName, React.ReactNode> = {
       <path d="M4 16l8 4 8-4" strokeWidth="1.5" />
     </>
   ),
-  sparkles: (
+  workflow: (
     <>
-      <path d="M12 3v2" strokeWidth="1.5" />
-      <path d="M12 19v2" strokeWidth="1.5" />
-      <path d="M3 12h2" strokeWidth="1.5" />
-      <path d="M19 12h2" strokeWidth="1.5" />
-      <path d="m5.6 5.6 1.4 1.4" strokeWidth="1.5" />
-      <path d="m17 17 1.4 1.4" strokeWidth="1.5" />
-      <path d="m17 7 1.4-1.4" strokeWidth="1.5" />
-      <path d="M5.6 18.4 7 17" strokeWidth="1.5" />
-      <circle cx="12" cy="12" r="3" strokeWidth="1.5" />
+      <rect x="3" y="5" width="6" height="6" rx="1.5" strokeWidth="1.5" />
+      <rect x="15" y="5" width="6" height="6" rx="1.5" strokeWidth="1.5" />
+      <rect x="9" y="13" width="6" height="6" rx="1.5" strokeWidth="1.5" />
+      <path d="M9 8h6M12 11v2" strokeWidth="1.5" />
     </>
   ),
   mobile: (

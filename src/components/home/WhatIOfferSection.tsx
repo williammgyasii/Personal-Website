@@ -2,29 +2,14 @@ import { motion } from "framer-motion";
 import { services, type ServiceAccent } from "../../data/services";
 import { ServiceIcon } from "../icons/ServiceIcons";
 
-const accentStyles: Record<
-  ServiceAccent,
-  { box: string; icon: string; tag: string }
-> = {
-  violet: {
-    box: "bg-violet-500/12 border-violet-400/25 text-violet-200",
-    icon: "text-violet-300",
-    tag: "bg-violet-500/10 text-violet-200/90 border-violet-400/20",
+const accentStyles: Record<ServiceAccent, { box: string; tag: string }> = {
+  primary: {
+    box: "border-primary/30 bg-primary/10 text-primary",
+    tag: "border-white/10 bg-white/[0.04] text-white/65",
   },
-  sky: {
-    box: "bg-sky-500/12 border-sky-400/25 text-sky-200",
-    icon: "text-sky-300",
-    tag: "bg-sky-500/10 text-sky-200/90 border-sky-400/20",
-  },
-  amber: {
-    box: "bg-amber-500/12 border-amber-400/25 text-amber-200",
-    icon: "text-amber-300",
-    tag: "bg-amber-500/10 text-amber-200/90 border-amber-400/20",
-  },
-  rose: {
-    box: "bg-rose-500/12 border-rose-400/25 text-rose-200",
-    icon: "text-rose-300",
-    tag: "bg-rose-500/10 text-rose-200/90 border-rose-400/20",
+  muted: {
+    box: "border-white/12 bg-white/[0.04] text-white/70",
+    tag: "border-white/10 bg-white/[0.04] text-white/65",
   },
 };
 
@@ -75,20 +60,16 @@ function OfferCard({
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="list-none"
     >
-      <article className="service-card group h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition hover:border-white/15 hover:bg-white/[0.035] sm:p-6">
+      <article className="h-full rounded-2xl border border-white/[0.08] bg-black/20 p-5 sm:p-6">
         <div className="mb-5 flex items-start gap-4">
           <div
             className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${accent.box}`}
           >
-            <span className={accent.icon}>
-              <ServiceIcon name={service.icon} />
-            </span>
+            <ServiceIcon name={service.icon} />
           </div>
-          <div>
-            <h3 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-              {service.title}
-            </h3>
-          </div>
+          <h3 className="pt-1 text-lg font-semibold tracking-tight text-white sm:text-xl">
+            {service.title}
+          </h3>
         </div>
 
         <p className="mb-5 text-sm leading-relaxed text-white/70">{service.description}</p>
@@ -97,7 +78,7 @@ function OfferCard({
           {service.items.map((item) => (
             <li
               key={item}
-              className={`rounded-lg border px-2.5 py-1 text-[11px] font-medium ${accent.tag}`}
+              className={`rounded-md border px-2.5 py-1 text-[11px] font-medium ${accent.tag}`}
             >
               {item}
             </li>

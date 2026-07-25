@@ -1,5 +1,5 @@
-export type ServiceAccent = "violet" | "sky" | "amber" | "rose";
-export type ServiceIconName = "layers" | "sparkles" | "mobile" | "grid";
+export type ServiceAccent = "primary" | "muted";
+export type ServiceIconName = "layers" | "workflow" | "mobile" | "grid";
 
 export interface Service {
   id: string;
@@ -25,22 +25,22 @@ export const services: Service[] = [
     ],
     image: "/images/work-2.jpg",
     icon: "layers",
-    accent: "sky",
+    accent: "primary",
   },
   {
-    id: "ai",
-    title: "AI systems integration",
+    id: "automation",
+    title: "Automation & integrations",
     description:
-      "LLM pipelines that ship in production, not slide decks. Document processing, qualification scoring, RAG workflows, and prompt pipelines embedded into real products with rate limits, cost controls, and human review gates.",
+      "Workflow automation, third party APIs, webhooks, and data pipelines built into real products with clear ownership, monitoring, and production guardrails.",
     items: [
-      "OpenAI & LLM APIs",
-      "Prompt engineering & evals",
-      "AI scoring & ranking",
-      "Document & chat AI",
+      "Workflow automation",
+      "Third party API integrations",
+      "Background jobs & queues",
+      "Reporting pipelines",
     ],
     image: "/images/work-1.jpg",
-    icon: "sparkles",
-    accent: "violet",
+    icon: "workflow",
+    accent: "muted",
   },
   {
     id: "mobile",
@@ -55,7 +55,7 @@ export const services: Service[] = [
     ],
     image: "/images/work-4.jpg",
     icon: "mobile",
-    accent: "amber",
+    accent: "primary",
   },
   {
     id: "saas",
@@ -70,7 +70,7 @@ export const services: Service[] = [
     ],
     image: "/images/work-3.jpg",
     icon: "grid",
-    accent: "rose",
+    accent: "muted",
   },
 ];
 
