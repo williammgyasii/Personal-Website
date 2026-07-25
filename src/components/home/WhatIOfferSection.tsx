@@ -1,42 +1,40 @@
 import { motion } from "framer-motion";
-import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
-import { services } from "../../data/services";
-import { TechBubbles } from "./TechBubbles";
-import type { ProjectTech } from "../../data/projects";
+import { services, type ServiceAccent } from "../../data/services";
+import { ServiceIcon } from "../icons/ServiceIcons";
 
-function toCapabilityBubbles(items: string[]): ProjectTech[] {
-  return items.map((name, index) => ({
-    name,
-    tone: index % 2 === 0 ? "primary" : "accent",
-  }));
-}
+const accentStyles: Record<
+  ServiceAccent,
+  { box: string; icon: string; tag: string }
+> = {
+  violet: {
+    box: "bg-violet-500/12 border-violet-400/25 text-violet-200",
+    icon: "text-violet-300",
+    tag: "bg-violet-500/10 text-violet-200/90 border-violet-400/20",
+  },
+  sky: {
+    box: "bg-sky-500/12 border-sky-400/25 text-sky-200",
+    icon: "text-sky-300",
+    tag: "bg-sky-500/10 text-sky-200/90 border-sky-400/20",
+  },
+  amber: {
+    box: "bg-amber-500/12 border-amber-400/25 text-amber-200",
+    icon: "text-amber-300",
+    tag: "bg-amber-500/10 text-amber-200/90 border-amber-400/20",
+  },
+  rose: {
+    box: "bg-rose-500/12 border-rose-400/25 text-rose-200",
+    icon: "text-rose-300",
+    tag: "bg-rose-500/10 text-rose-200/90 border-rose-400/20",
+  },
+};
 
 export function WhatIOfferSection() {
   return (
-    <section id="services" className="relative overflow-hidden border-t border-border">
-      <ParallaxBanner className="relative h-[min(28vh,280px)] min-h-[180px] w-full">
-        <ParallaxBannerLayer speed={-14} className="absolute inset-0">
-          <div className="offer-gradient-bg absolute inset-0" />
-        </ParallaxBannerLayer>
-
-        <ParallaxBannerLayer speed={-22} className="absolute inset-0 flex items-center justify-center">
-          <p
-            className="pointer-events-none select-none text-center text-[clamp(3rem,14vw,9rem)] font-bold leading-[0.88] tracking-[-0.05em] text-white/[0.08]"
-            aria-hidden="true"
-          >
-            WHAT I OFFER
-          </p>
-        </ParallaxBannerLayer>
-
-        <ParallaxBannerLayer speed={-4} className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/20 to-surface" />
-        </ParallaxBannerLayer>
-      </ParallaxBanner>
-
-      <div className="relative z-10 px-4 pb-16 sm:px-6 sm:pb-24">
+    <section id="services" className="relative border-t border-border">
+      <div className="px-4 py-16 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-[1320px]">
-          <div className="-mt-8 mb-10 sm:-mt-12 sm:mb-14">
-            <h2 className="max-w-2xl text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-tight">
+          <div className="mb-10 sm:mb-14">
+            <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-tight">
               What I offer
             </h2>
             <p className="mt-3 max-w-xl text-base text-muted">
@@ -44,9 +42,14 @@ export function WhatIOfferSection() {
             </p>
           </div>
 
-          <ul className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
+          <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6">
             {services.map((service, index) => (
-              <OfferCard key={service.id} index={index} service={service} />
+              <OfferCard
+                key={service.id}
+                index={index}
+                accent={accentStyles[service.accent]}
+                service={service}
+              />
             ))}
           </ul>
         </div>
@@ -58,26 +61,48 @@ export function WhatIOfferSection() {
 function OfferCard({
   service,
   index,
+  accent,
 }: {
   service: (typeof services)[number];
   index: number;
+  accent: (typeof accentStyles)[ServiceAccent];
 }) {
   return (
     <motion.li
       initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="group list-none"
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      className="list-none"
     >
-      <article className="relative flex h-full flex-col border-t border-border pt-6 sm:pt-7">
-        <div className="flex flex-1 flex-col">
-          <h3 className="mb-3 text-lg font-semibold tracking-tight sm:text-xl">{service.title}</h3>
-          <p className="mb-5 flex-1 text-sm leading-relaxed text-white/75">{service.description}</p>
-
-          <div className="border-t border-border pt-4">
-            <TechBubbles items={toCapabilityBubbles(service.items)} />
+      <article className="service-card group h-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition hover:border-white/15 hover:bg-white/[0.035] sm:p-6">
+        <div className="mb-5 flex items-start gap-4">
+          <div
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${accent.box}`}
+          >
+            <span className={accent.icon}>
+              <ServiceIcon name={service.icon} />
+            </span>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+              {service.title}
+            </h3>
           </div>
         </div>
+
+        <p className="mb-5 text-sm leading-relaxed text-white/70">{service.description}</p>
+
+        <ul className="flex flex-wrap gap-2">
+          {service.items.map((item) => (
+            <li
+              key={item}
+              className={`rounded-lg border px-2.5 py-1 text-[11px] font-medium ${accent.tag}`}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
       </article>
     </motion.li>
   );

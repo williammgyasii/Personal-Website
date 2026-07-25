@@ -12,10 +12,10 @@ export const site = {
   cta: "View projects",
   ctaSecondary: "Contact",
   nav: [
-    { id: "home", label: "Home", href: "/" },
-    { id: "projects", label: "Projects", href: "/projects" },
-    { id: "work", label: "Work", href: "/work" },
-    { id: "about", label: "About", href: "/about" },
-    { id: "contact", label: "Contact", href: "/contact" },
+    { id: "home", label: "HOME", href: "/" },
+    { id: "projects", label: "PROJECTS", href: "/projects" },
+    { id: "work", label: "WORK", href: "/work" },
+    { id: "about", label: "ABOUT", href: "/about" },
+    { id: "contact", label: "CONTACT", href: "/contact" },
   ],
 } as const;
