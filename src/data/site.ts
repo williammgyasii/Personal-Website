@@ -6,7 +6,7 @@ export const site = {
   roles: ["FULL STACK DEV", "AI ENGINEER", "PRODUCT BUILDER"],
   availability: "OPEN TO FULL TIME & CONTRACT",
   heroSummary:
-    "Six years shipping production systems across SaaS, mobile, and AI. I architect and deploy the full stack — APIs, cloud infra, LLM pipelines, and mobile clients. Six products live, two flagships running real traffic at scale.",
+    "Six years shipping production systems across SaaS, mobile, and AI. I architect and deploy the full stack from APIs and cloud infra to LLM pipelines and mobile clients. Six products live, two flagships running real traffic at scale.",
   heroStats: ["6 YEARS", "6 LIVE PRODUCTS", "2 FLAGSHIPS"],
   cta: "VIEW PROJECTS",
   ctaSecondary: "CONTACT",
