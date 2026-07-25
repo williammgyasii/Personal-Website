@@ -62,34 +62,45 @@
     pointer-events: none;
   }
 
-  /* Header animated background */
-  .header-bg-gradient {
+  /* Nav menu bar animated background */
+  .nav-menu-gradient {
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(7, 196, 44, 0.14), transparent 55%),
-      radial-gradient(ellipse at 80% 30%, rgba(56, 189, 248, 0.1), transparent 50%);
-    animation: header-gradient-shift 8s ease-in-out infinite alternate;
+      radial-gradient(ellipse at 15% 50%, rgba(7, 196, 44, 0.18), transparent 55%),
+      radial-gradient(ellipse at 85% 50%, rgba(56, 189, 248, 0.12), transparent 50%);
+    animation: nav-menu-gradient-shift 6s ease-in-out infinite alternate;
   }
 
-  .header-bg-grid {
+  .nav-menu-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.06) 1px, transparent 1px);
-    background-size: 32px 32px;
-    animation: grid-drift 20s linear infinite;
+      linear-gradient(rgba(7, 196, 44, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7, 196, 44, 0.07) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: grid-drift 16s linear infinite;
   }
 
-  .header-shimmer {
+  .nav-menu-shimmer {
     background: linear-gradient(
       105deg,
-      transparent 40%,
-      rgba(56, 189, 248, 0.08) 50%,
-      transparent 60%
+      transparent 35%,
+      rgba(56, 189, 248, 0.12) 50%,
+      transparent 65%
     );
-    animation: header-shimmer 6s ease-in-out infinite;
+    animation: nav-menu-shimmer 5s ease-in-out infinite;
   }
 
-  .header-stream {
-    animation: header-stream-pulse 3s ease-in-out infinite;
+  .nav-menu-glow {
+    animation: nav-menu-glow-pulse 2.5s ease-in-out infinite;
+  }
+
+  .nav-menu-link-active {
+    background: rgba(7, 196, 44, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(7, 196, 44, 0.25);
+  }
+
+  .nav-menu-active-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(7, 196, 44, 0.2), transparent 70%);
+    animation: nav-menu-active-pulse 2s ease-in-out infinite;
+    z-index: -1;
   }
 
   /* Page loader CSS art */
@@ -184,13 +195,48 @@
   }
 }
 
-@keyframes header-gradient-shift {
+@keyframes nav-menu-gradient-shift {
   0% {
-    transform: translateX(-2%) scale(1);
-    opacity: 0.85;
+    transform: translateX(-4%) scale(1);
+    opacity: 0.9;
   }
   100% {
-    transform: translateX(2%) scale(1.05);
+    transform: translateX(4%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes nav-menu-shimmer {
+  0%,
+  100% {
+    transform: translateX(-140%);
+    opacity: 0;
+  }
+  45%,
+  55% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(280%);
+  }
+}
+
+@keyframes nav-menu-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes nav-menu-active-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
     opacity: 1;
   }
 }
@@ -201,31 +247,6 @@
   }
   100% {
     background-position: 32px 32px;
-  }
-}
-
-@keyframes header-shimmer {
-  0%,
-  100% {
-    transform: translateX(-120%);
-    opacity: 0;
-  }
-  45%,
-  55% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(320%);
-  }
-}
-
-@keyframes header-stream-pulse {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 1;
   }
 }
 
@@ -314,10 +335,11 @@
     scroll-behavior: auto;
   }
 
-  .header-bg-gradient,
-  .header-bg-grid,
-  .header-shimmer,
-  .header-stream,
+  .nav-menu-gradient,
+  .nav-menu-grid,
+  .nav-menu-shimmer,
+  .nav-menu-glow,
+  .nav-menu-active-glow,
   .loader-grid,
   .loader-ring,
   .loader-node,

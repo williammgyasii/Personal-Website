@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { site } from "../../data/site";
-import { HeaderBackground } from "./HeaderBackground";
+import { NavMenuBackground } from "./NavMenuBackground";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,24 +29,23 @@ export function Header() {
   }, [pathname]);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `group relative inline-flex items-start gap-1.5 text-sm font-medium tracking-tight transition-colors hover:text-primary ${
+    `group text-sm font-medium tracking-tight transition-colors hover:text-primary ${
       isActive ? "text-primary" : "text-white/85"
     }`;
 
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-50 overflow-hidden px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-5 ${
+        className={`fixed inset-x-0 top-0 z-50 px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-5 ${
           scrolled || !isHome
-            ? "border-b border-white/10 bg-[#1a2e28]/85 backdrop-blur-xl"
-            : "border-b border-white/10 bg-[#1a2e28]/55 backdrop-blur-md"
+            ? "border-b border-white/10 bg-black/75 backdrop-blur-xl"
+            : "border-b border-transparent bg-black/25 backdrop-blur-md"
         }`}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
-        <HeaderBackground />
-        <div className="relative z-10 mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
+        <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
           <Link
             to="/"
             className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border border-white/20 bg-white/5 text-sm font-bold tracking-tight transition hover:border-primary hover:text-primary hover:shadow-[0_0_20px_rgba(7,196,44,0.25)]"
@@ -56,27 +55,34 @@ export function Header() {
           </Link>
 
           <nav className="hidden justify-center lg:flex" aria-label="Primary">
-            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              {site.nav.map((item, index) => (
-                <li key={item.id}>
-                  <NavLink to={item.href} end={item.href === "/"} className={navLinkClass}>
-                    {({ isActive }) => (
-                      <>
-                        <span className="text-[9px] leading-3 text-muted transition group-hover:text-primary/70">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        {item.label}
-                        <span
-                          className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${
-                            isActive ? "w-full" : "w-0 group-hover:w-full"
-                          }`}
-                        />
-                      </>
-                    )}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+            <div className="nav-menu-shell relative overflow-hidden rounded-full border border-white/10 bg-black/40 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+              <NavMenuBackground />
+              <ul className="relative z-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
+                {site.nav.map((item, index) => (
+                  <li key={item.id}>
+                    <NavLink to={item.href} end={item.href === "/"} className={navLinkClass}>
+                      {({ isActive }) => (
+                        <>
+                          <span
+                            className={`nav-menu-link relative inline-flex items-start gap-1.5 rounded-full px-3.5 py-2 transition-colors ${
+                              isActive ? "nav-menu-link-active text-primary" : ""
+                            }`}
+                          >
+                            <span className="text-[9px] leading-3 text-muted transition group-hover:text-primary/70">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                            {item.label}
+                            {isActive && (
+                              <span className="nav-menu-active-glow absolute inset-0 rounded-full" aria-hidden="true" />
+                            )}
+                          </span>
+                        </>
+                      )}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
 
           <div className="hidden gap-1 lg:grid">
@@ -94,12 +100,13 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex items-center gap-2 text-sm font-medium tracking-tight transition hover:text-primary lg:hidden"
+            className="nav-menu-shell relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/40 px-4 py-2.5 text-sm font-medium tracking-tight backdrop-blur-md transition hover:text-primary lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? "CLOSE" : "MENU"}
+            <NavMenuBackground />
+            <span className="relative z-10">{menuOpen ? "CLOSE" : "MENU"}</span>
           </button>
         </div>
       </motion.header>
