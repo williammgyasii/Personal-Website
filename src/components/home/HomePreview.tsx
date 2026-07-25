@@ -1,46 +1,12 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { stats, workHighlights } from "../../data/home";
+import { stats } from "../../data/home";
 import { services } from "../../data/services";
+import { ExperienceSection } from "./ExperienceSection";
 
 export function HomePreview() {
   return (
     <>
-      <section className="border-t border-border py-16 sm:py-24">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="mb-2 text-xs text-muted">EXPERIENCE</p>
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                Recent roles
-              </h2>
-            </div>
-            <Link
-              to="/work"
-              className="text-xs font-medium text-primary transition hover:underline"
-            >
-              View full work history →
-            </Link>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {workHighlights.map((item, i) => (
-              <motion.div
-                key={item.company}
-                className="rounded-xl border border-border p-5"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-              >
-                <p className="text-xs text-muted">{item.period}</p>
-                <h3 className="mt-1 font-semibold">{item.role}</h3>
-                <p className="text-sm text-primary">{item.company}</p>
-                <p className="mt-2 text-sm text-muted">{item.highlight}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ExperienceSection />
 
       <section className="border-t border-border py-16 sm:py-24">
         <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
