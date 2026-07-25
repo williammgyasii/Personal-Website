@@ -450,63 +450,64 @@
     background: radial-gradient(ellipse at 0% 0%, rgba(7, 196, 44, 0.08), transparent 55%);
   }
 
-  .experience-timeline-line {
+  .experience-h-timeline {
+    position: relative;
+  }
+
+  .experience-h-track {
+    position: relative;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-bottom: 1.75rem;
+    padding-inline: 1.5rem;
+  }
+
+  .experience-h-line {
     position: absolute;
-    left: 50%;
-    top: 0.875rem;
-    height: calc(100% + 2.75rem);
-    width: 2px;
-    transform: translateX(-50%);
+    top: calc(100% - 0.625rem);
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 2px;
     border-radius: 9999px;
-    overflow: hidden;
-    background: rgba(7, 196, 44, 0.12);
-  }
-
-  .experience-river-line::after {
-    content: "";
-    position: absolute;
-    inset: 0;
     background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(7, 196, 44, 0.65),
-      rgba(56, 189, 248, 0.45),
-      transparent
+      to right,
+      rgba(7, 196, 44, 0.2),
+      rgba(7, 196, 44, 0.55),
+      rgba(56, 189, 248, 0.35),
+      rgba(7, 196, 44, 0.2)
     );
-    background-size: 100% 200%;
-    animation: experience-river-flow 3.5s linear infinite;
   }
 
-  .experience-river-stroke {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 0;
-  }
-
-  .experience-river-glow {
-    background:
-      radial-gradient(ellipse at 15% 40%, rgba(7, 196, 44, 0.08), transparent 50%),
-      radial-gradient(ellipse at 85% 65%, rgba(56, 189, 248, 0.06), transparent 45%);
-  }
-
-  .experience-river-section {
-    background: linear-gradient(180deg, transparent 0%, rgba(7, 196, 44, 0.02) 40%, transparent 100%);
-  }
-
-  .experience-timeline-more {
+  .experience-h-node {
+    position: relative;
+    z-index: 1;
     display: flex;
-    justify-content: center;
-    padding-top: 0.5rem;
-    padding-left: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-h-cards {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .experience-h-cards::-webkit-scrollbar {
+    display: none;
   }
 
   @media (min-width: 768px) {
-    .experience-timeline-more {
-      padding-left: 220px;
-      justify-content: flex-start;
-    }
-
-    .experience-timeline-line {
-      height: calc(100% + 3.5rem);
+    .experience-h-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      overflow: visible;
+      padding-bottom: 0;
     }
   }
 
@@ -548,15 +549,6 @@
   }
   50% {
     transform: translateX(2px);
-  }
-}
-
-@keyframes experience-river-flow {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 0% 100%;
   }
 }
 
@@ -676,8 +668,6 @@
   .works-nav-btn,
   .works-nav-arrow,
   .experience-gradient-bg,
-  .experience-river-line,
-  .experience-river-stroke,
   .hero-panel-gradient,
   .hero-panel-grid,
   .hero-panel-shimmer,
