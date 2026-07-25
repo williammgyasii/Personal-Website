@@ -1,0 +1,111 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { stats, workHighlights } from "../../data/home";
+import { services } from "../../data/services";
+
+export function HomePreview() {
+  return (
+    <>
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="mb-2 text-xs text-muted">EXPERIENCE</p>
+              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Recent roles
+              </h2>
+            </div>
+            <Link
+              to="/work"
+              className="text-xs font-medium text-primary transition hover:underline"
+            >
+              View full work history →
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {workHighlights.map((item, i) => (
+              <motion.div
+                key={item.company}
+                className="rounded-xl border border-border p-5"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <p className="text-xs text-muted">{item.period}</p>
+                <h3 className="mt-1 font-semibold">{item.role}</h3>
+                <p className="text-sm text-primary">{item.company}</p>
+                <p className="mt-2 text-sm text-muted">{item.highlight}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="mb-2 text-xs text-muted">ABOUT</p>
+              <h2 className="mb-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+                Engineering products that ship
+              </h2>
+              <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted">
+                Full-stack engineer building AI-native SaaS, mobile apps, and platform
+                software—from schema design to production deploy.
+              </p>
+              <Link
+                to="/about"
+                className="inline-flex h-10 items-center rounded-full border border-border px-5 text-xs font-medium transition hover:border-primary hover:text-primary"
+              >
+                READ FULL BIO →
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-border p-4">
+                  <p className="text-3xl font-semibold text-primary">{stat.number}</p>
+                  <p className="text-xs text-muted">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
+          <p className="mb-2 text-xs text-muted">SERVICES</p>
+          <h2 className="mb-8 text-2xl font-semibold tracking-tight sm:text-3xl">
+            What I build
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {services.slice(0, 4).map((service) => (
+              <div key={service.id} className="rounded-xl border border-border p-5">
+                <h3 className="mb-2 font-semibold">{service.title}</h3>
+                <p className="text-sm text-muted">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-[1320px] px-4 text-center sm:px-6">
+          <h2 className="mb-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+            Ready to talk?
+          </h2>
+          <p className="mx-auto mb-8 max-w-md text-sm text-muted">
+            Open to full-time, contract, and co-building opportunities.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex h-11 items-center rounded-full border border-primary bg-primary/10 px-8 text-xs font-medium text-primary transition hover:bg-primary/20"
+          >
+            GET IN TOUCH →
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
