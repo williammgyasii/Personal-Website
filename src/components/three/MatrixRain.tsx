@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { usePrefersReducedMotion } from "../../hooks/useMediaQuery";
 
 const CHARS = "アイウエオカキクケコサシスセソ0123456789ABCDEF<>/{}[]";
+const GREEN = "7, 196, 44";
+const CYAN = "56, 189, 248";
 
 export function MatrixRain({ className = "" }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -33,20 +35,23 @@ export function MatrixRain({ className = "" }: { className?: string }) {
     };
 
     const drawStatic = () => {
-      ctx.fillStyle = "#030303";
+      ctx.fillStyle = "#101816";
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.font = `${fontSize}px "Courier New", monospace`;
       for (let i = 0; i < columns.length; i += 2) {
         for (let j = 0; j < 8; j++) {
           const char = CHARS[Math.floor(Math.random() * CHARS.length)];
-          ctx.fillStyle = j === 0 ? "rgba(7, 196, 44, 0.9)" : "rgba(7, 196, 44, 0.25)";
+          const useCyan = (i + j) % 3 === 0;
+          ctx.fillStyle = j === 0
+            ? `rgba(${useCyan ? CYAN : GREEN}, 0.75)`
+            : `rgba(${useCyan ? CYAN : GREEN}, 0.2)`;
           ctx.fillText(char, i * fontSize, j * fontSize * 2 + 40);
         }
       }
     };
 
     const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+      ctx.fillStyle = "rgba(16, 24, 22, 0.12)";
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.font = `${fontSize}px "Courier New", monospace`;
 
@@ -54,12 +59,15 @@ export function MatrixRain({ className = "" }: { className?: string }) {
         const char = CHARS[Math.floor(Math.random() * CHARS.length)];
         const x = i * fontSize;
         const y = drops[i];
+        const useCyan = i % 4 === 0;
 
-        ctx.fillStyle = "rgba(7, 196, 44, 0.95)";
+        ctx.fillStyle = `rgba(${useCyan ? CYAN : GREEN}, 0.85)`;
         ctx.fillText(char, x, y);
 
-        ctx.fillStyle = "rgba(7, 196, 44, 0.35)";
-        if (y > fontSize) ctx.fillText(CHARS[(i + 3) % CHARS.length], x, y - fontSize);
+        ctx.fillStyle = `rgba(${useCyan ? CYAN : GREEN}, 0.28)`;
+        if (y > fontSize) {
+          ctx.fillText(CHARS[(i + 3) % CHARS.length], x, y - fontSize);
+        }
 
         drops[i] += fontSize * (0.55 + columns[i] * 0.45);
         if (drops[i] > window.innerHeight + fontSize && Math.random() > 0.975) {

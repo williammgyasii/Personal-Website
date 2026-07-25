@@ -9,7 +9,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.85 + i * 0.1, duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { delay: 0.85 + i * 0.08, duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -19,15 +19,16 @@ export function Hero() {
       className="relative flex h-[100dvh] min-h-[600px] flex-col justify-end overflow-hidden pb-12 pt-24 sm:pb-16 sm:pt-28"
       aria-label="Introduction"
     >
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
+      <div className="absolute inset-0 -z-10 bg-surface" aria-hidden="true">
         <MatrixRain />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/95" />
-        <div className="hero-scanlines absolute inset-0 opacity-[0.07]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(7,196,44,0.12),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-surface/40 via-[#152019]/55 to-surface/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_15%,rgba(7,196,44,0.14),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_25%,rgba(56,189,248,0.1),transparent_45%)]" />
+        <div className="hero-scanlines absolute inset-0 opacity-[0.04]" />
       </div>
 
       <div className="relative z-10 mx-auto flex h-full w-full max-w-[1320px] flex-col justify-end px-4 sm:px-6">
-        <div className="grid flex-1 items-end gap-10 lg:grid-cols-[1.65fr_1fr] lg:gap-12">
+        <div className="grid flex-1 items-end gap-10 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div className="min-w-0">
             <motion.ul
               className="mb-5 flex flex-wrap gap-x-5 gap-y-2 sm:mb-8 lg:mb-10"
@@ -35,11 +36,15 @@ export function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              {site.roles.map((role) => (
+              {site.roles.map((role, i) => (
                 <li key={role}>
                   <Link
                     to="/about"
-                    className="text-xs font-medium tracking-[0.12em] text-white/70 transition hover:text-primary sm:text-sm"
+                    className={`text-xs font-medium tracking-[0.12em] transition sm:text-sm ${
+                      i % 2 === 0
+                        ? "text-white/75 hover:text-primary"
+                        : "text-white/75 hover:text-accent"
+                    }`}
                   >
                     {role}
                   </Link>
@@ -55,10 +60,14 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.6 }}
             >
-              {site.heroStats.map((stat) => (
+              {site.heroStats.map((stat, i) => (
                 <li
                   key={stat}
-                  className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1.5 text-[10px] font-medium tracking-[0.14em] text-primary sm:text-xs"
+                  className={`rounded-full border px-3 py-1.5 text-[10px] font-medium tracking-[0.14em] sm:text-xs ${
+                    i % 2 === 0
+                      ? "border-primary/35 bg-primary/8 text-primary"
+                      : "border-accent/35 bg-accent/8 text-accent"
+                  }`}
                 >
                   {stat}
                 </li>
@@ -66,7 +75,7 @@ export function Hero() {
             </motion.ul>
           </div>
 
-          <div className="flex flex-col justify-end gap-8 lg:gap-10">
+          <div className="flex flex-col justify-end gap-8 lg:gap-9">
             <motion.div
               className="flex flex-wrap items-center justify-between gap-3 text-xs font-medium sm:text-sm"
               initial={{ opacity: 0 }}
@@ -83,15 +92,31 @@ export function Hero() {
               <span className="text-muted">{site.timezone}</span>
             </motion.div>
 
-            <motion.p
-              className="max-w-lg text-base leading-relaxed text-white/80 sm:text-lg sm:leading-relaxed"
+            <motion.dl
+              className="space-y-3.5 rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm sm:space-y-4 sm:p-6"
               custom={0}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
             >
-              {site.heroDescription}
-            </motion.p>
+              {site.heroIntro.map(({ label, value }, i) => (
+                <div
+                  key={label}
+                  className="grid gap-1 sm:grid-cols-[6.5rem_1fr] sm:items-baseline sm:gap-4"
+                >
+                  <dt
+                    className={`text-[10px] font-semibold tracking-[0.2em] sm:text-[11px] ${
+                      i % 2 === 0 ? "text-primary" : "text-accent"
+                    }`}
+                  >
+                    {label}
+                  </dt>
+                  <dd className="text-sm leading-relaxed text-white/85 sm:text-base">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </motion.dl>
 
             <motion.div
               className="flex flex-col gap-3 sm:flex-row sm:items-center"
@@ -108,12 +133,9 @@ export function Hero() {
               </Link>
               <Link
                 to="/contact"
-                className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-[10px] border border-white/30 px-8 text-sm font-medium tracking-tight transition hover:border-white sm:w-auto"
+                className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-[10px] border border-accent/50 bg-accent/5 px-8 text-sm font-medium tracking-tight text-accent transition hover:bg-accent hover:text-black sm:w-auto"
               >
-                <span className="relative z-10 transition group-hover:text-black">
-                  {site.ctaSecondary}
-                </span>
-                <span className="absolute inset-x-[-1px] bottom-[-1px] top-[calc(100%+1px)] bg-white transition-all duration-300 group-hover:top-0" />
+                {site.ctaSecondary}
               </Link>
             </motion.div>
           </div>
@@ -126,7 +148,7 @@ export function Hero() {
           transition={{ delay: 1.4, duration: 0.8 }}
           aria-hidden="true"
         >
-          <span className="h-px w-12 bg-primary/50" />
+          <span className="h-px w-12 bg-gradient-to-r from-primary to-accent" />
           Scroll to explore
           <motion.span
             animate={{ y: [0, 6, 0] }}

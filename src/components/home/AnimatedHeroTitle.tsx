@@ -17,10 +17,10 @@ const letterVariants = {
 export function AnimatedHeroTitle({ name }: { name: string }) {
   return (
     <h1
-      className="font-[550] leading-[0.88] tracking-[-0.05em]"
+      className="font-[550] leading-[0.88] tracking-[-0.04em]"
       aria-label={name}
     >
-      <span className="inline-flex flex-wrap items-baseline text-[clamp(3.25rem,16vw,11rem)] sm:text-[clamp(4rem,18vw,12rem)]">
+      <span className="inline-flex flex-nowrap items-baseline whitespace-nowrap text-[clamp(2.5rem,11vw,9.5rem)] sm:text-[clamp(3rem,12vw,10.5rem)]">
         {name.split("").map((char, i) => (
           <motion.span
             key={`${char}-${i}`}
@@ -28,14 +28,14 @@ export function AnimatedHeroTitle({ name }: { name: string }) {
             initial="hidden"
             animate="visible"
             variants={letterVariants}
-            className="inline-block text-glow"
+            className="inline-block shrink-0 text-glow"
           >
             {char}
           </motion.span>
         ))}
         <motion.span
-          className="inline-block text-primary text-glow-primary"
-          animate={{ opacity: [1, 0.15, 1] }}
+          className="inline-block shrink-0 text-accent text-glow-accent"
+          animate={{ opacity: [1, 0.2, 1] }}
           transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
           aria-hidden="true"
         >
