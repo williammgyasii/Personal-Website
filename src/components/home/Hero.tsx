@@ -4,6 +4,7 @@ import { site } from "../../data/site";
 import { MatrixRain } from "../three/MatrixRain";
 import { AnimatedHeroTitle } from "./AnimatedHeroTitle";
 import { HeroPanelBackground } from "./HeroPanelBackground";
+import { HeroTitleBackground } from "./HeroTitleBackground";
 
 export function Hero() {
   return (
@@ -25,7 +26,15 @@ export function Hero() {
         {/* Mobile: single column · Desktop: two columns */}
         <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.55fr_1fr] lg:items-end lg:gap-14">
           {/* Primary column */}
-          <div className="min-w-0">
+          <div className="relative min-w-0">
+            <div
+              className="hero-title-backdrop pointer-events-none absolute -inset-x-6 -top-[min(42vh,320px)] bottom-[-1.5rem] sm:-inset-x-8 lg:-top-[min(48vh,420px)] lg:bottom-[-2rem]"
+              aria-hidden="true"
+            >
+              <HeroTitleBackground />
+            </div>
+
+            <div className="relative z-10">
             <motion.ul
               className="mb-4 flex flex-wrap gap-x-4 gap-y-1.5 sm:mb-6 lg:mb-8"
               initial={{ opacity: 0 }}
@@ -89,6 +98,7 @@ export function Hero() {
                 </motion.p>
                 <HeroCTAs />
               </div>
+            </div>
             </div>
           </div>
 

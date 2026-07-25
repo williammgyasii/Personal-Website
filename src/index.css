@@ -138,6 +138,54 @@
     animation-delay: 1.5s;
   }
 
+  /* Hero title zone atmospheric background (behind WILLIAM_) */
+  .hero-title-backdrop {
+    mask-image: radial-gradient(ellipse at 35% 75%, black 25%, transparent 72%);
+    -webkit-mask-image: radial-gradient(ellipse at 35% 75%, black 25%, transparent 72%);
+  }
+
+  .hero-title-gradient {
+    background:
+      radial-gradient(ellipse at 25% 70%, rgba(7, 196, 44, 0.22), transparent 55%),
+      radial-gradient(ellipse at 70% 40%, rgba(56, 189, 248, 0.12), transparent 50%),
+      linear-gradient(to top, rgba(30, 56, 48, 0.55), transparent 65%);
+    animation: hero-title-gradient-shift 8s ease-in-out infinite alternate;
+  }
+
+  .hero-title-grid {
+    background-image:
+      linear-gradient(rgba(7, 196, 44, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7, 196, 44, 0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+    animation: grid-drift 18s linear infinite;
+  }
+
+  .hero-title-shimmer {
+    background: linear-gradient(
+      115deg,
+      transparent 25%,
+      rgba(56, 189, 248, 0.08) 50%,
+      transparent 75%
+    );
+    animation: hero-title-shimmer 9s ease-in-out infinite;
+  }
+
+  .hero-title-orb {
+    border-radius: 9999px;
+    filter: blur(48px);
+    opacity: 0.7;
+  }
+
+  .hero-title-orb-green {
+    background: rgba(7, 196, 44, 0.35);
+    animation: hero-title-orb-drift-a 10s ease-in-out infinite alternate;
+  }
+
+  .hero-title-orb-cyan {
+    background: rgba(56, 189, 248, 0.28);
+    animation: hero-title-orb-drift-b 12s ease-in-out infinite alternate;
+  }
+
   /* Page loader CSS art */
   .loader-grid {
     background-image:
@@ -227,6 +275,50 @@
 
   .loader-status {
     animation: loader-status-pulse 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-title-gradient-shift {
+  0% {
+    transform: translateY(2%) scale(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-3%) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-title-shimmer {
+  0%,
+  100% {
+    transform: translateX(-120%) rotate(-8deg);
+    opacity: 0;
+  }
+  45%,
+  55% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(280%) rotate(-8deg);
+  }
+}
+
+@keyframes hero-title-orb-drift-a {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(24px, -32px) scale(1.15);
+  }
+}
+
+@keyframes hero-title-orb-drift-b {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-20px, 24px) scale(1.1);
   }
 }
 
@@ -406,6 +498,11 @@
   .hero-panel-shimmer,
   .hero-panel-glow-top,
   .hero-panel-glow-bottom,
+  .hero-title-gradient,
+  .hero-title-grid,
+  .hero-title-shimmer,
+  .hero-title-orb-green,
+  .hero-title-orb-cyan,
   .loader-grid,
   .loader-ring,
   .loader-node,
