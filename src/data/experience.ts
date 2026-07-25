@@ -14,7 +14,7 @@ export interface WorkHighlight {
   technologies: ProjectTech[];
 }
 
-const tones: TechTone[] = ["primary", "accent", "violet", "amber"];
+const tones: TechTone[] = ["primary", "accent"];
 
 export function toTechBubbles(names: string[]): ProjectTech[] {
   return names.map((name, i) => ({
@@ -23,7 +23,7 @@ export function toTechBubbles(names: string[]): ProjectTech[] {
   }));
 }
 
-/** Home page experience highlights (3 most recent roles). */
+/** Home page experience highlights (full list lives on /work). */
 export const experienceHighlights: WorkHighlight[] = [
   {
     id: 1,

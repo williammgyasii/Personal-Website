@@ -5,7 +5,11 @@ import { experienceHighlights } from "../../data/experience";
 import type { WorkHighlight } from "../../data/experience";
 import { TechBubbles } from "./TechBubbles";
 
+const PREVIEW_COUNT = 2;
+
 export function ExperienceSection() {
+  const previewJobs = experienceHighlights.slice(0, PREVIEW_COUNT);
+
   return (
     <section className="relative overflow-hidden border-t border-border">
       <ParallaxBanner className="relative h-[min(28vh,280px)] min-h-[180px] w-full">
@@ -29,63 +33,69 @@ export function ExperienceSection() {
 
       <div className="relative z-10 px-4 pb-16 sm:px-6 sm:pb-24">
         <div className="mx-auto max-w-[1320px]">
-          <div className="-mt-8 mb-10 flex flex-wrap items-end justify-between gap-4 sm:-mt-12 sm:mb-12">
-            <div>
-              <p className="mb-2 text-xs tracking-[0.16em] text-muted">RECENT ROLES</p>
-              <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-tight">
-                Experience that compounds
-              </h2>
-            </div>
-            <Link
-              to="/work"
-              className="text-[10px] font-medium text-primary transition hover:underline sm:text-xs"
-            >
-              VIEW FULL WORK HISTORY →
-            </Link>
+          <div className="-mt-8 mb-10 sm:-mt-12 sm:mb-12">
+            <p className="mb-2 text-xs tracking-[0.16em] text-muted">RECENT ROLES</p>
+            <h2 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-tight">
+              Experience that compounds
+            </h2>
           </div>
 
-          <div className="relative">
-            <div
-              className="absolute bottom-0 left-[11px] top-0 hidden w-px bg-gradient-to-b from-primary/50 via-accent/30 to-transparent sm:left-[15px] md:block"
-              aria-hidden="true"
-            />
+          <ul className="experience-timeline relative">
+            {previewJobs.map((job, index) => (
+              <ExperienceTimelineItem
+                key={job.id}
+                job={job}
+                index={index}
+                showLine={index < previewJobs.length - 1}
+              />
+            ))}
 
-            <ul className="space-y-8 sm:space-y-10">
-              {experienceHighlights.map((job, index) => (
-                <ExperienceTimelineItem key={job.id} job={job} index={index} />
-              ))}
-            </ul>
-          </div>
+            <li className="experience-timeline-more">
+              <Link
+                to="/work"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-primary/50 bg-primary/10 px-8 text-xs font-semibold tracking-[0.14em] text-primary transition hover:bg-primary hover:text-black sm:text-sm"
+              >
+                VIEW FULL WORK HISTORY →
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
   );
 }
 
-function ExperienceTimelineItem({ job, index }: { job: WorkHighlight; index: number }) {
+function ExperienceTimelineItem({
+  job,
+  index,
+  showLine,
+}: {
+  job: WorkHighlight;
+  index: number;
+  showLine: boolean;
+}) {
   return (
     <motion.li
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="relative grid gap-5 md:grid-cols-[180px_1fr] md:gap-10 lg:grid-cols-[220px_1fr]"
+      className="experience-timeline-item grid gap-5 pb-10 md:grid-cols-[200px_1fr] md:gap-12 lg:grid-cols-[220px_1fr]"
     >
-      <div className="flex items-start gap-4 md:flex-col md:gap-3">
-        <span
-          className={`relative z-10 mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border sm:mt-2 ${
-            job.current
-              ? "border-primary bg-primary/20 shadow-[0_0_16px_rgba(7,196,44,0.45)]"
-              : "border-accent/50 bg-accent/10"
-          }`}
-          aria-hidden="true"
-        >
+      <div className="experience-timeline-meta relative flex gap-4 md:block">
+        <div className="relative flex w-6 shrink-0 justify-center md:mb-4">
+          {showLine && <span className="experience-timeline-line" aria-hidden="true" />}
           <span
-            className={`h-2 w-2 rounded-full ${job.current ? "animate-pulse bg-primary" : "bg-accent"}`}
-          />
-        </span>
+            className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary bg-surface ${
+              job.current ? "shadow-[0_0_14px_rgba(7,196,44,0.55)]" : ""
+            }`}
+            aria-hidden="true"
+          >
+            <span className={`h-2 w-2 rounded-full bg-primary ${job.current ? "animate-pulse" : ""}`} />
+          </span>
+        </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 pt-0.5">
           <p className="text-sm font-medium tabular-nums text-white/90">{job.period}</p>
           <p className="mt-1 text-xs text-muted">{job.location}</p>
           {job.current && (
@@ -96,9 +106,9 @@ function ExperienceTimelineItem({ job, index }: { job: WorkHighlight; index: num
         </div>
       </div>
 
-      <Parallax speed={index % 2 === 0 ? 4 : -3}>
+      <Parallax speed={3}>
         <article className="experience-card relative overflow-hidden rounded-2xl border border-border bg-black/25 p-5 backdrop-blur-sm sm:p-7">
-          <div className="experience-card-glow pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+          <div className="experience-card-glow pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
 
           <div className="relative z-10 space-y-4 sm:space-y-5">
             <div className="flex flex-wrap items-start justify-between gap-3">
@@ -106,7 +116,7 @@ function ExperienceTimelineItem({ job, index }: { job: WorkHighlight; index: num
                 <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">{job.role}</h3>
                 <p className="mt-1 text-sm font-medium text-primary sm:text-base">{job.company}</p>
               </div>
-              <span className="rounded-full border border-accent/35 bg-accent/10 px-3 py-1 text-[10px] font-semibold tracking-wide text-accent sm:text-[11px]">
+              <span className="rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[10px] font-semibold tracking-wide text-primary sm:text-[11px]">
                 {job.metric}
               </span>
             </div>

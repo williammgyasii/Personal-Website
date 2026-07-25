@@ -440,16 +440,42 @@
 
   .experience-gradient-bg {
     background:
-      radial-gradient(ellipse at 75% 25%, rgba(56, 189, 248, 0.14), transparent 52%),
-      radial-gradient(ellipse at 15% 70%, rgba(7, 196, 44, 0.12), transparent 50%),
+      radial-gradient(ellipse at 75% 25%, rgba(7, 196, 44, 0.1), transparent 52%),
+      radial-gradient(ellipse at 15% 70%, rgba(7, 196, 44, 0.08), transparent 50%),
       linear-gradient(180deg, #1a2e28 0%, #152820 100%);
     animation: works-gradient-shift 12s ease-in-out infinite alternate;
   }
 
   .experience-card-glow {
-    background:
-      radial-gradient(ellipse at 0% 0%, rgba(7, 196, 44, 0.08), transparent 55%),
-      radial-gradient(ellipse at 100% 100%, rgba(56, 189, 248, 0.06), transparent 50%);
+    background: radial-gradient(ellipse at 0% 0%, rgba(7, 196, 44, 0.08), transparent 55%);
+  }
+
+  .experience-timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0.875rem;
+    height: calc(100% + 2.75rem);
+    width: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, rgba(7, 196, 44, 0.45), rgba(7, 196, 44, 0.15));
+  }
+
+  .experience-timeline-more {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-left: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .experience-timeline-more {
+      padding-left: 220px;
+      justify-content: flex-start;
+    }
+
+    .experience-timeline-line {
+      height: calc(100% + 3.5rem);
+    }
   }
 
 @keyframes hero-scroll-cue-bounce {
