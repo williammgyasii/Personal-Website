@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Layout } from "./components/layout/Layout";
 import { PageLoader } from "./components/layout/PageLoader";
+import { SmoothScrollProvider } from "./components/layout/SmoothScrollProvider";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { WorkPage } from "./pages/WorkPage";
@@ -22,16 +23,18 @@ function App() {
         animate={{ opacity: ready ? 1 : 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
-        <Routes>
-          <Route element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="about" element={<AboutPage />} />
-            <Route path="work" element={<WorkPage />} />
-            <Route path="projects" element={<ProjectsPage />} />
-            <Route path="projects/:slug" element={<ProjectDetailPage />} />
-            <Route path="contact" element={<ContactPage />} />
-          </Route>
-        </Routes>
+        <SmoothScrollProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="work" element={<WorkPage />} />
+              <Route path="projects" element={<ProjectsPage />} />
+              <Route path="projects/:slug" element={<ProjectDetailPage />} />
+              <Route path="contact" element={<ContactPage />} />
+            </Route>
+          </Routes>
+        </SmoothScrollProvider>
       </motion.div>
     </>
   );

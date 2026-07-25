@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLenis } from "lenis/react";
 import { Link } from "react-router-dom";
 import { site } from "../../data/site";
 import { MatrixRain } from "../three/MatrixRain";
@@ -9,7 +10,7 @@ import { HeroTitleBackground } from "./HeroTitleBackground";
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden pb-6 pt-20 sm:pb-8 sm:pt-24 lg:h-[100dvh] lg:pb-10 lg:pt-28"
+      className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden pb-12 pt-20 sm:pb-16 sm:pt-24 lg:h-[100dvh] lg:pb-20 lg:pt-28"
       aria-label="Introduction"
     >
       <div className="absolute inset-0 -z-10 bg-[#1e3830]" aria-hidden="true">
@@ -18,6 +19,7 @@ export function Hero() {
         <div className="hero-grid absolute inset-0 opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#243d34]/20 via-transparent to-[#182822]/45" />
         <div className="hero-scanlines absolute inset-0 opacity-[0.03]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-48 bg-gradient-to-b from-transparent via-[#1a2e28]/35 to-surface sm:h-56" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6">
@@ -129,7 +131,13 @@ export function Hero() {
 }
 
 function HeroScrollCue() {
+  const lenis = useLenis();
+
   const scrollToWorks = () => {
+    if (lenis) {
+      lenis.scrollTo("#works", { offset: -112, duration: 1.8 });
+      return;
+    }
     document.getElementById("works")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 

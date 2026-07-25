@@ -1,58 +1,45 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { usePrefersReducedMotion } from "../../hooks/useMediaQuery";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Parallax,
+  ParallaxBanner,
+  ParallaxBannerLayer,
+} from "react-scroll-parallax";
 import { projects } from "../../data/projects";
-import { ParallaxLayer } from "./ParallaxLayer";
 
 export function SelectedWorks() {
   const [active, setActive] = useState(0);
   const current = projects[active];
   const total = projects.length;
-  const sectionRef = useRef<HTMLElement>(null);
-  const reducedMotion = usePrefersReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "center center"],
-  });
-
-  const bannerScale = useTransform(scrollYProgress, [0, 1], reducedMotion ? [1, 1] : [1.12, 1]);
-  const bannerY = useTransform(scrollYProgress, [0, 1], reducedMotion ? ["0%", "0%"] : ["-18%", "0%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.45, 1], [0.4, 1, 1]);
-  const contentY = useTransform(scrollYProgress, [0, 1], reducedMotion ? [0, 0] : [48, 0]);
 
   const prev = () => setActive((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setActive((i) => (i === total - 1 ? 0 : i + 1));
 
   return (
-    <section
-      id="works"
-      ref={sectionRef}
-      className="relative -mt-10 scroll-mt-24 pb-0 sm:-mt-14 lg:-mt-20"
-    >
-      <div className="relative max-h-[200px] overflow-hidden sm:max-h-[280px] md:max-h-[340px] lg:max-h-[380px]">
-        <motion.div
-          className="h-full w-full"
-          style={reducedMotion ? undefined : { y: bannerY, scale: bannerScale }}
-        >
+    <section id="works" className="relative scroll-mt-28 bg-surface pt-16 sm:pt-20 lg:pt-24">
+      <ParallaxBanner className="relative h-[min(42vh,420px)] min-h-[240px] w-full overflow-hidden">
+        <ParallaxBannerLayer speed={-25} className="absolute inset-0">
           <img
             src="/images/mountain.png"
             alt=""
-            className="h-full min-h-[160px] w-full scale-105 object-cover object-center opacity-90 sm:min-h-[240px]"
+            className="h-[130%] w-full object-cover object-center"
             loading="lazy"
           />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#1e3830] to-transparent" />
-      </div>
+        </ParallaxBannerLayer>
 
-      <motion.div
-        className="relative z-10 -mt-12 px-4 sm:-mt-20 sm:px-6 md:-mt-24 lg:-mt-28"
-        style={reducedMotion ? undefined : { y: contentY, opacity: contentOpacity }}
-      >
-        <div className="mx-auto grid max-w-[1320px] gap-8 md:grid-cols-[1fr_1.6fr] md:gap-12">
-          <ParallaxLayer speed={0.08} className="order-2 md:order-1">
+        <ParallaxBannerLayer speed={-8} className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-black/45 to-black/15" />
+        </ParallaxBannerLayer>
+
+        <ParallaxBannerLayer speed={-4} className="absolute inset-x-0 top-0 h-32">
+          <div className="h-full bg-gradient-to-b from-[#1e3830]/90 via-[#1a2e28]/35 to-transparent" />
+        </ParallaxBannerLayer>
+      </ParallaxBanner>
+
+      <div className="relative z-10 -mt-20 px-4 sm:-mt-28 sm:px-6 md:-mt-32 lg:-mt-36">
+        <div className="mx-auto grid max-w-[1320px] gap-10 md:grid-cols-[1fr_1.6fr] md:gap-12">
+          <Parallax speed={8} className="order-2 md:order-1">
             <div>
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3 sm:mb-6">
                 <p className="text-xs tracking-tight text-muted">SELECTED WORKS</p>
@@ -85,13 +72,13 @@ export function SelectedWorks() {
                 )}
               </div>
             </div>
-          </ParallaxLayer>
+          </Parallax>
 
-          <ParallaxLayer speed={0.12} className="relative order-1 md:order-2">
+          <Parallax speed={-12} className="relative order-1 md:order-2">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
-                className="overflow-hidden rounded-xl border border-border sm:rounded-2xl"
+                className="overflow-hidden rounded-xl border border-border shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:rounded-2xl"
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.02 }}
@@ -106,11 +93,11 @@ export function SelectedWorks() {
                 />
               </motion.div>
             </AnimatePresence>
-          </ParallaxLayer>
+          </Parallax>
         </div>
-      </motion.div>
+      </div>
 
-      <div className="relative z-10 px-4 pt-6 pb-16 sm:px-6 sm:pt-8 sm:pb-20">
+      <div className="relative z-10 px-4 pt-10 pb-16 sm:px-6 sm:pt-12 sm:pb-20">
         <div className="mx-auto grid max-w-[1320px] gap-6 sm:gap-8 md:grid-cols-3">
           <div className="min-h-[40px] md:col-span-1">
             <AnimatePresence mode="wait">
