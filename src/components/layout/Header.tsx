@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { site } from "../../data/site";
+import { HeaderBackground } from "./HeaderBackground";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,16 +36,17 @@ export function Header() {
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-50 px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-5 ${
+        className={`fixed inset-x-0 top-0 z-50 overflow-hidden px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-5 ${
           scrolled || !isHome
-            ? "border-b border-white/10 bg-black/75 backdrop-blur-xl"
-            : "border-b border-transparent bg-black/25 backdrop-blur-md"
+            ? "border-b border-white/10 bg-[#1a2e28]/85 backdrop-blur-xl"
+            : "border-b border-white/10 bg-[#1a2e28]/55 backdrop-blur-md"
         }`}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
+        <HeaderBackground />
+        <div className="relative z-10 mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
           <Link
             to="/"
             className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border border-white/20 bg-white/5 text-sm font-bold tracking-tight transition hover:border-primary hover:text-primary hover:shadow-[0_0_20px_rgba(7,196,44,0.25)]"

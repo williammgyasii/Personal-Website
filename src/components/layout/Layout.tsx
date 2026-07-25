@@ -7,11 +7,11 @@ export function Layout() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
   return (
-    <div className="bg-black">
+    <div className="bg-surface">
       <Header />
       <main>
         <Outlet />
