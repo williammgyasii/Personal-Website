@@ -14,11 +14,9 @@ export function Hero() {
     >
       <div className="absolute inset-0 -z-10 bg-[#1e3830]" aria-hidden="true">
         <MatrixRain />
+        <HeroTitleBackground />
         <div className="hero-grid absolute inset-0 opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#243d34]/30 via-[#1e3830]/20 to-[#182822]/50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_15%,rgba(7,196,44,0.22),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_90%_25%,rgba(56,189,248,0.18),transparent_45%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(30,56,48,0.6),transparent_60%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#243d34]/20 via-transparent to-[#182822]/45" />
         <div className="hero-scanlines absolute inset-0 opacity-[0.03]" />
       </div>
 
@@ -26,15 +24,7 @@ export function Hero() {
         {/* Mobile: single column · Desktop: two columns */}
         <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[1.55fr_1fr] lg:items-end lg:gap-14">
           {/* Primary column */}
-          <div className="relative min-w-0">
-            <div
-              className="hero-title-backdrop pointer-events-none absolute -inset-x-6 -top-[min(42vh,320px)] bottom-[-1.5rem] sm:-inset-x-8 lg:-top-[min(48vh,420px)] lg:bottom-[-2rem]"
-              aria-hidden="true"
-            >
-              <HeroTitleBackground />
-            </div>
-
-            <div className="relative z-10">
+          <div className="min-w-0">
             <motion.ul
               className="mb-4 flex flex-wrap gap-x-4 gap-y-1.5 sm:mb-6 lg:mb-8"
               initial={{ opacity: 0 }}
@@ -98,7 +88,6 @@ export function Hero() {
                 </motion.p>
                 <HeroCTAs />
               </div>
-            </div>
             </div>
           </div>
 
