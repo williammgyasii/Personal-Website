@@ -28,11 +28,11 @@ export const timelineEntries = [
     duration: "Jun 2024 – Feb 2025",
     country: "Maryland, United States",
     description:
-      "Built an AI-powered budgeting platform that turns financial chaos into actionable insights—onboarding, tracking, and reporting in one cohesive product.",
+      "Users were spread across spreadsheets and banking apps with no clear path from raw transactions to actionable budgets. Built Penny Pilot, an AI powered budgeting platform that unifies onboarding, spending tracking, and reporting in one cohesive product.",
     responsibilities: [
-      "Designed multi-step onboarding with Next.js and Zustand — 35% lift in new user engagement",
-      "Built interactive financial dashboards with Recharts and D3.js for at-a-glance clarity",
-      "Optimized mobile-responsive UX — 15% increase in user retention post-launch",
+      "Owned full stack development of Penny Pilot: onboarding flows, financial dashboards, and Stripe billing integration",
+      "Built OpenAI powered spending insights and interactive Recharts reporting with Next.js and Zustand",
+      "Increased new user engagement 35% and user retention 15% through onboarding redesign and mobile responsive dashboard UX",
     ],
   },
   {

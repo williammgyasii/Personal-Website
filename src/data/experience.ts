@@ -60,9 +60,9 @@ export const experienceHighlights: WorkHighlight[] = [
     location: "Maryland, US",
     current: false,
     bullets: [
-      "Built an AI powered budgeting platform with multi step onboarding, financial dashboards, and spending insights",
-      "Developed Next.js features with Zustand state management and Recharts reporting across the full user journey",
-      "Increased new user engagement 35% through onboarding flow and dashboard UX improvements",
+      "Owned full stack development of Penny Pilot, an AI powered budgeting platform with multi step onboarding, financial dashboards, and Stripe subscription billing",
+      "Built OpenAI powered spending insights and interactive Recharts reporting with Next.js, Zustand, and PostgreSQL across the full user journey",
+      "Increased new user engagement 35% and user retention 15% through onboarding flow redesign and mobile responsive dashboard UX",
     ],
     metric: "35% engagement lift",
     technologies: toTechBubbles([

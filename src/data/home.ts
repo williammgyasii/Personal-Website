@@ -33,7 +33,7 @@ export const workHighlights = [
     company: "Penny-Pilot",
     period: "2024 – 2025",
     highlight:
-      "AI budgeting platform with 35% engagement lift—proof that good onboarding is a growth lever, not an afterthought.",
+      "Owned full stack development of Penny Pilot, an AI powered budgeting platform with multi step onboarding, OpenAI spending insights, and 35% lift in new user engagement.",
   },
   {
     role: "Frontend Developer",
