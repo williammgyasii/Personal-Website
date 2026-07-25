@@ -13,10 +13,10 @@ export const projects: Project[] = [
   {
     id: "lumencue",
     name: "LumenCue",
-    category: "AI Worship Platform",
+    category: "AI Worship Platform · Flagship",
     tags: [".NET", "AWS", "DESKTOP", "AUTO-UPDATE"],
     description:
-      "AI-assisted worship operations platform with .NET desktop client and AWS-backed distribution pipeline.",
+      "Broadcast-grade worship operations without the six-figure AV stack. A .NET desktop client with AWS-backed sync, semver auto-updates, and AI-assisted cue orchestration—built for live services where a missed cue isn't an option.",
     image: "/images/work-1.jpg",
     link: "https://github.com/williammgyasii/lumencue-releases",
     flagship: true,
@@ -24,10 +24,10 @@ export const projects: Project[] = [
   {
     id: "seeka",
     name: "Seeka",
-    category: "Opportunity Pipeline SaaS",
+    category: "Opportunity Pipeline SaaS · Flagship",
     tags: ["NEXT.JS", "AI SCORING", "MULTI-TENANT", "AUTOMATION"],
     description:
-      "Discover, qualify, and win opportunities across 50+ sources with AI-powered pipeline automation.",
+      "Stop tab-hopping. Start closing. Seeka aggregates 50+ job boards and lead sources, scores every opportunity with AI, and automates outreach—one pipeline from discovery to deal.",
     image: "/images/work-2.jpg",
     link: "https://www.seeka.tech/",
     flagship: true,
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     category: "EdTech SaaS",
     tags: ["LSAT PREP", "OPENAI", "STRIPE", "NEXT.JS"],
     description:
-      "Official PrepTest practice, AI study assistant, and writing simulator on a freemium SaaS stack.",
+      "Serious LSAT prep without the $3,000 course. 10,000+ official PrepTest questions, an AI study assistant trained on your materials, and freemium tiers that convert because the free product delivers real value.",
     image: "/images/work-3.jpg",
     link: "https://www.lawprep.io/",
   },
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     category: "Mobile · AI Routines",
     tags: ["REACT NATIVE", "AI PLANNING", "EXPO", "MOBILE"],
     description:
-      "Income and schedule-aware AI routines that adapt as your calendar and goals change.",
+      "Productivity that respects your bank account and your calendar. AI-generated routines that replan when life shifts—not another streak app that guilt-trips you for being human.",
     image: "/images/work-4.jpg",
     link: "https://get-grounded.app/",
   },
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     category: "Culture-First Marketplace",
     tags: ["MARKETPLACE", "NEXT.JS", "STRIPE", "DIASPORA"],
     description:
-      "Wedding vendor matching by culture—connecting couples with photographers, DJs, and caterers who get it.",
+      "The wedding marketplace diaspora communities deserve. Find Nigerian DJs, Ghanaian caterers, and Indian photographers who actually understand your ceremony—not vendors who need a cultural crash course.",
     image: "/images/work-5.jpg",
     link: "https://festura.org/",
   },
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     category: "AI-Assisted CMS",
     tags: ["HEADLESS CMS", "OPENAI", "SEO", "PUBLISHING"],
     description:
-      "AI-native CMS with grammar, tone, and SEO tooling built into a distraction-free editor.",
+      "WordPress power without plugin hell. Grammar, tone, SEO scoring, and headless publishing in one distraction-free editor—AI that enhances your voice instead of replacing it.",
     image: "/images/work-6.jpg",
     link: "https://www.forgecms.io/",
   },
