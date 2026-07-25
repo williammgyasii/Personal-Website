@@ -31,11 +31,15 @@ export const projects: Project[] = [
     tags: [".NET", "AWS", "DESKTOP", "AUTO-UPDATE"],
     technologies: [
       { name: ".NET", tone: "violet" },
+      { name: "C#", tone: "violet" },
       { name: "AWS", tone: "amber" },
+      { name: "S3", tone: "amber" },
       { name: "OpenAI", tone: "accent" },
       { name: "React", tone: "primary" },
-      { name: "Docker", tone: "accent" },
       { name: "TypeScript", tone: "primary" },
+      { name: "Docker", tone: "accent" },
+      { name: "SignalR", tone: "violet" },
+      { name: "Electron", tone: "amber" },
     ],
     description:
       "Broadcast-grade worship operations without the six-figure AV stack. A .NET desktop client with AWS-backed sync, semver auto-updates, and AI-assisted cue orchestration—built for live services where a missed cue isn't an option.",
@@ -53,9 +57,13 @@ export const projects: Project[] = [
     technologies: [
       { name: "Next.js", tone: "primary" },
       { name: "TypeScript", tone: "accent" },
+      { name: "Node.js", tone: "primary" },
+      { name: "Express", tone: "violet" },
       { name: "PostgreSQL", tone: "violet" },
-      { name: "OpenAI", tone: "accent" },
       { name: "Drizzle", tone: "amber" },
+      { name: "OpenAI", tone: "accent" },
+      { name: "Redis", tone: "amber" },
+      { name: "Zod", tone: "accent" },
       { name: "Vercel", tone: "primary" },
     ],
     description:
@@ -73,10 +81,14 @@ export const projects: Project[] = [
     tags: ["LSAT PREP", "OPENAI", "STRIPE", "NEXT.JS"],
     technologies: [
       { name: "Next.js", tone: "primary" },
+      { name: "React", tone: "primary" },
+      { name: "TypeScript", tone: "accent" },
       { name: "OpenAI", tone: "accent" },
       { name: "Stripe", tone: "violet" },
       { name: "Drizzle", tone: "amber" },
-      { name: "PostgreSQL", tone: "accent" },
+      { name: "PostgreSQL", tone: "violet" },
+      { name: "NextAuth", tone: "accent" },
+      { name: "Tailwind", tone: "primary" },
       { name: "Vercel", tone: "primary" },
     ],
     description:
@@ -94,9 +106,13 @@ export const projects: Project[] = [
     technologies: [
       { name: "React Native", tone: "primary" },
       { name: "Expo", tone: "accent" },
+      { name: "TypeScript", tone: "primary" },
       { name: "OpenAI", tone: "violet" },
       { name: "Firebase", tone: "amber" },
-      { name: "TypeScript", tone: "primary" },
+      { name: "PostgreSQL", tone: "accent" },
+      { name: "Tailwind", tone: "primary" },
+      { name: "Push Notifications", tone: "violet" },
+      { name: "Calendar API", tone: "amber" },
     ],
     description:
       "Productivity that respects your bank account and your calendar. AI-generated routines that replan when life shifts—not another streak app that guilt-trips you for being human.",
@@ -112,10 +128,14 @@ export const projects: Project[] = [
     tags: ["MARKETPLACE", "NEXT.JS", "STRIPE", "DIASPORA"],
     technologies: [
       { name: "Next.js", tone: "primary" },
+      { name: "React", tone: "primary" },
+      { name: "TypeScript", tone: "accent" },
       { name: "Stripe", tone: "violet" },
       { name: "PostgreSQL", tone: "accent" },
+      { name: "Algolia", tone: "amber" },
       { name: "AWS S3", tone: "amber" },
       { name: "Tailwind", tone: "primary" },
+      { name: "Vercel", tone: "accent" },
     ],
     description:
       "The wedding marketplace diaspora communities deserve. Find Nigerian DJs, Ghanaian caterers, and Indian photographers who actually understand your ceremony—not vendors who need a cultural crash course.",
@@ -131,10 +151,14 @@ export const projects: Project[] = [
     tags: ["HEADLESS CMS", "OPENAI", "SEO", "PUBLISHING"],
     technologies: [
       { name: "Next.js", tone: "primary" },
+      { name: "React", tone: "primary" },
+      { name: "TypeScript", tone: "accent" },
       { name: "OpenAI", tone: "accent" },
       { name: "Prisma", tone: "violet" },
+      { name: "PostgreSQL", tone: "violet" },
       { name: "Redis", tone: "amber" },
-      { name: "PostgreSQL", tone: "primary" },
+      { name: "Tailwind", tone: "primary" },
+      { name: "Vercel", tone: "primary" },
     ],
     description:
       "WordPress power without plugin hell. Grammar, tone, SEO scoring, and headless publishing in one distraction-free editor—AI that enhances your voice instead of replacing it.",

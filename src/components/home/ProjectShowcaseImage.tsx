@@ -1,40 +1,43 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import type { Project } from "../../data/projects";
 
 type ProjectShowcaseImageProps = {
   project: Project;
+  compact?: boolean;
 };
 
-export function ProjectShowcaseImage({ project }: ProjectShowcaseImageProps) {
+export function ProjectShowcaseImage({ project, compact = false }: ProjectShowcaseImageProps) {
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="group relative block overflow-hidden rounded-2xl border border-border shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+      className="group relative block overflow-hidden rounded-xl border border-border shadow-[0_16px_48px_rgba(0,0,0,0.3)] sm:rounded-2xl"
       aria-label={`View ${project.name} case study`}
     >
-      <motion.img
+      <img
         src={project.image}
         alt={project.name}
-        className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105 sm:aspect-[4/3]"
+        className={`w-full object-cover transition duration-700 group-hover:scale-105 ${
+          compact ? "aspect-[4/3] max-h-[280px] sm:max-h-[320px]" : "aspect-[16/10] sm:aspect-[4/3]"
+        }`}
         loading="lazy"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 transition duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent opacity-90 transition duration-500 group-hover:opacity-100" />
 
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 backdrop-blur-[6px] transition duration-500 group-hover:opacity-100 group-hover:backdrop-blur-md">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/35 via-black/25 to-accent/35" />
-        <div className="relative flex flex-col items-center gap-3 text-center">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/25 bg-white/10 text-2xl backdrop-blur-sm transition duration-500 group-hover:scale-110">
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 backdrop-blur-[4px] transition duration-500 group-hover:opacity-100 group-hover:backdrop-blur-lg">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-black/30 to-accent/40" />
+        <div className="relative flex flex-col items-center gap-2 text-center">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/10 text-xl backdrop-blur-sm transition duration-500 group-hover:scale-110">
             →
           </span>
-          <span className="text-sm font-semibold tracking-[0.14em] text-white">VIEW PROJECT</span>
-          <span className="text-[11px] text-white/70">Case study & details</span>
+          <span className="text-xs font-semibold tracking-[0.16em] text-white sm:text-sm">
+            VIEW PROJECT
+          </span>
         </div>
       </div>
 
       {project.flagship && (
-        <span className="absolute left-4 top-4 rounded-full border border-primary/40 bg-black/50 px-3 py-1 text-[10px] font-medium text-primary backdrop-blur-sm">
+        <span className="absolute left-3 top-3 rounded-full border border-primary/40 bg-black/50 px-2.5 py-1 text-[9px] font-medium text-primary backdrop-blur-sm">
           FLAGSHIP
         </span>
       )}
