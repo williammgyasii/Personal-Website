@@ -450,6 +450,15 @@
     background: radial-gradient(ellipse at 0% 0%, rgba(7, 196, 44, 0.08), transparent 55%);
   }
 
+  .experience-resume-bullets {
+    list-style: disc;
+    padding-left: 1.125rem;
+  }
+
+  .experience-resume-bullets li::marker {
+    color: rgba(7, 196, 44, 0.85);
+  }
+
   .experience-h-timeline {
     position: relative;
   }

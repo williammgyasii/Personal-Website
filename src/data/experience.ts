@@ -34,9 +34,9 @@ export const experienceHighlights: WorkHighlight[] = [
     location: "Maryland, US",
     current: true,
     bullets: [
-      "Problem: supply chain teams juggled disconnected ERPs, email, and portals with manual vendor follow ups and no critical path visibility",
-      "Built and maintain DeliverEarly, the autonomous supply chain platform with ATLAS AI agents running 24/7",
-      "Own the full stack: visual workflow builder, integrations, real time dashboards, and production releases",
+      "Own full stack development of DeliverEarly at deliverearly.com, including the workflow builder, ATLAS AI agents, integrations, and production dashboards",
+      "Built autonomous vendor follow ups and critical path risk detection with OpenAI powered ATLAS agents running 24/7",
+      "Designed PostgreSQL schemas and tRPC APIs for orders, vendors, and real time collaboration, deployed on AWS at production scale",
     ],
     metric: "deliverearly.com",
     productUrl: "https://www.deliverearly.com/",
@@ -60,9 +60,9 @@ export const experienceHighlights: WorkHighlight[] = [
     location: "Maryland, US",
     current: false,
     bullets: [
-      "Problem: users struggled to turn raw spending data into clear budgets and next steps",
-      "Shipped AI budgeting with multi step onboarding, financial dashboards, and reporting",
-      "Result: 35% lift in new user engagement after onboarding and dashboard redesign",
+      "Built an AI powered budgeting platform with multi step onboarding, financial dashboards, and spending insights",
+      "Developed Next.js features with Zustand state management and Recharts reporting across the full user journey",
+      "Increased new user engagement 35% through onboarding flow and dashboard UX improvements",
     ],
     metric: "35% engagement lift",
     technologies: toTechBubbles([
@@ -84,9 +84,9 @@ export const experienceHighlights: WorkHighlight[] = [
     location: "Accra, Ghana",
     current: false,
     bullets: [
-      "Problem: schools relied on paper workflows admins could not adopt at scale",
-      "Led SchoolDesk frontend and UX for a platform now used by 200+ schools in Ghana",
-      "Result: 40% engagement increase and 70% feature adoption within the first month of major releases",
+      "Led frontend development of SchoolDesk, a school management platform adopted by 200+ schools in Ghana",
+      "Shipped reusable React component libraries and admin workflows that reduced support tickets 25%",
+      "Drove 40% engagement lift and 70% feature adoption within the first month of major releases",
     ],
     metric: "200+ schools live",
     technologies: toTechBubbles([

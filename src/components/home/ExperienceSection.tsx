@@ -138,12 +138,9 @@ function ExperienceTimelineCard({ job, index }: { job: WorkHighlight; index: num
             </span>
           )}
 
-          <ul className="space-y-2.5 text-sm leading-relaxed text-white/80">
+          <ul className="experience-resume-bullets space-y-2 text-sm leading-relaxed text-white/85">
             {job.bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-2.5">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>{bullet}</span>
-              </li>
+              <li key={bullet}>{bullet}</li>
             ))}
           </ul>
 
