@@ -4,7 +4,7 @@ export const lumencue: ProjectDetail = {
   id: 1,
   slug: "lumencue",
   name: "LumenCue",
-  subline: "AI Worship Operations Platform for Modern Churches",
+  subline: "Broadcast-Grade Worship Ops Without the Enterprise Price Tag",
   category: "fullstack",
   status: "in-progress",
   flagship: true,
@@ -13,30 +13,30 @@ export const lumencue: ProjectDetail = {
     {
       title: "Intelligent Cue Orchestration",
       description:
-        "Event-driven worship cue workflows with AI-assisted sequencing for lyrics, slides, lighting, and stage transitions across multi-service schedules.",
+        "One control surface for lyrics, slides, lighting, and stage transitions—AI suggests sequences, operators stay in control. Built for Sunday morning, not Sunday morning rehearsals.",
     },
     {
       title: "Lightweight Desktop Distribution",
       description:
-        "Cross-platform desktop client with a hardened auto-update channel, semver-gated releases, and delta-friendly installer delivery.",
+        "Ships like a consumer app, runs like production software. Semver-gated auto-updates via GitHub Releases—volunteer church IT never touches a manual installer again.",
     },
     {
       title: "Multi-Campus Church Topology",
       description:
-        "Org-scoped tenancy for campuses, ministries, and operator roles with isolated media libraries and shared template inheritance.",
+        "One church, five campuses, zero cue drift. Org-scoped tenancy with shared templates so every location runs the same quality service without duplicate prep work.",
     },
     {
       title: "AWS-Native Reliability Layer",
       description:
-        "Cloud-backed sync, asset delivery, and observability with least-privilege IAM, encrypted object storage, and CI-driven release automation.",
+        "AWS S3, CloudFront, and serverless APIs handle media delivery and config sync—encrypted, least-privilege, and observable. Church data stays church data.",
     },
   ],
   description:
-    "LumenCue is an AI-assisted worship operations platform engineered for churches that need broadcast-grade reliability without enterprise AV complexity. Built on a .NET application core with AWS-backed infrastructure, it orchestrates service cues, media assets, and operator workflows through a lightweight desktop client distributed via a secure public release channel with automated updates.",
+    "LumenCue replaces the duct-taped stack of ProPresenter, lighting consoles, and volunteer spreadsheets with a single worship control plane. Built on .NET for sub-second cue latency and AWS for reliable asset sync, it gives production teams broadcast-grade orchestration without the six-figure price tag. AI assists with sequencing and run-of-show planning—always reviewable, never a black box. Already shipping via automated release channels (v0.7.x) to real church operators.",
   problemStatement: {
     title: "Church AV Stacks Are Overbuilt and Under-Integrated",
     description:
-      "Most houses of worship stitch together presentation software, lighting consoles, and volunteer-run spreadsheets. Operators burn prep time reconciling cues across tools, and multi-campus teams lack a unified, low-latency control plane.",
+      "Churches spend thousands on AV gear, then run services on volunteer labor and prayer. Presentation software doesn't talk to lighting. Lighting doesn't talk to stage. Multi-campus teams prep the same service six different ways. When the cue misfires on Sunday, everyone notices.",
     painPoints: [
       "Fragmented cue management across presentation, lighting, and stage teams",
       "High cognitive load for volunteer operators during live services",
@@ -163,7 +163,7 @@ export const lumencue: ProjectDetail = {
     ],
   },
   outcomes:
-    "Delivering a production-grade worship operations platform that replaces duct-taped AV workflows with a unified, AI-assisted control plane—distributed securely via automated release channels.",
+    "LumenCue proves that a lean engineering team can deliver enterprise-grade worship operations at a fraction of legacy AV cost—native desktop performance, AWS reliability, and AI assistance that respects the operator. Not a concept. Shipping now.",
   image: "/images/work-1.jpg",
   link: "https://github.com/williammgyasii/lumencue-releases",
 };
