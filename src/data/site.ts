@@ -1,13 +1,15 @@
 export const site = {
-  name: "GYASII",
+  name: "WILLIAM",
   email: "williammgyasii@gmail.com",
   timezone: "EST",
   year: new Date().getFullYear(),
-  roles: ["FULL-STACK DEV", "AI ENGINEER", "PRODUCT BUILDER"],
-  availability: "AVAILABLE FOR WORK",
+  roles: ["FULL STACK DEV", "AI ENGINEER", "PRODUCT BUILDER"],
+  availability: "OPEN TO FULL TIME & CONTRACT",
   heroDescription:
-    "I build products people actually use—AI-native SaaS, multi-tenant platforms, desktop clients, and mobile apps shipped end to end. From schema design to Stripe billing to production deploy, I engineer systems that scale, convert, and survive real users.",
-  cta: "START A PROJECT",
+    "Full stack engineer, five years in production. I ship SaaS, mobile, and AI systems end to end: database design, API layers, Stripe billing, and deploy. Six live products. Two flagships. Based in Maryland, open to remote.",
+  heroStats: ["5+ YEARS", "6 LIVE PRODUCTS", "2 FLAGSHIPS"],
+  cta: "VIEW PROJECTS",
+  ctaSecondary: "CONTACT",
   nav: [
     { id: "home", label: "HOME", href: "/" },
     { id: "projects", label: "PROJECTS", href: "/projects" },
