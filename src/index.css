@@ -27,3 +27,24 @@
     @apply min-h-screen min-h-[100dvh];
   }
 }
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  }
+
+  .text-glow-primary {
+    text-shadow: 0 0 24px rgba(7, 196, 44, 0.85);
+  }
+
+  .hero-scanlines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.4) 2px,
+      rgba(0, 0, 0, 0.4) 4px
+    );
+    pointer-events: none;
+  }
+}
