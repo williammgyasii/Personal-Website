@@ -17,7 +17,7 @@ export function ContactPage() {
       <PageHeader
         label="CONTACT"
         title="Let's build something real."
-        description="Open to full-time roles, contract work, and co-building flagship products. Tell me what you're shipping—I'll tell you how we get it to production."
+        description="Open to full-time roles, contract engagements, and co-building flagship products. Tell me what you're shipping and who it's for—I'll tell you how we get it to production."
       />
 
       <div className="relative z-10 mx-auto max-w-[1320px] px-4 sm:px-6">

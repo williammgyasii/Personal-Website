@@ -41,7 +41,7 @@ function ProjectCard({
               {project.status === "in-progress" ? "Building" : "Live"}
             </span>
           </div>
-          <p className="mb-3 text-sm text-muted">{project.subline}</p>
+          <p className="mb-3 line-clamp-3 text-sm text-muted">{project.description}</p>
           <div className="flex flex-wrap gap-2">
             {project.technologies.slice(0, 4).map((tech) => (
               <span
@@ -64,8 +64,8 @@ export function ProjectsPage() {
     <>
       <PageHeader
         label="PROJECTS"
-        title="Selected works"
-        description="Six production products across AI SaaS, mobile, marketplaces, and developer tools—with deep case studies for each."
+        title="Products that ship"
+        description="Six live builds across AI SaaS, mobile, marketplaces, and developer tools—not mockups, not tutorials. Flagship products first. Full case studies on every one."
       />
 
       <div className="mx-auto max-w-[1320px] space-y-16 px-4 pb-24 sm:px-6 sm:pb-32">

@@ -48,11 +48,12 @@ export function HomePreview() {
             <div>
               <p className="mb-2 text-xs text-muted">ABOUT</p>
               <h2 className="mb-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-                Engineering products that ship
+                I build products people pay for
               </h2>
               <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted">
-                Full-stack engineer building AI-native SaaS, mobile apps, and platform
-                software—from schema design to production deploy.
+                Full-stack engineer with six live products across AI SaaS, mobile, and
+                marketplaces. I own the stack from PostgreSQL schema to Stripe billing
+                to the deploy that puts it in users&apos; hands.
               </p>
               <Link
                 to="/about"
@@ -93,10 +94,11 @@ export function HomePreview() {
       <section className="border-t border-border py-16 sm:py-24">
         <div className="mx-auto max-w-[1320px] px-4 text-center sm:px-6">
           <h2 className="mb-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-            Ready to talk?
+            Have a product to ship?
           </h2>
           <p className="mx-auto mb-8 max-w-md text-sm text-muted">
-            Open to full-time, contract, and co-building opportunities.
+            Full-time, contract, or co-build—I&apos;m open to conversations with teams
+            that care about shipping, not just planning.
           </p>
           <Link
             to="/contact"

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { profileInfo, timelineEntries, aboutSnippet } from "../data/about";
-import { stats, techStack } from "../data/home";
+import { profileInfo, timelineEntries } from "../data/about";
+import { stats, techStack, valueProps } from "../data/home";
 import { PageHeader } from "../components/layout/PageHeader";
 
 export function AboutPage() {
@@ -9,27 +9,28 @@ export function AboutPage() {
     <>
       <PageHeader
         label="ABOUT"
-        title={aboutSnippet.greeting}
+        title="I build products people use—not decks people applaud."
         description={profileInfo.bio}
       />
 
       <div className="mx-auto max-w-[1320px] space-y-20 px-4 pb-24 sm:px-6 sm:pb-32">
         <section>
-          <h2 className="mb-6 text-xl font-semibold tracking-tight">Highlights</h2>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {aboutSnippet.highlights.map((item, i) => (
-              <motion.li
-                key={item}
-                className="rounded-xl border border-border p-4 text-sm text-muted"
+          <h2 className="mb-6 text-xl font-semibold tracking-tight">Why work with me</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {valueProps.map((item, i) => (
+              <motion.div
+                key={item.title}
+                className="rounded-xl border border-border p-5"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
               >
-                {item}
-              </motion.li>
+                <h3 className="mb-2 font-semibold text-primary">{item.title}</h3>
+                <p className="text-sm text-muted">{item.description}</p>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section>

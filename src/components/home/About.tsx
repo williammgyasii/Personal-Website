@@ -25,7 +25,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              Engineering products that ship—not slide decks.
+              Engineering products that ship—and sell.
             </motion.h2>
             <motion.p
               className="mb-5 max-w-lg text-sm leading-relaxed text-muted sm:mb-6"
@@ -34,10 +34,10 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.7 }}
             >
-              I&apos;m William Gyasi—a full-stack engineer building AI-native SaaS,
-              mobile apps, and platform software. From multi-tenant backends to
-              desktop release pipelines, I own the stack from schema design to
-              production deploy.
+              I&apos;m William Gyasi—a full-stack engineer who builds AI-native SaaS,
+              mobile apps, and platform software. Six live products. Two flagships.
+              From multi-tenant backends to desktop release pipelines, I own the
+              vertical from schema design to production deploy.
             </motion.p>
             <motion.p
               className="max-w-lg text-sm leading-relaxed text-muted"
@@ -46,9 +46,9 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.7 }}
             >
-              Current focus: flagship products like{" "}
-              {flagships.map((p) => p.name).join(" and ")}, plus a portfolio of
-              live platforms across edtech, marketplaces, and developer tools.
+              Currently building{" "}
+              {flagships.map((p) => p.name).join(" and ")}—plus live platforms in
+              edtech, marketplaces, and developer tools that real users depend on.
             </motion.p>
           </div>
 
