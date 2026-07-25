@@ -14,11 +14,11 @@ export const timelineEntries = [
     duration: "May 2025 – Present",
     country: "Maryland, United States",
     description:
-      "Leading development of an in-house Call CRM platform—the operational backbone for lead tracking, call logging, and agent workflows at scale.",
+      "Supply chain teams faced disconnected systems, manual follow ups, and revenue killing delays. I build and maintain DeliverEarly, the autonomous supply chain platform with AI agents that orchestrate vendors, tasks, and operations end to end.",
     responsibilities: [
-      "Architected responsive CRM frontend in Next.js + Tailwind, built for agents under pressure",
-      "Shipped real-time backend services with Node.js and tRPC for high-volume call operations",
-      "Delivered secure, role-gated features that reduced agent context-switching across tools",
+      "Full stack ownership of DeliverEarly at deliverearly.com from workflow builder to production",
+      "Built ATLAS AI agent features: vendor follow ups, risk alerts, and automated escalations",
+      "Shipped real time dashboards and integrations connecting ERPs, email, and partner portals",
     ],
   },
   {

@@ -33,17 +33,18 @@ export const experienceHighlights: WorkHighlight[] = [
     location: "Maryland, US",
     current: true,
     summary:
-      "Leading the in house Call CRM platform. Next.js frontend, tRPC backend, and production grade agent workflows built for high volume call operations.",
-    metric: "40% faster page loads",
+      "Supply chain teams were stuck across disconnected ERPs, email, and partner portals with manual vendor follow ups and no visibility into critical path risk. I build and maintain DeliverEarly, the autonomous supply chain platform where AI agents orchestrate vendors, workflows, and operations end to end. Full stack ownership from the workflow builder and ATLAS agent automations to integrations, dashboards, and production releases.",
+    metric: "deliverearly.com live",
     technologies: toTechBubbles([
       "Next.js",
       "TypeScript",
       "Node.js",
       "tRPC",
       "PostgreSQL",
+      "OpenAI",
       "AWS",
-      "Tailwind",
       "Redis",
+      "Tailwind",
     ]),
   },
   {

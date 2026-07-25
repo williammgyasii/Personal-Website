@@ -26,7 +26,7 @@ export const workHighlights = [
     company: "Intuitive Analytica",
     period: "2025 – Present",
     highlight:
-      "Building the Call CRM that agents run on daily—Next.js frontend, tRPC backend, production-grade from day one.",
+      "Building and maintaining DeliverEarly, the autonomous supply chain platform with AI agents, workflow automation, and real time visibility at deliverearly.com.",
   },
   {
     role: "Full-Stack Developer",

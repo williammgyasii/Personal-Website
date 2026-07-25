@@ -17,7 +17,7 @@ export function WorkPage() {
       <PageHeader
         label="WORK"
         title="Experience that compounds"
-        description="Five years across CRM, fintech, edtech, and healthtech—shipping products that move metrics, not just tickets. Every role below came with real users and real accountability."
+        description="Six years across supply chain SaaS, fintech, edtech, and healthtech. Shipping products that move metrics, not just tickets. Every role below came with real users and real accountability."
       />
 
       <div className="mx-auto max-w-[1320px] px-4 pb-24 sm:px-6 sm:pb-32">
