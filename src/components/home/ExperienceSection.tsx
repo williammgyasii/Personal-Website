@@ -65,9 +65,8 @@ export function ExperienceSection() {
 function ExperienceTimelineCard({ job, index }: { job: WorkHighlight; index: number }) {
   return (
     <motion.li
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="experience-h-card-item"
     >
