@@ -1,70 +1,93 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { usePrefersReducedMotion } from "../../hooks/useMediaQuery";
 import { projects } from "../../data/projects";
+import { ParallaxLayer } from "./ParallaxLayer";
 
 export function SelectedWorks() {
   const [active, setActive] = useState(0);
   const current = projects[active];
   const total = projects.length;
+  const sectionRef = useRef<HTMLElement>(null);
+  const reducedMotion = usePrefersReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "center center"],
+  });
+
+  const bannerScale = useTransform(scrollYProgress, [0, 1], reducedMotion ? [1, 1] : [1.12, 1]);
+  const bannerY = useTransform(scrollYProgress, [0, 1], reducedMotion ? ["0%", "0%"] : ["-18%", "0%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.45, 1], [0.4, 1, 1]);
+  const contentY = useTransform(scrollYProgress, [0, 1], reducedMotion ? [0, 0] : [48, 0]);
 
   const prev = () => setActive((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setActive((i) => (i === total - 1 ? 0 : i + 1));
 
   return (
-    <section id="works" className="relative pb-0 pt-6 sm:pt-8">
+    <section
+      id="works"
+      ref={sectionRef}
+      className="relative -mt-10 scroll-mt-24 pb-0 sm:-mt-14 lg:-mt-20"
+    >
+      <div className="relative max-h-[200px] overflow-hidden sm:max-h-[280px] md:max-h-[340px] lg:max-h-[380px]">
+        <motion.div
+          className="h-full w-full"
+          style={reducedMotion ? undefined : { y: bannerY, scale: bannerScale }}
+        >
+          <img
+            src="/images/mountain.png"
+            alt=""
+            className="h-full min-h-[160px] w-full scale-105 object-cover object-center opacity-90 sm:min-h-[240px]"
+            loading="lazy"
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#1e3830] to-transparent" />
+      </div>
+
       <motion.div
-        className="relative max-h-[220px] overflow-hidden sm:max-h-[320px] md:max-h-none"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.8 }}
+        className="relative z-10 -mt-12 px-4 sm:-mt-20 sm:px-6 md:-mt-24 lg:-mt-28"
+        style={reducedMotion ? undefined : { y: contentY, opacity: contentOpacity }}
       >
-        <img
-          src="/images/mountain.png"
-          alt=""
-          className="h-full min-h-[180px] w-full object-cover object-center opacity-90 sm:min-h-[260px]"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-      </motion.div>
-
-      <div className="relative z-10 -mt-16 px-4 sm:-mt-24 sm:px-6 md:-mt-32">
         <div className="mx-auto grid max-w-[1320px] gap-8 md:grid-cols-[1fr_1.6fr] md:gap-12">
-          <div className="order-2 md:order-1">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 sm:mb-6">
-              <p className="text-xs tracking-tight text-muted">SELECTED WORKS</p>
-              <Link
-                to="/projects"
-                className="text-[10px] font-medium text-primary transition hover:underline sm:text-xs"
-              >
-                VIEW ALL →
-              </Link>
-            </div>
-
-            <div className="relative min-h-[72px] pr-20 sm:min-h-[100px] sm:pr-24 md:min-h-[120px]">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={current.id}
-                  className="text-[clamp(1.75rem,8vw,4.5rem)] font-semibold leading-tight tracking-tight"
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          <ParallaxLayer speed={0.08} className="order-2 md:order-1">
+            <div>
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3 sm:mb-6">
+                <p className="text-xs tracking-tight text-muted">SELECTED WORKS</p>
+                <Link
+                  to="/projects"
+                  className="text-[10px] font-medium text-primary transition hover:underline sm:text-xs"
                 >
-                  {current.name}
-                </motion.p>
-              </AnimatePresence>
+                  VIEW ALL →
+                </Link>
+              </div>
 
-              {current.flagship && (
-                <span className="absolute right-0 top-0 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-[9px] font-medium text-primary sm:px-3 sm:text-[10px]">
-                  FLAGSHIP
-                </span>
-              )}
+              <div className="relative min-h-[72px] pr-20 sm:min-h-[100px] sm:pr-24 md:min-h-[120px]">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={current.id}
+                    className="text-[clamp(1.75rem,8vw,4.5rem)] font-semibold leading-tight tracking-tight"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -40 }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    {current.name}
+                  </motion.p>
+                </AnimatePresence>
+
+                {current.flagship && (
+                  <span className="absolute right-0 top-0 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-[9px] font-medium text-primary sm:px-3 sm:text-[10px]">
+                    FLAGSHIP
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
+          </ParallaxLayer>
 
-          <div className="relative order-1 md:order-2">
+          <ParallaxLayer speed={0.12} className="relative order-1 md:order-2">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
@@ -83,11 +106,11 @@ export function SelectedWorks() {
                 />
               </motion.div>
             </AnimatePresence>
-          </div>
+          </ParallaxLayer>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="relative z-10 px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-20">
+      <div className="relative z-10 px-4 pt-6 pb-16 sm:px-6 sm:pt-8 sm:pb-20">
         <div className="mx-auto grid max-w-[1320px] gap-6 sm:gap-8 md:grid-cols-3">
           <div className="min-h-[40px] md:col-span-1">
             <AnimatePresence mode="wait">

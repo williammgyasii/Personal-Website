@@ -406,6 +406,22 @@
   }
 }
 
+.hero-scroll-cue-arrow {
+  animation: hero-scroll-cue-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
 @keyframes grid-drift {
   0% {
     background-position: 0 0;
@@ -505,6 +521,7 @@
   .nav-menu-shimmer,
   .nav-menu-glow,
   .nav-menu-active-glow,
+  .hero-scroll-cue-arrow,
   .hero-panel-gradient,
   .hero-panel-grid,
   .hero-panel-shimmer,

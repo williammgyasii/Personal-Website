@@ -9,7 +9,7 @@ import { HeroTitleBackground } from "./HeroTitleBackground";
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden pb-8 pt-20 sm:pb-12 sm:pt-24 lg:h-[100dvh] lg:pb-16 lg:pt-28"
+      className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden pb-6 pt-20 sm:pb-8 sm:pt-24 lg:h-[100dvh] lg:pb-10 lg:pt-28"
       aria-label="Introduction"
     >
       <div className="absolute inset-0 -z-10 bg-[#1e3830]" aria-hidden="true">
@@ -122,7 +122,30 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <HeroScrollCue />
     </section>
+  );
+}
+
+function HeroScrollCue() {
+  const scrollToWorks = () => {
+    document.getElementById("works")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <motion.button
+      type="button"
+      onClick={scrollToWorks}
+      className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-medium tracking-[0.18em] text-white/60 transition hover:text-primary sm:bottom-6"
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.2, duration: 0.6 }}
+      aria-label="Scroll to selected works"
+    >
+      <span>SELECTED WORKS</span>
+      <span className="hero-scroll-cue-arrow text-primary">↓</span>
+    </motion.button>
   );
 }
 
