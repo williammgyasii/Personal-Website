@@ -58,25 +58,20 @@ export function Header() {
             <div className="nav-menu-shell relative overflow-hidden rounded-full border border-white/10 bg-black/40 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
               <NavMenuBackground />
               <ul className="relative z-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
-                {site.nav.map((item, index) => (
+                {site.nav.map((item) => (
                   <li key={item.id}>
                     <NavLink to={item.href} end={item.href === "/"} className={navLinkClass}>
                       {({ isActive }) => (
-                        <>
-                          <span
-                            className={`nav-menu-link relative inline-flex items-start gap-1.5 rounded-full px-3.5 py-2 transition-colors ${
-                              isActive ? "nav-menu-link-active text-primary" : ""
-                            }`}
-                          >
-                            <span className="text-[9px] leading-3 text-muted transition group-hover:text-primary/70">
-                              {String(index + 1).padStart(2, "0")}
-                            </span>
-                            {item.label}
-                            {isActive && (
-                              <span className="nav-menu-active-glow absolute inset-0 rounded-full" aria-hidden="true" />
-                            )}
-                          </span>
-                        </>
+                        <span
+                          className={`nav-menu-link relative inline-flex rounded-full px-3.5 py-2 transition-colors ${
+                            isActive ? "nav-menu-link-active text-primary" : ""
+                          }`}
+                        >
+                          {item.label}
+                          {isActive && (
+                            <span className="nav-menu-active-glow absolute inset-0 rounded-full" aria-hidden="true" />
+                          )}
+                        </span>
                       )}
                     </NavLink>
                   </li>
@@ -88,10 +83,10 @@ export function Header() {
           <div className="hidden gap-1 lg:grid">
             <a
               href={`mailto:${site.email}`}
-              className="max-w-[220px] truncate text-sm font-medium tracking-tight transition hover:text-primary xl:max-w-none"
+              className="max-w-[220px] truncate text-sm font-medium transition hover:text-primary xl:max-w-none"
               title={site.email}
             >
-              {site.email.toUpperCase()}
+              {site.email}
             </a>
             <p className="text-xs text-muted">
               {site.timezone} · <Clock />
@@ -106,7 +101,7 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             <NavMenuBackground />
-            <span className="relative z-10">{menuOpen ? "CLOSE" : "MENU"}</span>
+            <span className="relative z-10">{menuOpen ? "Close" : "Menu"}</span>
           </button>
         </div>
       </motion.header>
@@ -124,21 +119,18 @@ export function Header() {
             <div className="flex h-full flex-col px-6 pb-10 pt-28">
               <nav aria-label="Mobile">
                 <ul className="space-y-6">
-                  {site.nav.map((item, index) => (
+                  {site.nav.map((item) => (
                     <li key={item.id}>
                       <NavLink
                         to={item.href}
                         end={item.href === "/"}
                         className={({ isActive }) =>
-                          `flex items-baseline gap-3 text-3xl font-semibold tracking-tight transition hover:text-primary sm:text-4xl ${
+                          `text-3xl font-semibold tracking-tight transition hover:text-primary sm:text-4xl ${
                             isActive ? "text-primary" : ""
                           }`
                         }
                         onClick={() => setMenuOpen(false)}
                       >
-                        <span className="text-sm text-muted">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
                         {item.label}
                       </NavLink>
                     </li>

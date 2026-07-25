@@ -44,9 +44,9 @@ export function SelectedWorks() {
           <div className="-mt-10 mb-8 flex flex-wrap items-center justify-end gap-4 sm:-mt-14 sm:mb-10 lg:-mt-16">
             <Link
               to="/projects"
-              className="text-[10px] font-medium text-primary transition hover:underline sm:text-xs"
+              className="text-sm text-muted transition hover:text-primary"
             >
-              VIEW ALL PROJECTS →
+              View all projects →
             </Link>
           </div>
 
@@ -66,10 +66,8 @@ export function SelectedWorks() {
                   className="flex flex-col gap-6 sm:gap-7"
                 >
                   <div className="space-y-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent sm:text-sm">
-                      {current.category}
-                    </p>
-                    <h2 className="text-[clamp(2.5rem,7vw,4.5rem)] font-semibold leading-[0.92] tracking-tight">
+                    <p className="text-sm text-muted">{current.category}</p>
+                    <h2 className="text-[clamp(2rem,6vw,3.5rem)] font-semibold leading-[1.05] tracking-tight">
                       {current.name}
                     </h2>
                   </div>
@@ -78,27 +76,24 @@ export function SelectedWorks() {
                     {current.summary}
                   </p>
 
-                  <div className="space-y-4">
-                    <p className="text-[11px] font-medium tracking-[0.18em] text-muted sm:text-xs">
-                      TECHNOLOGIES
-                    </p>
+                  <div className="space-y-2">
                     <TechBubbles items={current.technologies} />
                   </div>
 
-                  <div className="flex flex-col gap-3 border-t border-border pt-7 sm:flex-row sm:flex-wrap">
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 border-t border-border pt-7">
                     <Link
                       to={`/projects/${current.id}`}
-                      className="inline-flex h-12 items-center justify-center rounded-full border border-primary bg-primary/10 px-7 text-xs font-medium text-primary transition hover:bg-primary hover:text-black sm:text-sm"
+                      className="text-sm font-medium text-primary underline decoration-primary/40 underline-offset-4 transition hover:decoration-primary"
                     >
-                      CASE STUDY →
+                      Case study →
                     </Link>
                     <a
                       href={current.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex h-12 items-center justify-center rounded-full border border-border px-7 text-xs font-medium transition hover:border-accent hover:text-accent sm:text-sm"
+                      className="text-sm text-muted transition hover:text-white"
                     >
-                      LIVE SITE ↗
+                      Live site ↗
                     </a>
                   </div>
                 </motion.div>

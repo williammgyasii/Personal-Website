@@ -36,12 +36,11 @@ export function WhatIOfferSection() {
       <div className="relative z-10 px-4 pb-16 sm:px-6 sm:pb-24">
         <div className="mx-auto max-w-[1320px]">
           <div className="-mt-8 mb-10 sm:-mt-12 sm:mb-14">
-            <p className="mb-2 text-xs tracking-[0.16em] text-muted">CAPABILITIES</p>
             <h2 className="max-w-2xl text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-tight">
-              From schema design to production billing
+              What I offer
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-              Full stack ownership for teams that need one engineer who ships the whole product, not just a layer.
+            <p className="mt-3 max-w-xl text-base text-muted">
+              Full stack ownership from schema design to production billing.
             </p>
           </div>
 
@@ -69,23 +68,14 @@ function OfferCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="group"
+      className="group list-none"
     >
-      <article className="offer-card relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-black/25 p-5 backdrop-blur-sm transition hover:border-primary/40 sm:p-6">
-        <div className="offer-card-glow pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100" aria-hidden="true" />
-
-        <div className="relative z-10 flex flex-1 flex-col">
-          <div className="mb-4 flex items-start justify-between gap-3">
-            <span className="text-[10px] font-medium tabular-nums tracking-[0.2em] text-primary/80">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-          </div>
-
+      <article className="relative flex h-full flex-col border-t border-border pt-6 sm:pt-7">
+        <div className="flex flex-1 flex-col">
           <h3 className="mb-3 text-lg font-semibold tracking-tight sm:text-xl">{service.title}</h3>
           <p className="mb-5 flex-1 text-sm leading-relaxed text-white/75">{service.description}</p>
 
-          <div className="space-y-3 border-t border-border pt-4">
-            <p className="text-[10px] font-medium tracking-[0.16em] text-muted">INCLUDES</p>
+          <div className="border-t border-border pt-4">
             <TechBubbles items={toCapabilityBubbles(service.items)} />
           </div>
         </div>
