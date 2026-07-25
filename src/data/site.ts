@@ -6,7 +6,7 @@ export const site = {
   roles: ["FULL-STACK DEV", "AI ENGINEER", "PRODUCT BUILDER"],
   availability: "AVAILABLE FOR WORK",
   heroDescription:
-    "I build production-grade web and mobile products with AI at the core—SaaS platforms, multi-tenant backends, and flagship apps shipped end to end. Every system is engineered for scale, clarity, and real-world impact.",
+    "I build products people actually use—AI-native SaaS, multi-tenant platforms, desktop clients, and mobile apps shipped end to end. From schema design to Stripe billing to production deploy, I engineer systems that scale, convert, and survive real users.",
   cta: "START A PROJECT",
   nav: [
     { id: "home", label: "HOME", href: "/" },

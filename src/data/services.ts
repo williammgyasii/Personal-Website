@@ -11,39 +11,59 @@ export const services: Service[] = [
     id: "fullstack",
     title: "Full-Stack Engineering",
     description:
-      "End-to-end product development—React/Next.js frontends, Node/.NET backends, PostgreSQL schemas, and production deployment pipelines.",
-    items: ["Next.js & React", "API Design", "Database Architecture", "Cloud Deploy"],
+      "I don't hand off at the API boundary. React/Next.js frontends, Node.js or .NET backends, PostgreSQL schemas, and CI/CD pipelines—one engineer, one coherent product, zero integration gaps.",
+    items: [
+      "Next.js & React SPAs",
+      "REST & tRPC APIs",
+      "Database design & migrations",
+      "AWS / Vercel deployment",
+    ],
     image: "/images/work-2.jpg",
   },
   {
     id: "ai",
     title: "AI Systems Integration",
     description:
-      "LLM pipelines, RAG workflows, document processing, and intelligent automation embedded into real products—not demos.",
-    items: ["OpenAI / LLM APIs", "Prompt Engineering", "AI Scoring", "Document AI"],
+      "LLM pipelines that ship in production—not slide decks. Document processing, qualification scoring, RAG workflows, and prompt pipelines embedded into real products with rate limits, cost controls, and human review gates.",
+    items: [
+      "OpenAI & LLM APIs",
+      "Prompt engineering & evals",
+      "AI scoring & ranking",
+      "Document & chat AI",
+    ],
     image: "/images/work-1.jpg",
   },
   {
     id: "mobile",
     title: "Mobile Development",
     description:
-      "Cross-platform React Native apps with native integrations, offline-first patterns, and App Store–ready release engineering.",
-    items: ["React Native", "Expo", "Push & Calendar", "App Distribution"],
+      "Cross-platform apps that feel native. React Native + Expo with calendar sync, push notifications, offline-first caching, and App Store–ready release engineering—not a web view in a wrapper.",
+    items: [
+      "React Native & Expo",
+      "Native calendar & push",
+      "Offline-first patterns",
+      "TestFlight & Play Store beta",
+    ],
     image: "/images/work-4.jpg",
   },
   {
     id: "saas",
     title: "SaaS & Product Architecture",
     description:
-      "Multi-tenant systems, subscription billing, role-based access, and marketplace dynamics built to scale from day one.",
-    items: ["Stripe Billing", "Multi-Tenancy", "RBAC / CASL", "Marketplace Logic"],
+      "Multi-tenant from day one. Stripe billing, role-based access, org/workspace isolation, and marketplace dynamics—architected so your MVP doesn't become a rewrite at 1,000 users.",
+    items: [
+      "Stripe subscriptions",
+      "Multi-tenant data models",
+      "RBAC / CASL authorization",
+      "Two-sided marketplace logic",
+    ],
     image: "/images/work-3.jpg",
   },
 ];
 
 export const stats = [
-  { value: "6+", label: "Products Shipped" },
-  { value: "5+", label: "Years Building" },
+  { value: "6+", label: "Live Products" },
+  { value: "5+", label: "Years Shipping" },
   { value: "2", label: "Flagship Apps" },
-  { value: "∞", label: "Commits Deep" },
+  { value: "200+", label: "Schools Scaled" },
 ];
