@@ -22,7 +22,7 @@ export function MatrixRain({ className = "" }: { className?: string }) {
     let drops: number[] = [];
 
     const fontSize = isMobile ? 13 : 16;
-    const trailFade = isMobile ? 0.07 : 0.12;
+    const trailFade = isMobile ? 0.05 : 0.08;
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2);
@@ -38,7 +38,7 @@ export function MatrixRain({ className = "" }: { className?: string }) {
     };
 
     const drawStatic = () => {
-      ctx.fillStyle = "#101816";
+      ctx.fillStyle = "#1e3830";
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.font = `${fontSize}px "Courier New", monospace`;
       const step = isMobile ? 1 : 2;
@@ -55,7 +55,7 @@ export function MatrixRain({ className = "" }: { className?: string }) {
     };
 
     const draw = () => {
-      ctx.fillStyle = `rgba(16, 24, 22, ${trailFade})`;
+      ctx.fillStyle = `rgba(30, 56, 48, ${trailFade})`;
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.font = `${fontSize}px "Courier New", monospace`;
 

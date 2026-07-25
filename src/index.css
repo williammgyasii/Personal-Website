@@ -7,7 +7,7 @@
   --color-primary-dim: #07c42c29;
   --color-accent: #38bdf8;
   --color-accent-dim: #38bdf829;
-  --color-surface: #101816;
+  --color-surface: #1a2e28;
   --color-muted: #ffffffa3;
   --color-faint: #ffffff52;
   --color-border: #ffffff29;
@@ -48,9 +48,17 @@
       0deg,
       transparent,
       transparent 2px,
-      rgba(0, 0, 0, 0.4) 2px,
-      rgba(0, 0, 0, 0.4) 4px
+      rgba(0, 0, 0, 0.18) 2px,
+      rgba(0, 0, 0, 0.18) 4px
     );
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(7, 196, 44, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7, 196, 44, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
     pointer-events: none;
   }
 }

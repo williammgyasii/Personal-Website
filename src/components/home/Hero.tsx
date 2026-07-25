@@ -10,12 +10,14 @@ export function Hero() {
       className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden pb-8 pt-20 sm:pb-12 sm:pt-24 lg:h-[100dvh] lg:pb-16 lg:pt-28"
       aria-label="Introduction"
     >
-      <div className="absolute inset-0 -z-10 bg-surface" aria-hidden="true">
+      <div className="absolute inset-0 -z-10 bg-[#1e3830]" aria-hidden="true">
         <MatrixRain />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface/25 via-[#152019]/40 to-surface/75 lg:from-surface/40 lg:via-[#152019]/55 lg:to-surface/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_10%,rgba(7,196,44,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_20%,rgba(56,189,248,0.14),transparent_50%)]" />
-        <div className="hero-scanlines absolute inset-0 opacity-[0.05] lg:opacity-[0.04]" />
+        <div className="hero-grid absolute inset-0 opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#243d34]/30 via-[#1e3830]/20 to-[#182822]/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_15%,rgba(7,196,44,0.22),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_90%_25%,rgba(56,189,248,0.18),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(30,56,48,0.6),transparent_60%)]" />
+        <div className="hero-scanlines absolute inset-0 opacity-[0.03]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6">
@@ -75,7 +77,7 @@ export function Hero() {
                 {site.availability}
               </p>
               <motion.p
-                className="text-sm leading-relaxed text-white/80"
+                className="text-[15px] leading-relaxed text-white/90 sm:text-base"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.55 }}
@@ -104,7 +106,7 @@ export function Hero() {
               <span className="text-muted">{site.timezone}</span>
             </div>
 
-            <p className="max-w-md text-lg leading-relaxed text-white/85">
+            <p className="max-w-md text-lg leading-relaxed text-white/90">
               {site.heroSummary}
             </p>
 
