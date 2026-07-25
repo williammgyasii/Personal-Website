@@ -9,8 +9,9 @@ export interface WorkHighlight {
   period: string;
   location: string;
   current: boolean;
-  summary: string;
+  bullets: string[];
   metric: string;
+  productUrl?: string;
   technologies: ProjectTech[];
 }
 
@@ -32,9 +33,13 @@ export const experienceHighlights: WorkHighlight[] = [
     period: "2025 – Present",
     location: "Maryland, US",
     current: true,
-    summary:
-      "Supply chain teams were stuck across disconnected ERPs, email, and partner portals with manual vendor follow ups and no visibility into critical path risk. I build and maintain DeliverEarly, the autonomous supply chain platform where AI agents orchestrate vendors, workflows, and operations end to end. Full stack ownership from the workflow builder and ATLAS agent automations to integrations, dashboards, and production releases.",
-    metric: "deliverearly.com live",
+    bullets: [
+      "Problem: supply chain teams juggled disconnected ERPs, email, and portals with manual vendor follow ups and no critical path visibility",
+      "Built and maintain DeliverEarly, the autonomous supply chain platform with ATLAS AI agents running 24/7",
+      "Own the full stack: visual workflow builder, integrations, real time dashboards, and production releases",
+    ],
+    metric: "deliverearly.com",
+    productUrl: "https://www.deliverearly.com/",
     technologies: toTechBubbles([
       "Next.js",
       "TypeScript",
@@ -54,8 +59,11 @@ export const experienceHighlights: WorkHighlight[] = [
     period: "2024 – 2025",
     location: "Maryland, US",
     current: false,
-    summary:
-      "Built an AI powered budgeting platform with multi step onboarding, financial dashboards, and reporting that turns raw spending into actionable insights.",
+    bullets: [
+      "Problem: users struggled to turn raw spending data into clear budgets and next steps",
+      "Shipped AI budgeting with multi step onboarding, financial dashboards, and reporting",
+      "Result: 35% lift in new user engagement after onboarding and dashboard redesign",
+    ],
     metric: "35% engagement lift",
     technologies: toTechBubbles([
       "Next.js",
@@ -75,8 +83,11 @@ export const experienceHighlights: WorkHighlight[] = [
     period: "2021 – 2023",
     location: "Accra, Ghana",
     current: false,
-    summary:
-      "Led SchoolDesk, the school management platform adopted by 200+ schools. Replaced paper workflows with UX admins adopt without hand holding.",
+    bullets: [
+      "Problem: schools relied on paper workflows admins could not adopt at scale",
+      "Led SchoolDesk frontend and UX for a platform now used by 200+ schools in Ghana",
+      "Result: 40% engagement increase and 70% feature adoption within the first month of major releases",
+    ],
     metric: "200+ schools live",
     technologies: toTechBubbles([
       "React",

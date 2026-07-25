@@ -455,9 +455,41 @@
     left: 50%;
     top: 0.875rem;
     height: calc(100% + 2.75rem);
-    width: 1px;
+    width: 2px;
     transform: translateX(-50%);
-    background: linear-gradient(to bottom, rgba(7, 196, 44, 0.45), rgba(7, 196, 44, 0.15));
+    border-radius: 9999px;
+    overflow: hidden;
+    background: rgba(7, 196, 44, 0.12);
+  }
+
+  .experience-river-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(7, 196, 44, 0.65),
+      rgba(56, 189, 248, 0.45),
+      transparent
+    );
+    background-size: 100% 200%;
+    animation: experience-river-flow 3.5s linear infinite;
+  }
+
+  .experience-river-stroke {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .experience-river-glow {
+    background:
+      radial-gradient(ellipse at 15% 40%, rgba(7, 196, 44, 0.08), transparent 50%),
+      radial-gradient(ellipse at 85% 65%, rgba(56, 189, 248, 0.06), transparent 45%);
+  }
+
+  .experience-river-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(7, 196, 44, 0.02) 40%, transparent 100%);
   }
 
   .experience-timeline-more {
@@ -516,6 +548,15 @@
   }
   50% {
     transform: translateX(2px);
+  }
+}
+
+@keyframes experience-river-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
   }
 }
 
@@ -635,6 +676,8 @@
   .works-nav-btn,
   .works-nav-arrow,
   .experience-gradient-bg,
+  .experience-river-line,
+  .experience-river-stroke,
   .hero-panel-gradient,
   .hero-panel-grid,
   .hero-panel-shimmer,
