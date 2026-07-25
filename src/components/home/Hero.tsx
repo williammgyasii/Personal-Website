@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { site } from "../../data/site";
 import { MatrixRain } from "../three/MatrixRain";
 import { AnimatedHeroTitle } from "./AnimatedHeroTitle";
+import { HeroPanelBackground } from "./HeroPanelBackground";
 
 export function Hero() {
   return (
@@ -68,49 +69,57 @@ export function Hero() {
             </motion.ul>
 
             {/* Summary + CTAs on mobile (keeps hero tight) */}
-            <div className="mt-5 space-y-4 lg:hidden">
-              <p className="inline-flex items-center gap-2 text-[11px] font-medium text-white/80">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-                </span>
-                {site.availability}
-              </p>
-              <motion.p
-                className="text-[15px] leading-relaxed text-white/90 sm:text-base"
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.55 }}
-              >
-                {site.heroSummary}
-              </motion.p>
-              <HeroCTAs />
+            <div className="hero-panel-shell relative mt-5 overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md lg:hidden">
+              <HeroPanelBackground />
+              <div className="relative z-10 space-y-4">
+                <p className="inline-flex items-center gap-2 text-[11px] font-medium text-white/80">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+                  </span>
+                  {site.availability}
+                </p>
+                <motion.p
+                  className="text-[15px] leading-relaxed text-white/90 sm:text-base"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.55 }}
+                >
+                  {site.heroSummary}
+                </motion.p>
+                <HeroCTAs />
+              </div>
             </div>
           </div>
 
-          {/* Desktop right column — simple copy only */}
+          {/* Desktop right column */}
           <motion.div
-            className="hidden flex-col gap-8 lg:flex lg:gap-9"
+            className="hidden lg:block"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
           >
-            <div className="flex items-center justify-between gap-3 text-sm font-medium">
-              <p className="inline-flex items-center gap-2.5">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_#07c42c]" />
-                </span>
-                {site.availability}
-              </p>
-              <span className="text-muted">{site.timezone}</span>
+            <div className="hero-panel-shell relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md xl:p-9">
+              <HeroPanelBackground />
+              <div className="relative z-10 flex flex-col gap-8 lg:gap-9">
+                <div className="flex items-center justify-between gap-3 text-sm font-medium">
+                  <p className="inline-flex items-center gap-2.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_#07c42c]" />
+                    </span>
+                    {site.availability}
+                  </p>
+                  <span className="text-muted">{site.timezone}</span>
+                </div>
+
+                <p className="text-lg leading-relaxed text-white/90">
+                  {site.heroSummary}
+                </p>
+
+                <HeroCTAs />
+              </div>
             </div>
-
-            <p className="max-w-md text-lg leading-relaxed text-white/90">
-              {site.heroSummary}
-            </p>
-
-            <HeroCTAs />
           </motion.div>
         </div>
       </div>
