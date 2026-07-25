@@ -50,7 +50,7 @@ export function ExperienceSection() {
                   </p>
                   <span
                     className={`flex h-5 w-5 items-center justify-center rounded-full border-2 border-primary bg-surface ${
-                      job.current ? "shadow-[0_0_14px_rgba(7,196,44,0.55)]" : ""
+                      job.current ? "shadow-[0_0_14px_rgba(221,214,200,0.35)]" : ""
                     }`}
                   >
                     <span className={`h-2 w-2 rounded-full bg-primary ${job.current ? "animate-pulse" : ""}`} />
@@ -92,7 +92,7 @@ function ExperienceTimelineCard({ job, index }: { job: WorkHighlight; index: num
       <div className="mb-4 flex items-center gap-3 md:hidden">
         <span
           className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-surface ${
-            job.current ? "shadow-[0_0_10px_rgba(7,196,44,0.5)]" : ""
+            job.current ? "shadow-[0_0_10px_rgba(221,214,200,0.3)]" : ""
           }`}
         >
           <span className={`h-1.5 w-1.5 rounded-full bg-primary ${job.current ? "animate-pulse" : ""}`} />

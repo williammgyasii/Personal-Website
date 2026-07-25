@@ -34,9 +34,9 @@ export function AnimatedHeroTitle({ name }: { name: string }) {
           </motion.span>
         ))}
         <motion.span
-          className="inline-block shrink-0 text-accent text-glow-accent"
-          animate={{ opacity: [1, 0.2, 1] }}
-          transition={{ repeat: Infinity, duration: 0.9, ease: "linear" }}
+          className="inline-block shrink-0 text-white/35"
+          animate={{ opacity: [0.35, 0.15, 0.35] }}
+          transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
           aria-hidden="true"
         >
           _

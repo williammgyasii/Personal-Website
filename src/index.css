@@ -3,11 +3,11 @@
 
 @theme {
   --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
-  --color-primary: #07c42c;
-  --color-primary-dim: #07c42c29;
-  --color-accent: #38bdf8;
-  --color-accent-dim: #38bdf829;
-  --color-surface: #1a2e28;
+  --color-primary: #ddd6c8;
+  --color-primary-dim: #ddd6c829;
+  --color-accent: #8b9cb3;
+  --color-accent-dim: #8b9cb329;
+  --color-surface: #12141a;
   --color-muted: #ffffffa3;
   --color-faint: #ffffff52;
   --color-border: #ffffff29;
@@ -36,11 +36,11 @@
   }
 
   .text-glow-primary {
-    text-shadow: 0 0 24px rgba(7, 196, 44, 0.85);
+    text-shadow: 0 0 24px rgba(221, 214, 200, 0.35);
   }
 
   .text-glow-accent {
-    text-shadow: 0 0 24px rgba(56, 189, 248, 0.75);
+    text-shadow: 0 0 24px rgba(139, 156, 179, 0.3);
   }
 
   .hero-scanlines {
@@ -56,8 +56,8 @@
 
   .hero-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(221, 214, 200, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(221, 214, 200, 0.04) 1px, transparent 1px);
     background-size: 48px 48px;
     pointer-events: none;
   }
@@ -65,15 +65,15 @@
   /* Nav menu bar animated background */
   .nav-menu-gradient {
     background:
-      radial-gradient(ellipse at 15% 50%, rgba(7, 196, 44, 0.18), transparent 55%),
-      radial-gradient(ellipse at 85% 50%, rgba(56, 189, 248, 0.12), transparent 50%);
+      radial-gradient(ellipse at 15% 50%, rgba(221, 214, 200, 0.18), transparent 55%),
+      radial-gradient(ellipse at 85% 50%, rgba(139, 156, 179, 0.12), transparent 50%);
     animation: nav-menu-gradient-shift 6s ease-in-out infinite alternate;
   }
 
   .nav-menu-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.07) 1px, transparent 1px);
+      linear-gradient(rgba(221, 214, 200, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(221, 214, 200, 0.07) 1px, transparent 1px);
     background-size: 20px 20px;
     animation: grid-drift 16s linear infinite;
   }
@@ -82,7 +82,7 @@
     background: linear-gradient(
       105deg,
       transparent 35%,
-      rgba(56, 189, 248, 0.12) 50%,
+      rgba(139, 156, 179, 0.12) 50%,
       transparent 65%
     );
     animation: nav-menu-shimmer 5s ease-in-out infinite;
@@ -93,12 +93,12 @@
   }
 
   .nav-menu-link-active {
-    background: rgba(7, 196, 44, 0.1);
-    box-shadow: inset 0 0 0 1px rgba(7, 196, 44, 0.25);
+    background: rgba(221, 214, 200, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(221, 214, 200, 0.25);
   }
 
   .nav-menu-active-glow {
-    background: radial-gradient(circle at 50% 50%, rgba(7, 196, 44, 0.2), transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(221, 214, 200, 0.2), transparent 70%);
     animation: nav-menu-active-pulse 2s ease-in-out infinite;
     z-index: -1;
   }
@@ -106,15 +106,15 @@
   /* Hero right panel animated background */
   .hero-panel-gradient {
     background:
-      radial-gradient(ellipse at 10% 20%, rgba(7, 196, 44, 0.16), transparent 50%),
-      radial-gradient(ellipse at 90% 80%, rgba(56, 189, 248, 0.14), transparent 45%);
+      radial-gradient(ellipse at 10% 20%, rgba(221, 214, 200, 0.16), transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(139, 156, 179, 0.14), transparent 45%);
     animation: hero-panel-gradient-shift 7s ease-in-out infinite alternate;
   }
 
   .hero-panel-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(221, 214, 200, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(221, 214, 200, 0.05) 1px, transparent 1px);
     background-size: 28px 28px;
     animation: grid-drift 22s linear infinite;
   }
@@ -123,7 +123,7 @@
     background: linear-gradient(
       110deg,
       transparent 30%,
-      rgba(56, 189, 248, 0.1) 50%,
+      rgba(139, 156, 179, 0.1) 50%,
       transparent 70%
     );
     animation: hero-panel-shimmer 7s ease-in-out infinite;
@@ -141,17 +141,17 @@
   /* Hero full-width atmospheric background (behind WILLIAM_) */
   .hero-title-gradient {
     background:
-      radial-gradient(ellipse at 12% 85%, rgba(7, 196, 44, 0.26), transparent 52%),
-      radial-gradient(ellipse at 88% 20%, rgba(56, 189, 248, 0.18), transparent 50%),
-      radial-gradient(ellipse at 50% 100%, rgba(30, 56, 48, 0.55), transparent 62%),
-      linear-gradient(to top, rgba(24, 40, 34, 0.7) 0%, rgba(30, 56, 48, 0.25) 45%, transparent 100%);
+      radial-gradient(ellipse at 12% 85%, rgba(221, 214, 200, 0.26), transparent 52%),
+      radial-gradient(ellipse at 88% 20%, rgba(139, 156, 179, 0.18), transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(24, 27, 34, 0.55), transparent 62%),
+      linear-gradient(to top, rgba(24, 40, 34, 0.7) 0%, rgba(24, 27, 34, 0.25) 45%, transparent 100%);
     animation: hero-title-gradient-shift 8s ease-in-out infinite alternate;
   }
 
   .hero-title-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(221, 214, 200, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(221, 214, 200, 0.06) 1px, transparent 1px);
     background-size: 36px 36px;
     animation: grid-drift 18s linear infinite;
   }
@@ -160,7 +160,7 @@
     background: linear-gradient(
       110deg,
       transparent 20%,
-      rgba(56, 189, 248, 0.07) 50%,
+      rgba(139, 156, 179, 0.07) 50%,
       transparent 80%
     );
     animation: hero-title-shimmer 9s ease-in-out infinite;
@@ -173,17 +173,17 @@
   }
 
   .hero-title-orb-green {
-    background: rgba(7, 196, 44, 0.38);
+    background: rgba(221, 214, 200, 0.14);
     animation: hero-title-orb-drift-a 10s ease-in-out infinite alternate;
   }
 
   .hero-title-orb-cyan {
-    background: rgba(56, 189, 248, 0.3);
+    background: rgba(139, 156, 179, 0.12);
     animation: hero-title-orb-drift-b 12s ease-in-out infinite alternate;
   }
 
   .hero-title-orb-mid {
-    background: rgba(7, 196, 44, 0.12);
+    background: rgba(255, 255, 255, 0.04);
     filter: blur(80px);
     opacity: 0.6;
     animation: hero-title-orb-drift-c 14s ease-in-out infinite alternate;
@@ -192,8 +192,8 @@
   /* Page loader CSS art */
   .loader-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(221, 214, 200, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(221, 214, 200, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     animation: grid-drift 24s linear infinite;
   }
@@ -216,17 +216,17 @@
   }
 
   .loader-ring-outer {
-    border-color: rgba(56, 189, 248, 0.35);
-    border-top-color: rgba(56, 189, 248, 0.9);
-    border-right-color: rgba(56, 189, 248, 0.5);
+    border-color: rgba(139, 156, 179, 0.35);
+    border-top-color: rgba(139, 156, 179, 0.9);
+    border-right-color: rgba(139, 156, 179, 0.5);
     animation: loader-spin 4s linear infinite;
   }
 
   .loader-ring-mid {
     inset: 12px;
-    border-color: rgba(7, 196, 44, 0.25);
-    border-bottom-color: rgba(7, 196, 44, 0.85);
-    border-left-color: rgba(7, 196, 44, 0.45);
+    border-color: rgba(221, 214, 200, 0.25);
+    border-bottom-color: rgba(221, 214, 200, 0.85);
+    border-left-color: rgba(221, 214, 200, 0.45);
     animation: loader-spin-reverse 2.8s linear infinite;
   }
 
@@ -247,8 +247,8 @@
     height: 6px;
     width: 6px;
     border-radius: 9999px;
-    background: #07c42c;
-    box-shadow: 0 0 10px #07c42c;
+    background: #ddd6c8;
+    box-shadow: 0 0 10px #ddd6c8;
   }
 
   .loader-node-a {
@@ -260,8 +260,8 @@
   .loader-node-b {
     right: 6%;
     bottom: 22%;
-    background: #38bdf8;
-    box-shadow: 0 0 10px #38bdf8;
+    background: #8b9cb3;
+    box-shadow: 0 0 10px #8b9cb3;
     animation: loader-orbit-b 3.6s ease-in-out infinite;
   }
 
@@ -416,16 +416,16 @@
 
   .works-gradient-bg {
     background:
-      radial-gradient(ellipse at 20% 30%, rgba(7, 196, 44, 0.22), transparent 55%),
-      radial-gradient(ellipse at 80% 60%, rgba(56, 189, 248, 0.16), transparent 50%),
-      linear-gradient(135deg, #152820 0%, #1a2e28 45%, #122018 100%);
+      radial-gradient(ellipse at 20% 30%, rgba(221, 214, 200, 0.22), transparent 55%),
+      radial-gradient(ellipse at 80% 60%, rgba(139, 156, 179, 0.16), transparent 50%),
+      linear-gradient(135deg, #14161c 0%, #12141a 45%, #101218 100%);
     animation: works-gradient-shift 10s ease-in-out infinite alternate;
   }
 
   .works-gradient-grid {
     background-image:
-      linear-gradient(rgba(7, 196, 44, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(7, 196, 44, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(221, 214, 200, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(221, 214, 200, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     animation: grid-drift 22s linear infinite;
   }
@@ -440,26 +440,26 @@
 
   .experience-gradient-bg {
     background:
-      radial-gradient(ellipse at 75% 25%, rgba(7, 196, 44, 0.1), transparent 52%),
-      radial-gradient(ellipse at 15% 70%, rgba(7, 196, 44, 0.08), transparent 50%),
-      linear-gradient(180deg, #1a2e28 0%, #152820 100%);
+      radial-gradient(ellipse at 75% 25%, rgba(221, 214, 200, 0.1), transparent 52%),
+      radial-gradient(ellipse at 15% 70%, rgba(221, 214, 200, 0.08), transparent 50%),
+      linear-gradient(180deg, #12141a 0%, #14161c 100%);
     animation: works-gradient-shift 12s ease-in-out infinite alternate;
   }
 
   .offer-gradient-bg {
     background:
-      radial-gradient(ellipse at 20% 30%, rgba(56, 189, 248, 0.08), transparent 50%),
-      radial-gradient(ellipse at 80% 60%, rgba(7, 196, 44, 0.1), transparent 52%),
-      linear-gradient(180deg, #1a2e28 0%, #152820 100%);
+      radial-gradient(ellipse at 20% 30%, rgba(139, 156, 179, 0.08), transparent 50%),
+      radial-gradient(ellipse at 80% 60%, rgba(221, 214, 200, 0.1), transparent 52%),
+      linear-gradient(180deg, #12141a 0%, #14161c 100%);
     animation: works-gradient-shift 12s ease-in-out infinite alternate;
   }
 
   .offer-card-glow {
-    background: radial-gradient(ellipse at 100% 0%, rgba(7, 196, 44, 0.1), transparent 55%);
+    background: radial-gradient(ellipse at 100% 0%, rgba(221, 214, 200, 0.1), transparent 55%);
   }
 
   .experience-card-glow {
-    background: radial-gradient(ellipse at 0% 0%, rgba(7, 196, 44, 0.08), transparent 55%);
+    background: radial-gradient(ellipse at 0% 0%, rgba(221, 214, 200, 0.08), transparent 55%);
   }
 
   .experience-resume-bullets {
@@ -468,7 +468,7 @@
   }
 
   .experience-resume-bullets li::marker {
-    color: rgba(7, 196, 44, 0.85);
+    color: rgba(221, 214, 200, 0.85);
   }
 
   .experience-h-timeline {
@@ -492,10 +492,10 @@
     border-radius: 9999px;
     background: linear-gradient(
       to right,
-      rgba(7, 196, 44, 0.2),
-      rgba(7, 196, 44, 0.55),
-      rgba(56, 189, 248, 0.35),
-      rgba(7, 196, 44, 0.2)
+      rgba(221, 214, 200, 0.2),
+      rgba(221, 214, 200, 0.55),
+      rgba(139, 156, 179, 0.35),
+      rgba(221, 214, 200, 0.2)
     );
   }
 
@@ -556,10 +556,10 @@
 @keyframes works-nav-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(7, 196, 44, 0);
+    box-shadow: 0 0 0 rgba(221, 214, 200, 0);
   }
   50% {
-    box-shadow: 0 0 24px rgba(7, 196, 44, 0.12);
+    box-shadow: 0 0 24px rgba(221, 214, 200, 0.12);
   }
 }
 
@@ -663,12 +663,12 @@
 @keyframes loader-status-pulse {
   0%,
   100% {
-    opacity: 0.5;
-    color: #38bdf8;
+    opacity: 0.45;
+    color: #ffffff80;
   }
   50% {
     opacity: 1;
-    color: #07c42c;
+    color: #ddd6c8;
   }
 }
 

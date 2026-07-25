@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import type { ProjectTech, TechTone } from "../../data/projects";
 
 const toneStyles: Record<TechTone, string> = {
-  primary: "border-primary/40 bg-primary/10 text-primary shadow-[0_0_20px_rgba(7,196,44,0.15)]",
-  accent: "border-accent/40 bg-accent/10 text-accent shadow-[0_0_20px_rgba(56,189,248,0.15)]",
+  primary: "border-primary/35 bg-primary/8 text-primary shadow-[0_0_20px_rgba(221,214,200,0.08)]",
+  accent: "border-accent/35 bg-accent/8 text-accent shadow-[0_0_20px_rgba(139,156,179,0.08)]",
   violet: "border-violet-400/40 bg-violet-500/10 text-violet-300 shadow-[0_0_20px_rgba(167,139,250,0.15)]",
   amber: "border-amber-400/40 bg-amber-500/10 text-amber-200 shadow-[0_0_20px_rgba(251,191,36,0.12)]",
 };

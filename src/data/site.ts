@@ -3,10 +3,10 @@ export const site = {
   email: "williammgyasii@gmail.com",
   timezone: "EST",
   year: new Date().getFullYear(),
-  roles: ["FULL STACK DEV", "AI ENGINEER", "PRODUCT BUILDER"],
+  roles: ["FULL STACK DEV", "PRODUCT BUILDER", "SOFTWARE ENGINEER"],
   availability: "OPEN TO FULL TIME & CONTRACT",
   heroSummary:
-    "Six years shipping production systems across SaaS, mobile, and AI. I architect and deploy the full stack from APIs and cloud infra to LLM pipelines and mobile clients. Six products live, two flagships running real traffic at scale.",
+    "Six years shipping production software across SaaS, mobile, and platforms. I architect and deploy the full stack from database design and APIs to polished frontends, billing, and production releases. Six products live, two flagships running real traffic at scale.",
   heroStats: ["6 YEARS", "6 LIVE PRODUCTS", "2 FLAGSHIPS"],
   cta: "VIEW PROJECTS",
   ctaSecondary: "CONTACT",

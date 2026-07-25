@@ -15,7 +15,7 @@ export function WorksProjectNav({ active, total, onPrev, onNext }: WorksProjectN
           type="button"
           onClick={onPrev}
           className="works-nav-btn group inline-flex min-h-[52px] flex-1 items-center justify-center gap-3 rounded-full border border-primary/50 bg-primary/10 px-5 text-xs font-semibold tracking-[0.14em] text-primary sm:flex-none sm:px-7 sm:text-sm"
-          whileHover={{ scale: 1.03, boxShadow: "0 0 32px rgba(7,196,44,0.25)" }}
+          whileHover={{ scale: 1.03, boxShadow: "0 0 32px rgba(221,214,200,0.12)" }}
           whileTap={{ scale: 0.97 }}
           aria-label="Previous project"
         >

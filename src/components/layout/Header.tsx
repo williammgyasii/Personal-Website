@@ -48,7 +48,7 @@ export function Header() {
         <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
           <Link
             to="/"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border border-white/20 bg-white/5 text-sm font-bold tracking-tight transition hover:border-primary hover:text-primary hover:shadow-[0_0_20px_rgba(7,196,44,0.25)]"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border border-white/20 bg-white/5 text-sm font-bold tracking-tight transition hover:border-primary/50 hover:text-primary hover:shadow-[0_0_20px_rgba(221,214,200,0.12)]"
             aria-label="Home"
           >
             WG

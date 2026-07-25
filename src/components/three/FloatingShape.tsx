@@ -20,8 +20,8 @@ function DistortedSphere() {
       <mesh ref={meshRef} scale={1.35}>
         <icosahedronGeometry args={[1, 4]} />
         <MeshDistortMaterial
-          color="#07c42c"
-          emissive="#07c42c"
+          color="#ddd6c8"
+          emissive="#ddd6c8"
           emissiveIntensity={0.35}
           roughness={0.2}
           metalness={0.8}
@@ -52,7 +52,7 @@ export function FloatingShape({
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
           <directionalLight position={[4, 4, 4]} intensity={1.2} />
-          <pointLight position={[-3, -2, 2]} color="#07c42c" intensity={2} />
+          <pointLight position={[-3, -2, 2]} color="#ddd6c8" intensity={1.2} />
           <DistortedSphere />
         </Suspense>
       </Canvas>

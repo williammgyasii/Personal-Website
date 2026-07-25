@@ -35,7 +35,7 @@ export function SelectedWorks() {
         </ParallaxBannerLayer>
 
         <ParallaxBannerLayer speed={-3} className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3830]/80 via-transparent to-surface" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#181b22]/80 via-transparent to-surface" />
         </ParallaxBannerLayer>
       </ParallaxBanner>
 

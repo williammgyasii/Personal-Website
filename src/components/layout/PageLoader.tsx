@@ -39,7 +39,7 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
 
   return (
     <motion.div
-      className="loader-screen fixed inset-0 z-[200] flex items-center justify-center bg-[#1a2e28]"
+      className="loader-screen fixed inset-0 z-[200] flex items-center justify-center bg-surface"
       initial={{ opacity: 1 }}
       animate={{ opacity: exiting ? 0 : 1 }}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -59,7 +59,7 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
           <span className="loader-ring loader-ring-mid" aria-hidden="true" />
           <span className="loader-ring loader-ring-inner" aria-hidden="true" />
 
-          <div className="loader-core relative z-10 flex h-20 w-20 items-center justify-center rounded-xl border border-primary/40 bg-[#1e3830]/90 shadow-[0_0_40px_rgba(7,196,44,0.2)] sm:h-24 sm:w-24">
+          <div className="loader-core relative z-10 flex h-20 w-20 items-center justify-center rounded-xl border border-primary/30 bg-[#181b22]/90 shadow-[0_0_40px_rgba(221,214,200,0.12)] sm:h-24 sm:w-24">
             <span className="text-xl font-bold tracking-tight text-primary text-glow-primary sm:text-2xl">
               WG
             </span>
@@ -74,10 +74,10 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
         <div className="w-full max-w-[220px] space-y-3">
           <div className="flex items-center justify-between text-[10px] font-medium tracking-[0.2em] text-white/50">
             <span>BOOT</span>
-            <span className="loader-status text-accent">INITIALIZING</span>
+            <span className="loader-status text-muted">LOADING</span>
           </div>
           <div className="loader-track h-1 overflow-hidden rounded-full bg-white/10">
-            <div className="loader-bar h-full rounded-full bg-primary shadow-[0_0_12px_#07c42c]" />
+            <div className="loader-bar h-full rounded-full bg-primary shadow-[0_0_12px_rgba(221,214,200,0.25)]" />
           </div>
         </div>
       </div>
