@@ -1,5 +1,5 @@
 export const stats = [
-  { number: "5+", label: "Years Experience" },
+  { number: "6", label: "Years Experience" },
   { number: "6", label: "Live Products" },
   { number: "2", label: "Flagship Apps" },
   { number: "200+", label: "Schools Scaled" },

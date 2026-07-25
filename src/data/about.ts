@@ -1,7 +1,7 @@
 export const profileInfo = {
   name: "William Kwabena Gyasi",
   title: "Full Stack Developer & Product Engineer",
-  bio: `I'm a full-stack engineer who builds products—not prototypes. Five years shipping SaaS platforms, mobile apps, and AI-native tools across fintech, edtech, CRM, and marketplaces. I own the entire stack: PostgreSQL schemas, Next.js frontends, LLM pipelines, Stripe billing, and the deploy that puts it in users' hands.`,
+  bio: `I'm a full stack engineer who builds products, not prototypes. Six years shipping SaaS platforms, mobile apps, and AI native tools across fintech, edtech, CRM, and marketplaces. I own the entire stack: PostgreSQL schemas, Next.js frontends, LLM pipelines, Stripe billing, and the deploy that puts it in users' hands.`,
   email: "williammgyasii@gmail.com",
   calendarLink: "https://cal.com/",
 };
@@ -68,7 +68,7 @@ export const timelineEntries = [
 export const aboutSnippet = {
   greeting: "Hi, I'm William",
   highlights: [
-    "5+ years shipping production software",
+    "6 years shipping production software",
     "6 live products across SaaS, mobile & desktop",
     "AI integration that ships—not just demos",
     "End-to-end ownership: schema → deploy → users",
