@@ -20,7 +20,7 @@ export function AnimatedHeroTitle({ name }: { name: string }) {
       className="font-[550] leading-[0.88] tracking-[-0.04em]"
       aria-label={name}
     >
-      <span className="inline-flex flex-nowrap items-baseline whitespace-nowrap text-[clamp(2.5rem,11vw,9.5rem)] sm:text-[clamp(3rem,12vw,10.5rem)]">
+      <span className="inline-flex flex-nowrap items-baseline whitespace-nowrap text-[clamp(2.75rem,13vw,9.5rem)] sm:text-[clamp(3rem,12vw,10.5rem)]">
         {name.split("").map((char, i) => (
           <motion.span
             key={`${char}-${i}`}

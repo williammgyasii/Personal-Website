@@ -5,20 +5,8 @@ export const site = {
   year: new Date().getFullYear(),
   roles: ["FULL STACK DEV", "AI ENGINEER", "PRODUCT BUILDER"],
   availability: "OPEN TO FULL TIME & CONTRACT",
-  heroIntro: [
-    { label: "ROLE", value: "Full stack engineer" },
-    { label: "EXPERIENCE", value: "6 years shipping production software" },
-    {
-      label: "FOCUS",
-      value: "SaaS, mobile, and AI systems from schema to deploy",
-    },
-    {
-      label: "DELIVERY",
-      value: "Database design, API layers, Stripe billing, production release",
-    },
-    { label: "PRODUCTS", value: "6 live apps · 2 flagships" },
-    { label: "LOCATION", value: "Maryland · Open to remote" },
-  ],
+  heroSummary:
+    "Full stack engineer with 6 years in production. I ship SaaS, mobile, and AI systems end to end. Six live products, two flagships. Maryland based, open to remote.",
   heroStats: ["6 YEARS", "6 LIVE PRODUCTS", "2 FLAGSHIPS"],
   cta: "VIEW PROJECTS",
   ctaSecondary: "CONTACT",
