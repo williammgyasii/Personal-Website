@@ -2,6 +2,7 @@ import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
 import { Link } from "react-router-dom";
+import { ChevronIcon } from "../icons/ChevronIcon";
 import { site } from "../../data/site";
 import { useHeroMotion, type HeroMotion } from "../../hooks/useHeroMotion";
 import { AnimatedHeroTitle } from "./AnimatedHeroTitle";
@@ -341,7 +342,7 @@ function HeroScrollCue({ motionConfig }: { motionConfig: HeroMotion }) {
       aria-label="Scroll to selected works"
     >
       <span>SELECTED WORKS</span>
-      <span className="hero-scroll-cue-arrow text-primary">↓</span>
+      <ChevronIcon direction="down" className="hero-scroll-cue-arrow h-4 w-4 text-primary" />
     </motion.button>
   );
 }
@@ -360,17 +361,19 @@ function HeroCTAs({ reducedMotion }: { reducedMotion: boolean }) {
       <motion.div {...motionProps} className="w-full sm:w-auto">
         <Link
           to="/projects"
-          className="inline-flex h-11 w-full items-center justify-center rounded-full bg-primary text-sm font-normal text-white transition hover:bg-[#0077ED] sm:h-12 sm:px-8"
+          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary text-sm font-normal text-white transition hover:bg-[#0077ED] sm:h-12 sm:px-8"
         >
-          {site.cta} →
+          {site.cta}
+          <ChevronIcon direction="right" className="h-4 w-4" />
         </Link>
       </motion.div>
       <motion.div {...motionProps} className="w-full sm:w-auto">
         <Link
           to="/contact"
-          className="inline-flex h-11 w-full items-center justify-center rounded-full text-sm font-normal text-primary transition hover:underline sm:h-12 sm:px-2"
+          className="inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-full text-sm font-normal text-primary transition hover:underline sm:h-12 sm:px-2"
         >
-          {site.ctaSecondary} ›
+          {site.ctaSecondary}
+          <ChevronIcon direction="right" className="h-3.5 w-3.5" />
         </Link>
       </motion.div>
     </div>

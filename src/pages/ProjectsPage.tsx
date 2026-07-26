@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ChevronIcon } from "../components/icons/ChevronIcon";
 import { featuredProject, gridProjects } from "../data/projectDetails";
 import type { ProjectDetail } from "../types/project";
 import { FeaturedProjectSection } from "../components/projects/FeaturedProjectSection";
@@ -56,7 +57,10 @@ function ProjectGridCard({
               </span>
             ))}
           </div>
-          <p className="mt-4 text-xs font-medium text-primary">View case study →</p>
+          <p className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary">
+            View case study
+            <ChevronIcon direction="right" className="h-3.5 w-3.5" />
+          </p>
         </div>
       </Link>
     </motion.article>

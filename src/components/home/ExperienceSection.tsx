@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronIcon, ArrowUpRightIcon } from "../icons/ChevronIcon";
 import { motion } from "framer-motion";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 import { experienceHighlights } from "../../data/experience";
@@ -61,9 +62,10 @@ export function ExperienceSection() {
             >
               <Link
                 to="/work"
-                className="inline-flex h-12 min-w-[min(100%,320px)] items-center justify-center rounded-full bg-primary px-10 text-base font-medium text-white transition-colors hover:bg-[#0077ED] sm:h-14 sm:min-w-[360px] sm:px-12 sm:text-lg"
+                className="inline-flex h-12 min-w-[min(100%,320px)] items-center justify-center gap-2 rounded-full bg-primary px-10 text-base font-medium text-white transition-colors hover:bg-[#0077ED] sm:h-14 sm:min-w-[360px] sm:px-12 sm:text-lg"
               >
-                View full work history →
+                View full work history
+                <ChevronIcon direction="right" className="h-4 w-4" />
               </Link>
             </motion.div>
           </div>
@@ -118,9 +120,10 @@ function ExperienceCard({ job }: { job: WorkHighlight }) {
                   href={job.productUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-primary underline decoration-primary/30 underline-offset-2 transition hover:decoration-primary"
+                  className="inline-flex items-center gap-0.5 text-primary underline decoration-primary/30 underline-offset-2 transition hover:decoration-primary"
                 >
-                  {job.metric} ↗
+                  {job.metric}
+                  <ArrowUpRightIcon className="h-3 w-3" />
                 </a>
               </>
             ) : (

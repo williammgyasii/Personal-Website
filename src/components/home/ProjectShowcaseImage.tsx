@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronIcon } from "../icons/ChevronIcon";
 import type { Project } from "../../data/projects";
 
 type ProjectShowcaseImageProps = {
@@ -27,8 +28,8 @@ export function ProjectShowcaseImage({ project, compact = false }: ProjectShowca
       <div className="absolute inset-0 flex items-center justify-center opacity-0 backdrop-blur-[4px] transition duration-500 group-hover:opacity-100 group-hover:backdrop-blur-lg">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-black/30 to-accent/40" />
         <div className="relative flex flex-col items-center gap-2 text-center">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/10 text-xl backdrop-blur-sm transition duration-500 group-hover:scale-110">
-            →
+          <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-sm transition duration-500 group-hover:scale-110">
+            <ChevronIcon direction="right" className="h-5 w-5 text-white" />
           </span>
           <span className="text-xs font-semibold tracking-[0.16em] text-white sm:text-sm">
             VIEW PROJECT

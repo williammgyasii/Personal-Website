@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { site } from "../../data/site";
+import { site, gmailComposeUrl } from "../../data/site";
 import { NavMenuBackground } from "./NavMenuBackground";
 
 export function Header() {
@@ -85,7 +85,9 @@ export function Header() {
 
           <div className="hidden gap-1 lg:grid">
             <a
-              href={`mailto:${site.email}`}
+              href={gmailComposeUrl(site.email)}
+              target="_blank"
+              rel="noreferrer"
               className="max-w-[220px] truncate text-sm font-medium tracking-tight transition hover:text-primary xl:max-w-none"
               title={site.email}
             >
@@ -146,7 +148,9 @@ export function Header() {
 
               <div className="mt-auto space-y-4 border-t border-border pt-8">
                 <a
-                  href={`mailto:${site.email}`}
+                  href={gmailComposeUrl(site.email)}
+                  target="_blank"
+                  rel="noreferrer"
                   className="block break-all text-sm font-medium transition hover:text-primary"
                   onClick={() => setMenuOpen(false)}
                 >

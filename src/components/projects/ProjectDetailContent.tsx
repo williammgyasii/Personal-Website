@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ArrowUpRightIcon } from "../icons/ChevronIcon";
 import type { ProjectDetail } from "../../types/project";
 import { projectDetails } from "../../data/projectDetails";
 
@@ -51,9 +52,10 @@ export function ProjectDetailContent({ project }: { project: ProjectDetail }) {
           href={project.link}
           target="_blank"
           rel="noreferrer"
-          className="ml-auto text-xs font-medium text-primary transition hover:underline"
+          className="ml-auto inline-flex items-center gap-1 text-xs font-medium text-primary transition hover:underline"
         >
-          Visit live project ↗
+          Visit live project
+          <ArrowUpRightIcon className="h-3.5 w-3.5" />
         </a>
       </div>
 

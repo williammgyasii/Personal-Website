@@ -75,8 +75,8 @@ export const services: Service[] = [
 ];
 
 export const stats = [
-  { value: "6+", label: "Live Products" },
-  { value: "6", label: "Years Shipping" },
+  { value: "7", label: "Years Shipping" },
+  { value: "6", label: "Live Products" },
   { value: "2", label: "Flagship Apps" },
   { value: "200+", label: "Schools Scaled" },
 ];

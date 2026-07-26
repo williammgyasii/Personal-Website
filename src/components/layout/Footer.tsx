@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SocialIcon, type SocialIconName } from "../icons/SocialIcons";
-import { site } from "../../data/site";
+import { site, gmailComposeUrl } from "../../data/site";
 import { FooterBackground } from "./FooterBackground";
 
 type SocialLink = {
@@ -13,17 +13,15 @@ type SocialLink = {
 const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/williammgyasii", icon: "github" },
   { label: "LinkedIn", href: "https://linkedin.com/in/williammgyasii", icon: "linkedin" },
-  { label: "Email", href: `mailto:${site.email}`, icon: "email" },
+  { label: "Email", href: gmailComposeUrl(site.email), icon: "email" },
 ];
 
 function SocialLinkButton({ social }: { social: SocialLink }) {
-  const isMail = social.href.startsWith("mailto:");
-
   return (
     <motion.a
       href={social.href}
-      target={isMail ? undefined : "_blank"}
-      rel={isMail ? undefined : "noreferrer"}
+      target="_blank"
+      rel="noreferrer"
       aria-label={social.label}
       whileHover={{ y: -3, scale: 1.04 }}
       whileTap={{ scale: 0.96 }}

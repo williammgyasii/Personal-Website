@@ -1,117 +1,106 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { profileInfo, timelineEntries } from "../data/about";
-import { stats, techStack, valueProps } from "../data/home";
-import { PageHeader } from "../components/layout/PageHeader";
+import { ChevronIcon } from "../components/icons/ChevronIcon";
+import { AboutExpertiseSection } from "../components/about/AboutExpertiseSection";
+import { AboutHeroSection } from "../components/about/AboutHeroSection";
+import { AboutValueSection } from "../components/about/AboutValueSection";
+import {
+  aboutRolePreview,
+  profileInfo,
+} from "../data/about";
+
+function SectionIntro({
+  label,
+  title,
+  description,
+  id,
+}: {
+  label: string;
+  title: string;
+  description?: string;
+  id?: string;
+}) {
+  return (
+    <div>
+      <p className="text-xs font-medium tracking-[0.14em] text-muted">{label}</p>
+      <h2 id={id} className="mt-1 text-[clamp(1.5rem,3.5vw,2.25rem)] font-semibold tracking-tight">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-2 max-w-2xl text-sm text-muted sm:text-base">{description}</p>
+      )}
+    </div>
+  );
+}
 
 export function AboutPage() {
+  useEffect(() => {
+    document.title = profileInfo.seoTitle;
+
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", profileInfo.seoDescription);
+  }, []);
+
   return (
     <>
-      <PageHeader
-        label="ABOUT"
-        title="I build products people use—not decks people applaud."
-        description={profileInfo.bio}
-      />
+      <AboutHeroSection />
+      <AboutExpertiseSection />
+      <AboutValueSection />
 
-      <div className="mx-auto max-w-[1320px] space-y-20 px-4 pb-24 sm:px-6 sm:pb-32">
-        <section>
-          <h2 className="mb-6 text-xl font-semibold tracking-tight">Why work with me</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {valueProps.map((item, i) => (
-              <motion.div
-                key={item.title}
-                className="rounded-xl border border-border p-5"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-              >
-                <h3 className="mb-2 font-semibold text-primary">{item.title}</h3>
-                <p className="text-sm text-muted">{item.description}</p>
-              </motion.div>
-            ))}
+      <div className="mx-auto max-w-[1320px] space-y-16 px-4 pb-24 sm:space-y-20 sm:px-6 sm:pb-32">
+        <section id="about-roles" className="scroll-mt-28" aria-labelledby="about-roles-heading">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <SectionIntro
+              label="CAREER"
+              id="about-roles-heading"
+              title="Recent roles"
+              description="Full timeline and responsibilities on the work page."
+            />
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline decoration-primary/30 underline-offset-4 transition hover:decoration-primary"
+            >
+              Full work history
+              <ChevronIcon direction="right" className="h-3.5 w-3.5" />
+            </Link>
           </div>
-        </section>
 
-        <section>
-          <h2 className="mb-6 text-xl font-semibold tracking-tight">By the numbers</h2>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="rounded-xl border border-border p-4 sm:p-6">
-                <p className="text-3xl font-semibold tracking-tighter text-primary sm:text-4xl">
-                  {stat.number}
-                </p>
-                <p className="mt-1 text-xs text-muted">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="mb-6 text-xl font-semibold tracking-tight">Tech stack</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {techStack.map((group) => (
-              <div key={group.category} className="rounded-xl border border-border p-5">
-                <h3 className="mb-3 text-sm font-medium text-primary">{group.category}</h3>
-                <ul className="space-y-2">
-                  {group.items.map((item) => (
-                    <li key={item} className="text-sm text-muted">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="mb-8 text-xl font-semibold tracking-tight">Career timeline</h2>
-          <div className="space-y-8">
-            {timelineEntries.map((entry, i) => (
+          <div className="space-y-4">
+            {aboutRolePreview.map((entry, i) => (
               <motion.article
                 key={entry.id}
-                className="grid gap-4 border-l-2 border-primary/30 pl-6 md:grid-cols-[200px_1fr]"
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                transition={{ delay: i * 0.05, duration: 0.5 }}
+                className={`rounded-2xl border bg-surface p-5 sm:p-6 ${
+                  entry.current ? "border-primary/25 ring-1 ring-primary/10" : "border-border"
+                }`}
               >
-                <div>
-                  <p className="text-xs text-muted">{entry.duration}</p>
-                  <p className="text-xs text-muted">{entry.country}</p>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-semibold tracking-tight">{entry.title}</h3>
+                    <p className="text-sm text-primary">{entry.company}</p>
+                  </div>
+                  <div className="text-right text-xs text-muted">
+                    <p>{entry.duration}</p>
+                    <p>{entry.country}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold">{entry.title}</h3>
-                  <p className="mb-2 text-sm text-primary">{entry.company}</p>
-                  <p className="mb-3 text-sm text-muted">{entry.description}</p>
-                  <ul className="space-y-1">
-                    {entry.responsibilities.map((r) => (
-                      <li key={r} className="text-sm text-muted before:mr-2 before:text-primary before:content-['·']">
-                        {r}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/88 sm:text-base sm:leading-[1.65]">
+                  {entry.description}
+                </p>
+                <p className="mt-3 text-xs font-medium text-primary">{entry.metric}</p>
               </motion.article>
             ))}
           </div>
         </section>
-
-        <div className="flex flex-wrap gap-4">
-          <Link
-            to="/work"
-            className="inline-flex h-11 items-center rounded-full border border-border px-6 text-xs font-medium transition hover:border-primary hover:text-primary"
-          >
-            VIEW WORK EXPERIENCE →
-          </Link>
-          <Link
-            to="/projects"
-            className="inline-flex h-11 items-center rounded-full border border-primary bg-primary/10 px-6 text-xs font-medium text-primary transition hover:bg-primary/20"
-          >
-            SEE PROJECTS →
-          </Link>
-        </div>
       </div>
     </>
   );

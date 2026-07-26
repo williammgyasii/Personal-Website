@@ -6,9 +6,9 @@ export const site = {
   roles: ["FULL STACK DEV", "PRODUCT BUILDER", "SOFTWARE ENGINEER"],
   availability: "OPEN TO FULL TIME & CONTRACT",
   heroSummary:
-    "Six years shipping production software across SaaS, mobile, and platforms. I architect and deploy the full stack from database design and APIs to frontends, billing, and production releases.",
+    "Seven years shipping production software across SaaS, mobile, desktop, and platforms. I architect and deploy the full stack from database design and APIs to frontends, billing, and production releases.",
   heroStats: [
-    { value: "6", label: "Years shipping" },
+    { value: "7", label: "Years shipping" },
     { value: "6", label: "Live products" },
     { value: "2", label: "Flagships" },
   ],
@@ -25,3 +25,7 @@ export const site = {
     { id: "contact", label: "CONTACT", href: "/contact" },
   ],
 } as const;
+
+export function gmailComposeUrl(email: string, subject = "Portfolio inquiry") {
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}`;
+}

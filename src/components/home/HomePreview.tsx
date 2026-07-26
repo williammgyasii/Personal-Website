@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronIcon } from "../icons/ChevronIcon";
 import { ExperienceSection } from "./ExperienceSection";
 import { WhatIOfferSection } from "./WhatIOfferSection";
 
@@ -19,9 +20,10 @@ export function HomePreview() {
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-block text-sm font-medium text-primary underline decoration-primary/40 underline-offset-4 transition hover:decoration-primary"
+              className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary underline decoration-primary/40 underline-offset-4 transition hover:decoration-primary"
             >
-              Get in touch →
+              Get in touch
+              <ChevronIcon direction="right" className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>

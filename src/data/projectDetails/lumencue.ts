@@ -8,7 +8,7 @@ export const lumencue: ProjectDetail = {
   category: "fullstack",
   status: "in-progress",
   flagship: true,
-  technologies: [".NET", "AWS", "OpenAI", "Docker", "TypeScript", "React"],
+  technologies: [".NET", "C#", "AWS", "OpenAI", "Docker", "SignalR", "S3"],
   keyFeatures: [
     {
       title: "Intelligent Cue Orchestration",
@@ -32,7 +32,7 @@ export const lumencue: ProjectDetail = {
     },
   ],
   description:
-    "LumenCue replaces the duct-taped stack of ProPresenter, lighting consoles, and volunteer spreadsheets with a single worship control plane. Built on .NET for sub-second cue latency and AWS for reliable asset sync, it gives production teams broadcast-grade orchestration without the six-figure price tag. AI assists with sequencing and run-of-show planning—always reviewable, never a black box. Already shipping via automated release channels (v0.7.x) to real church operators.",
+    "LumenCue replaces the duct taped stack of ProPresenter, lighting consoles, and volunteer spreadsheets with a single worship control plane. Built as a full C# and .NET desktop application for sub second cue latency, with AWS for reliable asset sync and AI assisted run of show planning. Already shipping via automated release channels (v0.7.x) to about 15 churches in production.",
   problemStatement: {
     title: "Church AV Stacks Are Overbuilt and Under-Integrated",
     description:
@@ -48,7 +48,7 @@ export const lumencue: ProjectDetail = {
   solutionApproach: {
     title: "Unified Worship Control Plane",
     description:
-      "LumenCue consolidates cue orchestration, media governance, and operator UX into a single .NET + AWS platform with AI-assisted planning and a production-grade desktop distribution model.",
+      "LumenCue consolidates cue orchestration, media governance, and operator UX into a full C# and .NET desktop platform with AWS sync, AI assisted planning, and a production grade release pipeline.",
     principles: [
       {
         title: "Operator-First Latency Budgets",
@@ -163,7 +163,7 @@ export const lumencue: ProjectDetail = {
     ],
   },
   outcomes:
-    "LumenCue proves that a lean engineering team can deliver enterprise-grade worship operations at a fraction of legacy AV cost—native desktop performance, AWS reliability, and AI assistance that respects the operator. Not a concept. Shipping now.",
+    "LumenCue proves that a lean engineering team can deliver enterprise grade worship operations at a fraction of legacy AV cost — native C# desktop performance, AWS reliability, and AI assistance that respects the operator. Live at about 15 churches and shipping now.",
   image: "/images/work-1.jpg",
   link: "https://github.com/williammgyasii/lumencue-releases",
 };

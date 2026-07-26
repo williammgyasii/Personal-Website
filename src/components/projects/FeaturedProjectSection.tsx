@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Parallax, ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 import type { ProjectDetail } from "../../types/project";
+import { ChevronIcon } from "../icons/ChevronIcon";
 import { usePrefersReducedMotion } from "../../hooks/useMediaQuery";
 
 type FeaturedProjectSectionProps = {
@@ -114,16 +115,18 @@ export function FeaturedProjectSection({ project }: FeaturedProjectSectionProps)
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to={`/projects/${project.slug}`}
-                className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-white transition-colors hover:bg-[#0077ED] sm:h-14 sm:px-10 sm:text-base"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-medium text-white transition-colors hover:bg-[#0077ED] sm:h-14 sm:px-10 sm:text-base"
               >
-                View case study →
+                View case study
+                <ChevronIcon direction="right" className="h-4 w-4" />
               </Link>
               <button
                 type="button"
                 onClick={scrollToGrid}
-                className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 px-8 text-sm font-medium text-white transition hover:border-white/40 sm:h-14 sm:px-10 sm:text-base"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-8 text-sm font-medium text-white transition hover:border-white/40 sm:h-14 sm:px-10 sm:text-base"
               >
-                More projects ↓
+                More projects
+                <ChevronIcon direction="down" className="h-4 w-4" />
               </button>
             </div>
           </motion.div>
@@ -136,7 +139,7 @@ export function FeaturedProjectSection({ project }: FeaturedProjectSectionProps)
             aria-label="Scroll to more projects"
           >
             <span>MORE PROJECTS</span>
-            <span className="hero-scroll-cue-arrow text-primary">↓</span>
+            <ChevronIcon direction="down" className="hero-scroll-cue-arrow h-4 w-4 text-primary" />
           </motion.button>
         </div>
       </div>
@@ -165,16 +168,18 @@ function FeaturedProjectStatic({
       <div className="mt-8 flex flex-wrap gap-4">
         <Link
           to={`/projects/${project.slug}`}
-          className="inline-flex h-12 items-center rounded-full bg-primary px-8 text-sm font-medium text-white"
+          className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-8 text-sm font-medium text-white"
         >
-          View case study →
+          View case study
+          <ChevronIcon direction="right" className="h-4 w-4" />
         </Link>
         <button
           type="button"
           onClick={onExplore}
-          className="inline-flex h-12 items-center rounded-full border border-border px-8 text-sm font-medium"
+          className="inline-flex h-12 items-center gap-2 rounded-full border border-border px-8 text-sm font-medium"
         >
-          More projects ↓
+          More projects
+          <ChevronIcon direction="down" className="h-4 w-4" />
         </button>
       </div>
     </>
