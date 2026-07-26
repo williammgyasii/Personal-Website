@@ -10,7 +10,7 @@ export function ProjectShowcaseImage({ project, compact = false }: ProjectShowca
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="group relative block overflow-hidden rounded-xl border border-border shadow-[0_16px_48px_rgba(0,0,0,0.3)] sm:rounded-2xl"
+      className="group relative block overflow-hidden rounded-xl border border-border shadow-[0_8px_24px_rgba(0,0,0,0.08)] sm:rounded-2xl"
       aria-label={`View ${project.name} case study`}
     >
       <img
@@ -37,7 +37,7 @@ export function ProjectShowcaseImage({ project, compact = false }: ProjectShowca
       </div>
 
       {project.flagship && (
-        <span className="absolute left-3 top-3 rounded-full border border-primary/40 bg-black/50 px-2.5 py-1 text-[9px] font-medium text-primary backdrop-blur-sm">
+        <span className="absolute left-3 top-3 rounded-full border border-primary/40 bg-white/90 px-2.5 py-1 text-[9px] font-medium text-primary backdrop-blur-sm">
           FLAGSHIP
         </span>
       )}

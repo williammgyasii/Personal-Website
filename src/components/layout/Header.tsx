@@ -30,16 +30,16 @@ export function Header() {
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `group text-sm font-medium tracking-tight transition-colors hover:text-primary ${
-      isActive ? "text-primary" : "text-white/85"
+      isActive ? "text-primary" : "text-foreground/85"
     }`;
 
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-50 px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-5 ${
+        className={`fixed inset-x-0 top-0 z-50 px-4 py-3 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-4 ${
           scrolled || !isHome
-            ? "border-b border-white/10 bg-black/75 backdrop-blur-xl"
-            : "border-b border-transparent bg-black/25 backdrop-blur-md"
+            ? "border-b border-border/80 bg-surface/72 backdrop-blur-xl backdrop-saturate-150"
+            : "border-b border-transparent bg-surface/60 backdrop-blur-xl backdrop-saturate-150"
         }`}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -48,14 +48,14 @@ export function Header() {
         <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
           <Link
             to="/"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border border-white/20 bg-white/5 text-sm font-bold tracking-tight transition hover:border-primary hover:text-primary hover:shadow-[0_0_20px_rgba(7,196,44,0.25)]"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-sm font-semibold tracking-tight text-foreground transition hover:text-primary"
             aria-label="Home"
           >
             WG
           </Link>
 
           <nav className="hidden justify-center lg:flex" aria-label="Primary">
-            <div className="nav-menu-shell relative overflow-hidden rounded-full border border-white/10 bg-black/40 px-2 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+            <div className="nav-menu-shell relative overflow-hidden rounded-full bg-surface-secondary/80 px-2 py-1">
               <NavMenuBackground />
               <ul className="relative z-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
                 {site.nav.map((item, index) => (
@@ -98,7 +98,7 @@ export function Header() {
 
           <button
             type="button"
-            className="nav-menu-shell relative inline-flex overflow-hidden rounded-full border border-white/10 bg-black/40 px-4 py-2.5 text-sm font-medium tracking-tight backdrop-blur-md transition hover:text-primary lg:hidden"
+            className="nav-menu-shell relative inline-flex overflow-hidden rounded-full bg-surface-secondary/80 px-4 py-2 text-sm font-normal tracking-tight transition hover:text-primary lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             onClick={() => setMenuOpen((open) => !open)}
@@ -113,7 +113,7 @@ export function Header() {
         {menuOpen && (
           <motion.div
             id="mobile-nav"
-            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[60] bg-surface/95 backdrop-blur-xl backdrop-saturate-150 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

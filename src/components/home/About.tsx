@@ -6,7 +6,7 @@ export function About() {
   const flagships = projects.filter((p) => p.flagship);
 
   return (
-    <section id="about" className="border-t border-border py-16 sm:py-24 md:py-32">
+    <section id="about" className="border-t border-border bg-surface py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="min-w-0">
@@ -63,7 +63,7 @@ export function About() {
               <motion.div
                 key={stat.label}
                 className="rounded-xl border border-border p-4 sm:rounded-2xl sm:p-6"
-                whileHover={{ y: -4, borderColor: "rgba(7,196,44,0.5)" }}
+                whileHover={{ y: -4, borderColor: "rgba(0,113,227,0.35)" }}
                 transition={{ delay: i * 0.05 }}
               >
                 <p className="text-3xl font-semibold tracking-tighter text-primary sm:text-4xl md:text-5xl">

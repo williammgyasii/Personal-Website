@@ -8,7 +8,7 @@ type TechBubblesProps = {
 export function TechBubbles({ items }: TechBubblesProps) {
   return (
     <motion.p
-      className="text-sm leading-relaxed text-white/55"
+      className="text-sm leading-relaxed text-muted"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

@@ -30,7 +30,7 @@ export function WorkPage() {
               className={`rounded-full border px-4 py-2 text-xs font-medium transition ${
                 filter === f.id
                   ? "border-primary bg-primary/10 text-primary"
-                  : "border-border text-muted hover:border-white/40"
+                  : "border-border text-muted hover:border-primary/40"
               }`}
             >
               {f.label}

@@ -78,9 +78,9 @@ export function ScrollStorySection({ statement, marquee }: ScrollStorySectionPro
 
   if (reducedMotion) {
     return (
-      <section className="border-y border-border px-4 py-20 sm:px-6 sm:py-28">
+      <section className="border-y border-border bg-surface-secondary px-4 py-20 sm:px-6 sm:py-28">
         <div className="mx-auto max-w-[1320px]">
-          <p className="max-w-4xl text-[clamp(1.5rem,4vw,3rem)] font-medium leading-[1.2] tracking-tight text-white/90">
+          <p className="max-w-4xl text-[clamp(1.5rem,4vw,3rem)] font-medium leading-[1.2] tracking-tight text-foreground/90">
             {statement}
           </p>
         </div>
@@ -93,13 +93,13 @@ export function ScrollStorySection({ statement, marquee }: ScrollStorySectionPro
   return (
     <section ref={sectionRef} className="scroll-story-section relative h-[220vh]">
       <div className="sticky top-0 flex h-[100dvh] flex-col justify-center overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/[0.02] to-transparent" />
 
         <motion.div
           style={{ opacity: lineOpacity }}
           className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6"
         >
-          <p className="max-w-5xl text-[clamp(1.65rem,4.8vw,3.75rem)] font-medium leading-[1.14] tracking-[-0.02em] text-white">
+          <p className="max-w-5xl text-[clamp(1.65rem,4.8vw,3.75rem)] font-medium leading-[1.14] tracking-[-0.02em] text-foreground">
             <ScrollRevealWords text={statement} progress={scrollYProgress} />
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ export function ScrollStorySection({ statement, marquee }: ScrollStorySectionPro
           className="relative z-10 mt-14 whitespace-nowrap sm:mt-20"
           aria-hidden="true"
         >
-          <p className="text-[clamp(2.5rem,8vw,5.5rem)] font-semibold uppercase tracking-[-0.04em] text-white/[0.07]">
+          <p className="text-[clamp(2.5rem,8vw,5.5rem)] font-semibold uppercase tracking-[-0.04em] text-foreground/[0.05]">
             {marqueeContent}
           </p>
         </motion.div>

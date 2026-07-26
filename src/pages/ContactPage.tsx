@@ -22,7 +22,7 @@ export function ContactPage() {
 
       <div className="relative z-10 mx-auto max-w-[1320px] px-4 sm:px-6">
         <motion.div
-          className="rounded-2xl border border-border bg-gradient-to-br from-white/[0.06] to-transparent p-6 sm:rounded-3xl sm:p-10 md:p-16"
+          className="rounded-2xl border border-border bg-surface p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] sm:rounded-3xl sm:p-10 md:p-16"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -30,14 +30,13 @@ export function ContactPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-4">
             <motion.a
               href={`mailto:${site.email}`}
-              className="group relative inline-flex min-h-[44px] w-full items-center justify-center overflow-hidden rounded-[10px] border border-white px-4 text-center text-[11px] font-medium tracking-tight sm:w-auto sm:px-8 sm:text-xs"
+              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-primary px-6 text-center text-[11px] font-normal text-white transition hover:bg-[#0077ED] sm:w-auto sm:px-8 sm:text-xs"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 break-all transition group-hover:text-black sm:break-normal">
+              <span className="break-all sm:break-normal">
                 {site.email.toUpperCase()}
               </span>
-              <span className="absolute inset-x-[-1px] bottom-[-1px] top-[calc(100%+1px)] bg-white transition-all duration-300 group-hover:top-0" />
             </motion.a>
 
             <div className="flex flex-wrap gap-4 sm:gap-5">

@@ -18,24 +18,26 @@ function App() {
   return (
     <>
       {!ready && <PageLoader onComplete={handleReady} />}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: ready ? 1 : 0 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <SmoothScrollProvider>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route index element={<HomePage />} />
-              <Route path="about" element={<AboutPage />} />
-              <Route path="work" element={<WorkPage />} />
-              <Route path="projects" element={<ProjectsPage />} />
-              <Route path="projects/:slug" element={<ProjectDetailPage />} />
-              <Route path="contact" element={<ContactPage />} />
-            </Route>
-          </Routes>
-        </SmoothScrollProvider>
-      </motion.div>
+      {ready && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <SmoothScrollProvider>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="about" element={<AboutPage />} />
+                <Route path="work" element={<WorkPage />} />
+                <Route path="projects" element={<ProjectsPage />} />
+                <Route path="projects/:slug" element={<ProjectDetailPage />} />
+                <Route path="contact" element={<ContactPage />} />
+              </Route>
+            </Routes>
+          </SmoothScrollProvider>
+        </motion.div>
+      )}
     </>
   );
 }

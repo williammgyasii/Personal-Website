@@ -59,7 +59,7 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
           <span className="loader-ring loader-ring-mid" aria-hidden="true" />
           <span className="loader-ring loader-ring-inner" aria-hidden="true" />
 
-          <div className="loader-core relative z-10 flex h-20 w-20 items-center justify-center rounded-xl border border-primary/30 bg-[#181b22]/90 shadow-[0_0_40px_rgba(221,214,200,0.12)] sm:h-24 sm:w-24">
+          <div className="loader-core relative z-10 flex h-20 w-20 items-center justify-center rounded-xl border border-border bg-surface shadow-[0_2px_16px_rgba(0,0,0,0.08)] sm:h-24 sm:w-24">
             <span className="text-xl font-bold tracking-tight text-primary text-glow-primary sm:text-2xl">
               WG
             </span>
@@ -72,12 +72,12 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
         </div>
 
         <div className="w-full max-w-[220px] space-y-3">
-          <div className="flex items-center justify-between text-[10px] font-medium tracking-[0.2em] text-white/50">
+          <div className="flex items-center justify-between text-[10px] font-medium tracking-[0.2em] text-faint">
             <span>BOOT</span>
             <span className="loader-status text-muted">LOADING</span>
           </div>
-          <div className="loader-track h-1 overflow-hidden rounded-full bg-white/10">
-            <div className="loader-bar h-full rounded-full bg-primary shadow-[0_0_12px_rgba(221,214,200,0.25)]" />
+          <div className="loader-track h-1 overflow-hidden rounded-full bg-neutral-200">
+            <div className="loader-bar h-full rounded-full bg-primary shadow-none" />
           </div>
         </div>
       </div>

@@ -257,7 +257,7 @@ export function ProjectDetailContent({ project }: { project: ProjectDetail }) {
         </Section>
 
         <Section title="Outcome">
-          <p className="rounded-2xl border border-border bg-white/[0.03] p-6 text-sm leading-relaxed text-muted">
+          <p className="rounded-2xl border border-border bg-neutral-50 p-6 text-sm leading-relaxed text-muted">
             {project.outcomes}
           </p>
         </Section>

@@ -5,17 +5,17 @@ import { ServiceIcon } from "../icons/ServiceIcons";
 const accentStyles: Record<ServiceAccent, { box: string; tag: string }> = {
   primary: {
     box: "border-primary/30 bg-primary/10 text-primary",
-    tag: "border-white/10 bg-white/[0.04] text-white/65",
+    tag: "border-border bg-neutral-50 text-muted",
   },
   muted: {
-    box: "border-white/12 bg-white/[0.04] text-white/70",
-    tag: "border-white/10 bg-white/[0.04] text-white/65",
+    box: "border-border bg-neutral-50 text-muted",
+    tag: "border-border bg-neutral-50 text-muted",
   },
 };
 
 export function WhatIOfferSection() {
   return (
-    <section id="services" className="relative border-t border-border">
+    <section id="services" className="relative border-t border-border bg-surface-secondary">
       <div className="px-4 py-16 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-[1320px]">
           <div className="mb-10 sm:mb-14">
@@ -60,19 +60,19 @@ function OfferCard({
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="list-none"
     >
-      <article className="h-full rounded-2xl border border-white/[0.08] bg-black/20 p-5 sm:p-6">
+      <article className="h-full rounded-2xl border border-border bg-surface p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] sm:p-6">
         <div className="mb-5 flex items-start gap-4">
           <div
             className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${accent.box}`}
           >
             <ServiceIcon name={service.icon} />
           </div>
-          <h3 className="pt-1 text-lg font-semibold tracking-tight text-white sm:text-xl">
+          <h3 className="pt-1 text-lg font-semibold tracking-tight sm:text-xl">
             {service.title}
           </h3>
         </div>
 
-        <p className="mb-5 text-sm leading-relaxed text-white/70">{service.description}</p>
+        <p className="mb-5 text-sm leading-relaxed text-muted">{service.description}</p>
 
         <ul className="flex flex-wrap gap-2">
           {service.items.map((item) => (

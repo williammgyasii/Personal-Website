@@ -15,6 +15,9 @@ export const projectDetails: ProjectDetail[] = [
   forgecms,
 ];
 
+export const featuredProject = projectDetails.find((p) => p.slug === "lumencue");
+export const gridProjects = projectDetails.filter((p) => p.slug !== "lumencue");
+
 export const flagshipProjects = projectDetails.filter((p) => p.flagship);
 export const otherProjects = projectDetails.filter((p) => !p.flagship);
 

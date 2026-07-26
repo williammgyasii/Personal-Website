@@ -7,7 +7,11 @@ export const site = {
   availability: "OPEN TO FULL TIME & CONTRACT",
   heroSummary:
     "Six years shipping production software across SaaS, mobile, and platforms. I architect and deploy the full stack from database design and APIs to frontends, billing, and production releases.",
-  heroStats: ["6 YEARS", "6 LIVE PRODUCTS", "2 FLAGSHIPS"],
+  heroStats: [
+    { value: "6", label: "Years shipping" },
+    { value: "6", label: "Live products" },
+    { value: "2", label: "Flagships" },
+  ],
   scrollStatement:
     "From idea to launch. Clean, scalable products built to move fast, stay simple, and perform in the real world.",
   scrollMarquee: "FULL STACK · PRODUCTION SOFTWARE · SHIP FAST · OWN THE STACK ·",

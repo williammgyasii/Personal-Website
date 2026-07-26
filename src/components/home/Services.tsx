@@ -18,7 +18,7 @@ export function Services() {
           animate={{ opacity: 0.2, scale: 1 }}
           transition={{ duration: 0.8 }}
         />
-        <div className="absolute inset-0 bg-black/90 sm:bg-black/85" />
+        <div className="absolute inset-0 bg-white/90 sm:bg-white/85" />
       </div>
 
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
@@ -41,8 +41,8 @@ export function Services() {
                 onClick={() => setActive(index)}
                 className={`shrink-0 rounded-full border px-4 py-3 text-left text-xs font-medium transition sm:text-sm lg:block lg:w-full lg:shrink lg:rounded-none lg:border-0 lg:border-l-2 lg:px-0 lg:py-4 lg:pl-5 lg:pr-2 ${
                   active === index
-                    ? "border-primary bg-primary/10 text-white lg:border-primary lg:bg-transparent"
-                    : "border-border text-muted hover:border-white/40 hover:text-white lg:border-border lg:hover:border-white/40"
+                    ? "border-primary bg-primary/10 text-primary lg:border-primary lg:bg-transparent"
+                    : "border-border text-muted hover:border-primary/40 hover:text-foreground lg:border-border lg:hover:border-primary/40"
                 }`}
               >
                 <span className="mr-2 text-[10px] text-muted">
@@ -60,7 +60,7 @@ export function Services() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-border bg-black/50 p-6 backdrop-blur-sm sm:p-8 md:p-10"
+            className="rounded-2xl border border-border bg-neutral-50/90 p-6 backdrop-blur-sm sm:p-8 md:p-10"
           >
             <h3 className="mb-3 text-xl font-semibold tracking-tight sm:mb-4 sm:text-2xl">
               {current.title}
