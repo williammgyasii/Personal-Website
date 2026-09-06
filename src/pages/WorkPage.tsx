@@ -61,7 +61,7 @@ export function WorkPage() {
           >
             <Link
               to="/projects"
-              className="inline-flex h-12 min-w-[min(100%,280px)] items-center justify-center gap-2 rounded-full bg-primary px-10 text-base font-medium text-white transition-colors hover:bg-[#0077ED] sm:h-14 sm:min-w-[320px] sm:px-12"
+              className="inline-flex h-12 min-w-[min(100%,280px)] items-center justify-center gap-2 rounded-full bg-primary px-10 text-base font-medium text-white transition-colors hover:bg-[#e84e24] sm:h-14 sm:min-w-[320px] sm:px-12"
             >
               View projects
               <ChevronIcon direction="right" className="h-4 w-4" />

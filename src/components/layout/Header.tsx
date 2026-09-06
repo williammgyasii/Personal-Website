@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { site, gmailComposeUrl } from "../../data/site";
-import { NavMenuBackground } from "./NavMenuBackground";
+import { site } from "../../data/site";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,84 +28,56 @@ export function Header() {
   }, [pathname]);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `group text-sm font-medium tracking-tight transition-colors hover:text-primary ${
-      isActive ? "text-primary" : "text-foreground/85"
+    `text-[15px] font-medium tracking-tight transition-colors hover:text-primary ${
+      isActive ? "text-primary" : "text-foreground"
     }`;
 
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-50 px-4 py-3 transition-[background,border,backdrop-filter] duration-300 sm:px-6 sm:py-4 ${
+        className={`fixed inset-x-0 top-0 z-50 px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 ${
           scrolled || !isHome
-            ? "border-b border-border/80 bg-surface/72 backdrop-blur-xl backdrop-saturate-150"
-            : "border-b border-transparent bg-surface/60 backdrop-blur-xl backdrop-saturate-150"
+            ? "border-b border-border/80 bg-surface/80 backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent"
         }`}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto_auto] lg:items-center lg:gap-8">
+        <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center lg:grid-cols-[1fr_auto_1fr]">
           <Link
             to="/"
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-sm font-semibold tracking-tight text-foreground transition hover:text-primary"
+            className="justify-self-start text-[17px] font-extrabold tracking-tight text-foreground transition hover:text-primary"
             aria-label="Home"
           >
-            WG
+            WILLIAM
           </Link>
 
-          <nav className="hidden justify-center lg:flex" aria-label="Primary">
-            <div className="nav-menu-shell relative overflow-hidden rounded-full bg-surface-secondary/80 px-2 py-1">
-              <NavMenuBackground />
-              <ul className="relative z-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
-                {site.nav.map((item, index) => (
-                  <li key={item.id}>
-                    <NavLink to={item.href} end={item.href === "/"} className={navLinkClass}>
-                      {({ isActive }) => (
-                        <span
-                          className={`nav-menu-link relative inline-flex items-start gap-1.5 rounded-full px-3.5 py-2 transition-colors ${
-                            isActive ? "nav-menu-link-active text-primary" : ""
-                          }`}
-                        >
-                          <span className="text-[9px] leading-3 text-muted transition group-hover:text-primary/70">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          {item.label}
-                          {isActive && (
-                            <span className="nav-menu-active-glow absolute inset-0 rounded-full" aria-hidden="true" />
-                          )}
-                        </span>
-                      )}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <nav className="hidden items-center justify-center gap-8 lg:flex" aria-label="Primary">
+            {site.nav.map((item) => (
+              <NavLink key={item.id} to={item.href} end={item.href === "/"} className={navLinkClass}>
+                {item.label === "HOME" ? "Home" : item.label.charAt(0) + item.label.slice(1).toLowerCase()}
+              </NavLink>
+            ))}
           </nav>
 
-          <div className="hidden gap-1 lg:grid">
-            <a
-              href={gmailComposeUrl(site.email)}
-              target="_blank"
-              rel="noreferrer"
-              className="max-w-[220px] truncate text-sm font-medium tracking-tight transition hover:text-primary xl:max-w-none"
-              title={site.email}
+          <div className="hidden justify-self-end lg:block">
+            <Link
+              to="/contact"
+              className="inline-flex h-10 items-center rounded-full border border-foreground px-5 text-sm font-medium transition hover:bg-foreground hover:text-surface"
             >
-              {site.email.toUpperCase()}
-            </a>
-            <p className="text-xs text-muted">
-              {site.timezone} · <Clock />
-            </p>
+              Contact
+            </Link>
           </div>
 
           <button
             type="button"
-            className="nav-menu-shell relative inline-flex overflow-hidden rounded-full bg-surface-secondary/80 px-4 py-2 text-sm font-normal tracking-tight transition hover:text-primary lg:hidden"
+            className="justify-self-end text-sm font-medium tracking-tight lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <NavMenuBackground />
-            <span className="relative z-10">{menuOpen ? "CLOSE" : "MENU"}</span>
+            {menuOpen ? "Close" : "Menu"}
           </button>
         </div>
       </motion.header>
@@ -115,7 +86,7 @@ export function Header() {
         {menuOpen && (
           <motion.div
             id="mobile-nav"
-            className="fixed inset-0 z-[60] bg-surface/95 backdrop-blur-xl backdrop-saturate-150 lg:hidden"
+            className="fixed inset-0 z-[60] bg-surface/96 backdrop-blur-xl lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -124,69 +95,37 @@ export function Header() {
             <div className="flex h-full flex-col px-6 pb-10 pt-28">
               <nav aria-label="Mobile">
                 <ul className="space-y-6">
-                  {site.nav.map((item, index) => (
+                  {site.nav.map((item) => (
                     <li key={item.id}>
                       <NavLink
                         to={item.href}
                         end={item.href === "/"}
                         className={({ isActive }) =>
-                          `flex items-baseline gap-3 text-3xl font-semibold tracking-tight transition hover:text-primary sm:text-4xl ${
+                          `text-4xl font-semibold tracking-tight transition hover:text-primary ${
                             isActive ? "text-primary" : ""
                           }`
                         }
                         onClick={() => setMenuOpen(false)}
                       >
-                        <span className="text-sm text-muted">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        {item.label}
+                        {item.label === "HOME" ? "Home" : item.label.charAt(0) + item.label.slice(1).toLowerCase()}
                       </NavLink>
                     </li>
                   ))}
                 </ul>
               </nav>
-
-              <div className="mt-auto space-y-4 border-t border-border pt-8">
-                <a
-                  href={gmailComposeUrl(site.email)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block break-all text-sm font-medium transition hover:text-primary"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {site.email}
-                </a>
-                <p className="text-xs text-muted">
-                  {site.timezone} · <Clock />
-                </p>
-              </div>
+              <Link
+                to="/contact"
+                className="mt-auto inline-flex h-12 items-center justify-center rounded-full border border-foreground text-sm font-medium"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contact
+              </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Spacer on non-home routes so content clears fixed header */}
       {!isHome && <div className="h-[72px] sm:h-[80px]" aria-hidden="true" />}
     </>
   );
-}
-
-function Clock() {
-  const [time, setTime] = useState(getTime);
-
-  useEffect(() => {
-    const id = window.setInterval(() => setTime(getTime()), 60_000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  return <span>{time}</span>;
-}
-
-function getTime() {
-  return new Date().toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-    timeZone: "America/New_York",
-  });
 }

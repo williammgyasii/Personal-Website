@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import type { HeroMotion } from "../../hooks/useHeroMotion";
+import { site } from "../../data/site";
 
 type AnimatedHeroTitleProps = {
   name: string;
@@ -7,37 +7,24 @@ type AnimatedHeroTitleProps = {
 };
 
 export function AnimatedHeroTitle({ name, motionConfig }: AnimatedHeroTitleProps) {
-  if (motionConfig.reducedMotion) {
-    return (
-      <h1 className="text-[clamp(2.75rem,13vw,9.5rem)] font-semibold leading-[0.92] tracking-[-0.03em] text-foreground">
-        {name}
-      </h1>
-    );
-  }
-
-  const { letter, letterStagger, letterDelay } = motionConfig;
+  const lines = site.heroLines;
+  const last = lines.length - 1;
 
   return (
-    <motion.h1
-      className="text-[clamp(2.75rem,13vw,9.5rem)] font-semibold leading-[0.92] tracking-[-0.03em] text-foreground"
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: letterStagger, delayChildren: letterDelay } },
-      }}
-      aria-label={name}
+    <h1
+      className="max-w-full text-[clamp(1.75rem,5.6vw,4.35rem)] font-medium leading-[0.96] tracking-[-0.05em] text-foreground"
+      aria-label={`${name}. ${lines.join(" ")}`}
     >
-      {name.split("").map((char, index) => (
-        <motion.span
-          key={`${char}-${index}`}
-          variants={letter}
-          className="inline-block"
-          style={{ willChange: "transform, opacity, filter" }}
+      {lines.map((line, index) => (
+        <span
+          key={line}
+          className={`${motionConfig.reducedMotion ? "block" : "hero-title-line"} ${
+            index === last ? "text-primary" : ""
+          }`}
         >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
+          <span className="break-words">{line}</span>
+        </span>
       ))}
-    </motion.h1>
+    </h1>
   );
 }

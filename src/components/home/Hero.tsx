@@ -13,7 +13,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden pb-12 pt-20 sm:pb-16 sm:pt-24 lg:h-[100dvh] lg:pb-20 lg:pt-28"
+      className="relative flex min-h-[100dvh] flex-col justify-center overflow-x-hidden pb-24 pt-28 sm:pb-28 sm:pt-32"
       aria-label="Introduction"
     >
       <div className="absolute inset-0 -z-10 bg-surface-secondary" aria-hidden="true">
@@ -22,7 +22,12 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
+          <div className="mb-5 flex justify-between gap-4 border-t border-border pt-3 text-[11px] uppercase tracking-[0.11em] text-muted sm:mb-7">
+            <p>Independent full-stack developer</p>
+            <p>Maryland, USA</p>
+          </div>
+
           <motion.ul
             className="mb-4 flex flex-wrap gap-x-4 gap-y-1.5 sm:mb-6 lg:mb-8"
             initial="hidden"
@@ -361,7 +366,7 @@ function HeroCTAs({ reducedMotion }: { reducedMotion: boolean }) {
       <motion.div {...motionProps} className="w-full sm:w-auto">
         <Link
           to="/projects"
-          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary text-sm font-normal text-white transition hover:bg-[#0077ED] sm:h-12 sm:px-8"
+          className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-primary text-sm font-normal text-white transition hover:bg-[#e84e24] sm:h-12 sm:px-8"
         >
           {site.cta}
           <ChevronIcon direction="right" className="h-4 w-4" />

@@ -23,9 +23,31 @@ const placeholder = (seed: string) =>
 
 export const projects: Project[] = [
   {
+    id: "kairos-payhub",
+    name: "KairosPayHub",
+    category: "Church Ops SaaS · Flagship",
+    summary:
+      "Multi-tenant church platform for giving, attendance, and roster — structure-aware workflows from cell to pastor, live on Cloudflare.",
+    tags: [".NET", "REACT", "CLOUDFLARE", "MULTI-TENANT"],
+    technologies: [
+      { name: "React", tone: "primary" },
+      { name: "TypeScript", tone: "accent" },
+      { name: ".NET 10", tone: "violet" },
+      { name: "PostgreSQL", tone: "violet" },
+      { name: "SignalR", tone: "accent" },
+      { name: "Cloudflare", tone: "amber" },
+      { name: "TanStack Table", tone: "primary" },
+    ],
+    description:
+      "Giving, attendance, and organizational structure in one church-scoped product. Campaigns, one-hop attendance approval, and a roster that follows the church’s real hierarchy — shipped from OpenSpec through production on Cloudflare.",
+    image: "/images/projects/kairos-payhub/dashboard.png",
+    link: "https://app.kairospayhub.com",
+    flagship: true,
+  },
+  {
     id: "lumencue",
     name: "LumenCue",
-    category: "AI Worship Platform · Flagship",
+    category: "AI Worship Platform",
     summary:
       "Full C# desktop app for broadcast grade worship ops without the six figure AV stack. AWS sync, semver auto updates, and AI assisted cue orchestration — live at about 15 churches.",
     tags: [".NET", "C#", "DESKTOP", "AWS"],
@@ -42,7 +64,6 @@ export const projects: Project[] = [
       "Broadcast grade worship operations without the six figure AV stack. A full C# and .NET desktop application with AWS backed sync, semver auto updates, and AI assisted cue orchestration — built for live services where a missed cue is not an option. Used in production by about 15 churches.",
     image: placeholder("lumencue-worship"),
     link: "https://github.com/williammgyasii/lumencue-releases",
-    flagship: true,
   },
   {
     id: "seeka",

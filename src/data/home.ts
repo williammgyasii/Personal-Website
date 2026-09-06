@@ -1,9 +1,9 @@
 import { workExperiences } from "./work";
 
 export const stats = [
-  { number: "7", label: "Years Experience" },
-  { number: "6", label: "Live Products" },
-  { number: "2", label: "Flagship Apps" },
+  { number: "6+", label: "Years Experience" },
+  { number: "37K+", label: "Daily Orders" },
+  { number: "15+", label: "Churches Live" },
   { number: "200+", label: "Schools Scaled" },
 ];
 

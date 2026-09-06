@@ -85,17 +85,17 @@ export const expertiseKeywords = expertiseCategories.flatMap((c) => c.items);
 export const profileInfo = {
   name: "William Kwabena Gyasi",
   shortName: "William Gyasi",
-  title: "Full Stack Developer & Product Engineer",
-  location: "Maryland, United States",
+  title: "Full-Stack Developer",
+  location: "Maryland, USA",
   profileImage: "/images/profile.jpg",
-  seoTitle: "About William Gyasi | Full Stack Developer & Product Engineer",
+  seoTitle: "About William Gyasi | Full-Stack Developer",
   seoDescription:
-    "Full stack developer with 7 years shipping SaaS, mobile, and desktop software. Expertise in React, Next.js, Node.js, PostgreSQL, AWS, OpenAI, C#, and .NET. Built DeliverEarly, LumenCue, and SchoolDesk. Open to full time and contract roles.",
-  headline: "Engineering products that ship and sell.",
+    "Full-stack developer with 6+ years shipping production applications across SaaS, web, mobile, desktop, and AI-powered platforms. React, Next.js, TypeScript, .NET, PostgreSQL, AWS, Cloudflare, OpenAI.",
+  headline: "I don’t decorate interfaces. I shape how a product communicates.",
   bioParagraphs: [
-    "I am William Gyasi, a full stack developer and product engineer with seven years of experience building production software across SaaS, mobile, desktop, and AI native platforms in fintech, supply chain, edtech, worship tech, and healthtech.",
-    "I own the full stack end to end: PostgreSQL schema design, Next.js and React frontends, Node.js and tRPC APIs, OpenAI powered features, Stripe billing, C# desktop applications, and AWS deployments that reach real users with measurable outcomes.",
-    "Recent production work includes DeliverEarly at deliverearly.com, LumenCue (C# desktop platform live at 15 churches), Penny Pilot (FinTech SaaS with 35% engagement lift), and SchoolDesk (EdTech platform adopted by 200+ schools in Ghana).",
+    "Full-stack developer and software engineer with 6+ years building and shipping production applications across SaaS, web, mobile, desktop, fintech, supply chain, edtech, health tech, and AI-powered platforms.",
+    "I work the full lifecycle: React and Next.js interfaces, Node.js and C#/.NET APIs, PostgreSQL data models, AWS and Terraform, Docker, CI/CD, and OpenAI integrations — from concept through deployment and production debugging.",
+    "Shipped software supporting 37K+ daily orders, 180+ integration configurations, 15+ churches, and 200+ schools, with a focus on reliability, performance, and measurable business impact.",
   ],
   email: site.email,
   calendarLink: "https://cal.com/",
@@ -189,8 +189,8 @@ export const aboutValueProps: AboutValueProp[] = [
 export const aboutSnippet = {
   greeting: "Hi, I'm William",
   highlights: [
-    "7 years shipping production software",
-    "6 live products across SaaS, mobile and desktop",
+    "6+ years shipping production software",
+    "Software supporting 37K+ daily orders and 200+ schools",
     "AI integration that ships, not just demos",
     "End to end ownership from schema to deploy to users",
   ],

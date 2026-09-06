@@ -48,5 +48,6 @@ export interface ProjectDetail {
   };
   outcomes: string;
   image: string;
+  gallery?: { src: string; alt: string }[];
   link: string;
 }

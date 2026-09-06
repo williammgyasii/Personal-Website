@@ -77,7 +77,7 @@ export function ProjectsPage() {
       <PageHeader
         label="PROJECTS"
         title="Products that ship"
-        description="Scroll through the featured build, then explore the full project grid."
+        description="KairosPayHub first. Open the case study, then explore the rest of the grid."
       />
 
       <FeaturedProjectSection project={featuredProject} />

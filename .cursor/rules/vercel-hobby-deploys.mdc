@@ -1,0 +1,28 @@
+---
+description: Keep Vercel Hobby deploys working — never push this site as Cursor Agent
+alwaysApply: true
+---
+
+# Vercel Hobby: owner must push
+
+This site deploys on **Vercel Hobby (free)**. Hobby only builds commits pushed by the GitHub account that owns the Vercel project (`williammgyasii`). Cursor Agent / bot pushes are skipped or billed. Do not upgrade the plan to work around this.
+
+## Do
+
+- Edit locally in `Personal-Website/`
+- Commit with the user's git identity when they ask to commit
+- Ship only with the **local git CLI** (`git commit`, `git push`)
+- Push only after they say to push **and** `gh api user --jq .login` is `williammgyasii`
+
+## Do not
+
+- Use Cursor Agent / cloud agent / GitHub App to push or "ship" this repo
+- Use Cursor's hosted GitHub shipping flow
+- `git push` if `gh` is logged in as `wgyasi` or any account other than `williammgyasii`
+- Suggest Vercel Pro or a team plan as the fix
+
+## Check before any website push
+
+```bash
+gh api user --jq .login   # must be williammgyasii
+```

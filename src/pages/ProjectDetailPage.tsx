@@ -25,7 +25,7 @@ export function ProjectDetailPage() {
         <h1 className="mb-2 text-[clamp(2rem,7vw,4rem)] font-semibold leading-tight tracking-tighter">
           {project.name}
         </h1>
-        <p className="max-w-2xl text-sm text-muted">{project.subline}</p>
+        <p className="max-w-2xl text-sm text-primary sm:text-base">{project.subline}</p>
       </div>
       <ProjectDetailContent project={project} />
     </>

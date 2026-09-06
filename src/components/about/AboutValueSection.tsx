@@ -335,7 +335,7 @@ export function AboutValueSection() {
         >
           <Link
             to="/contact"
-            className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-8 text-sm font-medium text-white transition-colors hover:bg-[#0077ED]"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-8 text-sm font-medium text-white transition-colors hover:bg-[#e84e24]"
           >
             Let&apos;s work together
             <ChevronIcon direction="right" className="h-4 w-4" />

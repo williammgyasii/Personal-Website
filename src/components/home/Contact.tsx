@@ -35,7 +35,7 @@ export function Contact() {
               href={emailChannel.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-primary px-6 text-center text-sm font-medium text-white transition hover:bg-[#0077ED] sm:w-auto sm:px-8"
+              className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-primary px-6 text-center text-sm font-medium text-white transition hover:bg-[#e84e24] sm:w-auto sm:px-8"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

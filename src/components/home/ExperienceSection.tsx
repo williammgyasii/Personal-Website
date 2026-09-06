@@ -62,7 +62,7 @@ export function ExperienceSection() {
             >
               <Link
                 to="/work"
-                className="inline-flex h-12 min-w-[min(100%,320px)] items-center justify-center gap-2 rounded-full bg-primary px-10 text-base font-medium text-white transition-colors hover:bg-[#0077ED] sm:h-14 sm:min-w-[360px] sm:px-12 sm:text-lg"
+                className="inline-flex h-12 min-w-[min(100%,320px)] items-center justify-center gap-2 rounded-full bg-primary px-10 text-base font-medium text-white transition-colors hover:bg-[#e84e24] sm:h-14 sm:min-w-[360px] sm:px-12 sm:text-lg"
               >
                 View full work history
                 <ChevronIcon direction="right" className="h-4 w-4" />

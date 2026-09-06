@@ -6,33 +6,32 @@ export interface ContactCardTheme {
   watermarkGradient: string;
 }
 
+const paper = "#f2f1ed";
+
 export const contactCardThemes: Record<string, ContactCardTheme> = {
   email: {
-    surface:
-      "linear-gradient(145deg, rgba(0, 113, 227, 0.14) 0%, rgba(255, 255, 255, 0.97) 55%, #ffffff 100%)",
-    border: "rgba(0, 113, 227, 0.22)",
-    glow: "rgba(0, 113, 227, 0.32)",
-    accent: "#0071e3",
+    surface: `linear-gradient(145deg, rgba(255, 91, 46, 0.14) 0%, rgba(242, 241, 237, 0.97) 55%, ${paper} 100%)`,
+    border: "rgba(255, 91, 46, 0.28)",
+    glow: "rgba(255, 91, 46, 0.28)",
+    accent: "#ff5b2e",
     watermarkGradient:
-      "linear-gradient(135deg, rgba(0, 113, 227, 0.4) 0%, rgba(41, 151, 255, 0.14) 60%, rgba(255, 255, 255, 0.04) 100%)",
+      "linear-gradient(135deg, rgba(255, 91, 46, 0.4) 0%, rgba(217, 255, 83, 0.14) 60%, rgba(242, 241, 237, 0.04) 100%)",
   },
   github: {
-    surface:
-      "linear-gradient(145deg, rgba(29, 29, 31, 0.08) 0%, rgba(255, 255, 255, 0.97) 55%, #ffffff 100%)",
-    border: "rgba(29, 29, 31, 0.14)",
-    glow: "rgba(29, 29, 31, 0.12)",
-    accent: "#1d1d1f",
+    surface: `linear-gradient(145deg, rgba(17, 17, 15, 0.08) 0%, rgba(242, 241, 237, 0.97) 55%, ${paper} 100%)`,
+    border: "rgba(17, 17, 15, 0.16)",
+    glow: "rgba(17, 17, 15, 0.1)",
+    accent: "#11110f",
     watermarkGradient:
-      "linear-gradient(135deg, rgba(29, 29, 31, 0.28) 0%, rgba(29, 29, 31, 0.1) 60%, rgba(255, 255, 255, 0.04) 100%)",
+      "linear-gradient(135deg, rgba(17, 17, 15, 0.28) 0%, rgba(17, 17, 15, 0.1) 60%, rgba(242, 241, 237, 0.04) 100%)",
   },
   linkedin: {
-    surface:
-      "linear-gradient(145deg, rgba(10, 102, 194, 0.12) 0%, rgba(255, 255, 255, 0.97) 55%, #ffffff 100%)",
-    border: "rgba(10, 102, 194, 0.2)",
-    glow: "rgba(10, 102, 194, 0.22)",
-    accent: "#0a66c2",
+    surface: `linear-gradient(145deg, rgba(255, 91, 46, 0.1) 0%, rgba(242, 241, 237, 0.97) 55%, ${paper} 100%)`,
+    border: "rgba(255, 91, 46, 0.22)",
+    glow: "rgba(255, 91, 46, 0.2)",
+    accent: "#ff5b2e",
     watermarkGradient:
-      "linear-gradient(135deg, rgba(10, 102, 194, 0.36) 0%, rgba(10, 102, 194, 0.12) 60%, rgba(255, 255, 255, 0.04) 100%)",
+      "linear-gradient(135deg, rgba(255, 91, 46, 0.32) 0%, rgba(217, 255, 83, 0.12) 60%, rgba(242, 241, 237, 0.04) 100%)",
   },
 };
 

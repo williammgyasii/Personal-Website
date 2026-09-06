@@ -3,6 +3,8 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useLenis } from "lenis/react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { PaperNoise } from "./PaperNoise";
+import { CustomCursor } from "./CustomCursor";
 import { usePrefersReducedMotion } from "../../hooks/useMediaQuery";
 
 export function Layout() {
@@ -20,6 +22,8 @@ export function Layout() {
 
   return (
     <div className="bg-surface">
+      <PaperNoise />
+      <CustomCursor />
       <Header />
       <main>
         <Outlet />

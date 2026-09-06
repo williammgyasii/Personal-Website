@@ -7,7 +7,7 @@ export const lumencue: ProjectDetail = {
   subline: "Broadcast-Grade Worship Ops Without the Enterprise Price Tag",
   category: "fullstack",
   status: "in-progress",
-  flagship: true,
+  flagship: false,
   technologies: [".NET", "C#", "AWS", "OpenAI", "Docker", "SignalR", "S3"],
   keyFeatures: [
     {

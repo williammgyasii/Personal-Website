@@ -106,7 +106,7 @@ export function AboutHeroSection() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-sm font-medium text-white transition-colors hover:bg-[#0077ED]"
+                className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-sm font-medium text-white transition-colors hover:bg-[#e84e24]"
               >
                 Get in touch
               </Link>

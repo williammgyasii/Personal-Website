@@ -29,7 +29,7 @@ export function WorksProjectNav({ active, total, onPrev, onNext }: WorksProjectN
           whileHover={
             reducedMotion
               ? undefined
-              : { y: -2, borderColor: "rgba(0, 113, 227, 0.45)", color: "#0071e3" }
+              : { y: -2, borderColor: "rgba(255, 91, 46, 0.5)", color: "#ff5b2e" }})
           }
           whileTap={reducedMotion ? undefined : { scale: 0.98, y: 0 }}
           transition={{ type: "spring", stiffness: 420, damping: 28 }}
@@ -42,7 +42,7 @@ export function WorksProjectNav({ active, total, onPrev, onNext }: WorksProjectN
           type="button"
           onClick={onNext}
           className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-5 text-sm font-medium text-white shadow-sm"
-          whileHover={reducedMotion ? undefined : { y: -2, backgroundColor: "#0077ED" }}
+          whileHover={reducedMotion ? undefined : { y: -2, backgroundColor: "#e84e24" }}
           whileTap={reducedMotion ? undefined : { scale: 0.98, y: 0 }}
           transition={{ type: "spring", stiffness: 420, damping: 28 }}
           aria-label="Next project"

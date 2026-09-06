@@ -44,14 +44,19 @@ function ScrollRevealWord({
   const start = (index / total) * (1 - windowSize);
   const end = start + windowSize;
 
-  const opacity = useTransform(progress, [start, end], [0.14, 1]);
+  const opacity = useTransform(progress, [start, end], [0.18, 1]);
   const y = useTransform(progress, [start, end], [28, 0]);
   const blur = useTransform(progress, [start, end], [8, 0]);
+  const color = useTransform(progress, [start, start + windowSize * 0.45, end], [
+    "#77746e",
+    "#ff5b2e",
+    "#11110f",
+  ]);
   const filter = useMotionTemplate`blur(${blur}px)`;
 
   return (
     <motion.span
-      style={{ opacity, y, filter }}
+      style={{ opacity, y, filter, color }}
       className={`inline-block ${isLast ? "" : "mr-[0.28em]"}`}
     >
       {word}

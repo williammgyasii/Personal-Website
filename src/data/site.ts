@@ -3,18 +3,19 @@ export const site = {
   email: "williammgyasii@gmail.com",
   timezone: "EST",
   year: new Date().getFullYear(),
-  roles: ["FULL STACK DEV", "PRODUCT BUILDER", "SOFTWARE ENGINEER"],
+  roles: ["FULL-STACK DEVELOPER", "SOFTWARE ENGINEER", "PRODUCT BUILDER"],
   availability: "OPEN TO FULL TIME & CONTRACT",
+  heroLines: ["Digital experiences", "built with clarity", "& character."],
   heroSummary:
-    "Seven years shipping production software across SaaS, mobile, desktop, and platforms. I architect and deploy the full stack from database design and APIs to frontends, billing, and production releases.",
+    "Full-stack developer with 6+ years shipping production software across SaaS, web, mobile, desktop, and AI-powered platforms. I design APIs and data models, build responsive interfaces, and take customer-facing features from concept through deployment.",
   heroStats: [
-    { value: "7", label: "Years shipping" },
-    { value: "6", label: "Live products" },
-    { value: "2", label: "Flagships" },
+    { value: "6", label: "Years shipping" },
+    { value: "15", label: "Churches live" },
+    { value: "200", label: "Schools scaled" },
   ],
   scrollStatement:
-    "From idea to launch. Clean, scalable products built to move fast, stay simple, and perform in the real world.",
-  scrollMarquee: "FULL STACK · PRODUCTION SOFTWARE · SHIP FAST · OWN THE STACK ·",
+    "Anyone can put a page online. The difference is how it feels — and whether it holds up in production.",
+  scrollMarquee: "REACT · NEXT.JS · TYPESCRIPT · .NET · AWS · POSTGRESQL · OPENAI · CLOUDFLARE ·",
   cta: "VIEW PROJECTS",
   ctaSecondary: "CONTACT",
   nav: [

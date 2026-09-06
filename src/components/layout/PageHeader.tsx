@@ -8,7 +8,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ label, title, description }: PageHeaderProps) {
   return (
-    <div className="mx-auto max-w-[1320px] px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32">
+    <div className="mx-auto max-w-[1320px] px-4 pb-8 pt-24 sm:px-6 sm:pb-10 sm:pt-28">
       <motion.p
         className="mb-4 text-xs tracking-tight text-muted"
         initial={{ opacity: 0 }}

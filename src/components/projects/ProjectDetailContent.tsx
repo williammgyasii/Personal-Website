@@ -64,6 +64,24 @@ export function ProjectDetailContent({ project }: { project: ProjectDetail }) {
           <p className="max-w-3xl text-sm leading-relaxed text-muted">{project.description}</p>
         </Section>
 
+        {project.gallery && project.gallery.length > 0 && (
+          <Section title="Product screens">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {project.gallery.map((shot) => (
+                <figure key={shot.src} className="overflow-hidden rounded-xl border border-border">
+                  <img
+                    src={shot.src}
+                    alt={shot.alt}
+                    className="aspect-[16/10] w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                  <figcaption className="px-3 py-2 text-xs text-muted">{shot.alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </Section>
+        )}
+
         <Section title={project.problemStatement.title}>
           <p className="mb-4 max-w-3xl text-sm text-muted">{project.problemStatement.description}</p>
           <ul className="grid gap-2 sm:grid-cols-2">
