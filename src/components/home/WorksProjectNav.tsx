@@ -29,7 +29,7 @@ export function WorksProjectNav({ active, total, onPrev, onNext }: WorksProjectN
           whileHover={
             reducedMotion
               ? undefined
-              : { y: -2, borderColor: "rgba(255, 91, 46, 0.5)", color: "#ff5b2e" }})
+              : { y: -2, borderColor: "rgba(255, 91, 46, 0.5)", color: "#ff5b2e" }
           }
           whileTap={reducedMotion ? undefined : { scale: 0.98, y: 0 }}
           transition={{ type: "spring", stiffness: 420, damping: 28 }}
