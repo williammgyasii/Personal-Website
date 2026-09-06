@@ -37,6 +37,9 @@ export function Seo({ path }: { path?: string }) {
     upsertMeta('meta[property="og:description"]', { property: "og:description" }, route.description);
     upsertMeta('meta[property="og:url"]', { property: "og:url" }, url);
     upsertMeta('meta[property="og:image"]', { property: "og:image" }, image);
+    upsertMeta('meta[property="og:image:secure_url"]', { property: "og:image:secure_url" }, image);
+    upsertMeta('meta[property="og:image:width"]', { property: "og:image:width" }, "1200");
+    upsertMeta('meta[property="og:image:height"]', { property: "og:image:height" }, "627");
     upsertMeta('meta[name="twitter:title"]', { name: "twitter:title" }, route.title);
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description" }, route.description);
     upsertMeta('meta[name="twitter:image"]', { name: "twitter:image" }, image);

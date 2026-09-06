@@ -8,7 +8,7 @@ export const site = {
   shortName: "William Gyasi",
   jobTitle: "Full-Stack Developer",
   location: "Maryland, USA",
-  ogImage: "/images/projects/kairos-payhub/dashboard.png",
+  ogImage: "/images/og.jpg",
   sameAs: [
     "https://www.linkedin.com/in/williammgyasii",
     "https://github.com/williammgyasii",
