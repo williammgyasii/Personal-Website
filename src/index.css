@@ -7,8 +7,8 @@
   --color-primary-dim: #ff5b2e1f;
   --color-accent: #d9ff53;
   --color-accent-dim: #d9ff531f;
-  --color-surface: #f2f1ed;
-  --color-surface-secondary: #e8e5dc;
+  --color-surface: #e6e2d8;
+  --color-surface-secondary: #d8d3c8;
   --color-foreground: #11110f;
   --color-muted: #77746e;
   --color-faint: #a19e97;
@@ -179,11 +179,16 @@
 
   /* Hero full-width atmospheric background (behind WILLIAM_) */
   .hero-title-gradient {
-    background: linear-gradient(180deg, #e8e5dc 0%, #f2f1ed 55%, #f2f1ed 100%);
+    background: linear-gradient(180deg, #c8c3b8 0%, #d8d3c8 48%, #e6e2d8 100%);
   }
 
   .hero-title-grid {
-    display: none;
+    display: block;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(rgba(17, 17, 15, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 17, 15, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
   }
 
   .hero-title-shimmer {
@@ -472,7 +477,7 @@
     background:
       radial-gradient(circle at 20% 30%, rgba(255, 91, 46, 0.12), transparent 45%),
       radial-gradient(circle at 80% 70%, rgba(217, 255, 83, 0.1), transparent 40%),
-      linear-gradient(180deg, #e8e5dc 0%, #f2f1ed 100%);
+      linear-gradient(180deg, #c8c3b8 0%, #e6e2d8 100%);
   }
 
   .about-value-gradient {

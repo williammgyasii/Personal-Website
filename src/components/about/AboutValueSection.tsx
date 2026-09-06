@@ -64,7 +64,7 @@ function PricingValueCard({
               transition: { type: "spring", stiffness: 380, damping: 26 },
             }
       }
-      className={`pricing-value-card relative flex h-full w-[min(82vw,340px)] shrink-0 snap-center flex-col overflow-hidden rounded-3xl bg-surface sm:w-[320px] lg:w-[300px] xl:w-[calc((min(100%,1320px)-4rem)/3.15)] ${
+      className={`pricing-value-card relative flex h-full w-[min(86vw,360px)] shrink-0 snap-center flex-col overflow-hidden rounded-3xl bg-surface sm:w-[340px] lg:w-[360px] ${
         featured ? "pricing-value-card-featured z-10 lg:-mt-3 lg:mb-3" : ""
       }`}
       style={{
@@ -249,17 +249,17 @@ export function AboutValueSection() {
         <div className="about-value-gradient absolute inset-0" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1320px] px-4 sm:px-6">
-        <ValueSectionHeader />
+      <div className="relative z-10">
+        <div className="mx-auto max-w-[1320px] px-4 sm:px-6">
+          <ValueSectionHeader />
+        </div>
 
         <div className="relative mt-10 sm:mt-12">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-8 bg-gradient-to-r from-surface-secondary to-transparent sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-8 bg-gradient-to-l from-surface-secondary to-transparent sm:block" />
-
           <div
             ref={scrollRef}
-            className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 pt-2 [scrollbar-width:none] sm:gap-6 lg:justify-start [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 pt-2 [scrollbar-width:none] sm:gap-6 [&::-webkit-scrollbar]:hidden"
           >
+            <div className="w-[max(1rem,calc((100vw-min(100vw,1320px))/2+1rem))] shrink-0 sm:w-[max(1.5rem,calc((100vw-min(100vw,1320px))/2+1.5rem))]" aria-hidden />
             {aboutValueProps.map((item, i) => (
               <PricingValueCard
                 key={item.id}
@@ -271,6 +271,7 @@ export function AboutValueSection() {
                 }}
               />
             ))}
+            <div className="w-[max(1rem,calc((100vw-min(100vw,1320px))/2+1rem))] shrink-0 sm:w-[max(1.5rem,calc((100vw-min(100vw,1320px))/2+1.5rem))]" aria-hidden />
           </div>
 
           <div className="mt-6 flex flex-col items-center gap-4">
@@ -327,7 +328,7 @@ export function AboutValueSection() {
         </div>
 
         <motion.div
-          className="mt-10 flex justify-center sm:mt-12"
+          className="mx-auto mt-10 flex max-w-[1320px] justify-center px-4 sm:mt-12 sm:px-6"
           initial={reducedMotion ? false : { opacity: 0, y: 12 }}
           whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}

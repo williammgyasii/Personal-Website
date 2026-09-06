@@ -20,13 +20,13 @@ function DistortedSphere() {
       <mesh ref={meshRef} scale={1.35}>
         <icosahedronGeometry args={[1, 4]} />
         <MeshDistortMaterial
-          color="#ddd6c8"
-          emissive="#ddd6c8"
-          emissiveIntensity={0.35}
-          roughness={0.2}
-          metalness={0.8}
-          distort={0.35}
-          speed={2}
+          color="#ff5b2e"
+          emissive="#d9ff53"
+          emissiveIntensity={0.22}
+          roughness={0.18}
+          metalness={0.7}
+          distort={0.32}
+          speed={1.6}
           wireframe
         />
       </mesh>
@@ -48,11 +48,17 @@ export function FloatingShape({
 
   return (
     <div className={`pointer-events-none ${className}`} aria-hidden="true">
-      <Canvas camera={{ position: [0, 0, 4], fov: 45 }} gl={{ alpha: true }}>
+      <Canvas
+        camera={{ position: [0, 0, 4], fov: 45 }}
+        gl={{ alpha: true, antialias: true }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
+      >
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
           <directionalLight position={[4, 4, 4]} intensity={1.2} />
-          <pointLight position={[-3, -2, 2]} color="#ddd6c8" intensity={1.2} />
+          <pointLight position={[-3, -2, 2]} color="#ff5b2e" intensity={1.1} />
           <DistortedSphere />
         </Suspense>
       </Canvas>

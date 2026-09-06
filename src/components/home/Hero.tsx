@@ -1,5 +1,4 @@
-import { animate, motion, useMotionValue, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Link } from "react-router-dom";
 import { ChevronIcon } from "../icons/ChevronIcon";
@@ -16,176 +15,25 @@ export function Hero() {
       className="relative flex min-h-[100dvh] flex-col justify-center overflow-x-hidden pb-24 pt-28 sm:pb-28 sm:pt-32"
       aria-label="Introduction"
     >
-      <div className="absolute inset-0 -z-10 bg-surface-secondary" aria-hidden="true">
+      <div className="absolute inset-0 -z-10 bg-[#c8c3b8]" aria-hidden="true">
         <HeroTitleBackground />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-b from-transparent to-surface sm:h-40" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6">
-        <div className="max-w-4xl">
-          <div className="mb-5 flex justify-between gap-4 border-t border-border pt-3 text-[11px] uppercase tracking-[0.11em] text-muted sm:mb-7">
-            <p>Independent full-stack developer</p>
-            <p>Maryland, USA</p>
-          </div>
+      <div className="relative z-10 mx-auto w-full max-w-[1100px] px-4 text-center sm:px-6">
+        <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-muted sm:text-xs">
+          {site.roles.join(" · ")}
+        </p>
 
-          <motion.ul
-            className="mb-4 flex flex-wrap gap-x-4 gap-y-1.5 sm:mb-6 lg:mb-8"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: motionConfig.reducedMotion ? 0 : motionConfig.roleStagger,
-                  delayChildren: motionConfig.reducedMotion ? 0 : 0.05,
-                },
-              },
-            }}
-          >
-            {site.roles.map((role) => (
-              <motion.li
-                key={role}
-                variants={
-                  motionConfig.reducedMotion
-                    ? undefined
-                    : motionConfig.fadeUp
-                }
-              >
-                <Link
-                  to="/work"
-                  className="text-[11px] font-medium tracking-[0.1em] text-muted transition hover:text-primary sm:text-xs"
-                >
-                  {role}
-                </Link>
-              </motion.li>
-            ))}
-          </motion.ul>
-
+        <div className="mt-5 sm:mt-6">
           <AnimatedHeroTitle name={site.name} motionConfig={motionConfig} />
-
-          <HeroStats motionConfig={motionConfig} />
-
-          <HeroAvailability motionConfig={motionConfig} />
         </div>
+
+        <HeroAvailability motionConfig={motionConfig} />
       </div>
 
       <HeroScrollCue motionConfig={motionConfig} />
     </section>
   );
-}
-
-function HeroStats({ motionConfig }: { motionConfig: HeroMotion }) {
-  const { reducedMotion, easeOut, lineDelay, lineDuration, statsStagger, statsDelay, statBaseDelay, statStep } =
-    motionConfig;
-
-  return (
-    <div className="relative mt-6 sm:mt-8 lg:mt-10">
-      <motion.div
-        className="absolute inset-x-0 top-0 h-px origin-left bg-border"
-        initial={{ scaleX: reducedMotion ? 1 : 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: lineDuration, delay: reducedMotion ? 0 : lineDelay, ease: easeOut }}
-        aria-hidden="true"
-      />
-
-      <motion.dl
-        className="flex flex-wrap items-start gap-x-8 gap-y-5 pt-6 sm:gap-x-10 sm:pt-7"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: reducedMotion ? 0 : statsStagger,
-              delayChildren: reducedMotion ? 0 : statsDelay,
-            },
-          },
-        }}
-        aria-label="Career highlights"
-      >
-        {site.heroStats.map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            variants={reducedMotion ? undefined : motionConfig.fadeUp}
-            className="relative flex min-w-[88px] flex-col overflow-hidden"
-          >
-            {index > 0 && (
-              <motion.span
-                className="absolute -left-4 top-1 hidden h-8 w-px origin-top bg-border sm:-left-5 sm:block"
-                initial={{ scaleY: reducedMotion ? 1 : 0 }}
-                animate={{ scaleY: 1 }}
-                transition={{
-                  duration: 0.45,
-                  delay: reducedMotion ? 0 : statBaseDelay + index * statStep,
-                  ease: easeOut,
-                }}
-                aria-hidden="true"
-              />
-            )}
-            <dt className="text-[clamp(1.75rem,4vw,2.5rem)] font-semibold leading-none tracking-tight tabular-nums text-foreground">
-              <CountUp
-                value={stat.value}
-                delay={reducedMotion ? 0 : statBaseDelay + index * statStep}
-                duration={motionConfig.reducedMotion ? 0 : motionConfig.countDuration}
-                reducedMotion={reducedMotion}
-              />
-            </dt>
-            <motion.dd
-              className="mt-1.5 text-[11px] leading-snug text-muted sm:text-xs"
-              initial={{ opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.45,
-                delay: reducedMotion ? 0 : statBaseDelay + index * statStep + 0.15,
-                ease: easeOut,
-              }}
-            >
-              {stat.label}
-            </motion.dd>
-          </motion.div>
-        ))}
-      </motion.dl>
-    </div>
-  );
-}
-
-function CountUp({
-  value,
-  delay,
-  duration,
-  reducedMotion,
-}: {
-  value: string;
-  delay: number;
-  duration: number;
-  reducedMotion: boolean;
-}) {
-  const target = Number.parseInt(value, 10);
-  const isNumeric = !Number.isNaN(target);
-  const motionValue = useMotionValue(0);
-  const rounded = useTransform(motionValue, (latest) => Math.round(latest));
-  const [display, setDisplay] = useState(reducedMotion || !isNumeric ? value : "0");
-
-  useEffect(() => {
-    if (reducedMotion || !isNumeric) {
-      setDisplay(value);
-      return;
-    }
-
-    const unsubscribe = rounded.on("change", (latest) => setDisplay(String(latest)));
-    const controls = animate(motionValue, target, {
-      duration,
-      delay,
-      ease: [0.22, 1, 0.36, 1],
-    });
-
-    return () => {
-      controls.stop();
-      unsubscribe();
-    };
-  }, [delay, duration, isNumeric, motionValue, reducedMotion, rounded, target, value]);
-
-  return <span>{display}</span>;
 }
 
 function HeroAvailability({ motionConfig }: { motionConfig: HeroMotion }) {
@@ -201,7 +49,7 @@ function HeroAvailability({ motionConfig }: { motionConfig: HeroMotion }) {
 
   return (
     <motion.div
-      className="mt-8 max-w-xl space-y-5 sm:mt-10 sm:space-y-6"
+      className="mx-auto mt-8 max-w-2xl space-y-5 sm:mt-10 sm:space-y-6"
       initial="hidden"
       animate="visible"
       variants={{
@@ -216,9 +64,9 @@ function HeroAvailability({ motionConfig }: { motionConfig: HeroMotion }) {
     >
       <motion.div
         variants={reducedMotion ? undefined : motionConfig.fadeUp}
-        className="flex flex-wrap items-center gap-x-3 gap-y-2"
+        className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
       >
-        <span className="inline-flex items-center gap-2.5 text-sm font-medium tracking-tight text-foreground">
+          <span className="inline-flex items-center gap-2.5 text-sm font-medium tracking-tight text-foreground">
           <AvailabilityDot reducedMotion={reducedMotion} delay={dotDelay} easeOut={easeOut} />
           <motion.span
             initial={{ opacity: reducedMotion ? 1 : 0, x: reducedMotion ? 0 : -8 }}
@@ -362,7 +210,7 @@ function HeroCTAs({ reducedMotion }: { reducedMotion: boolean }) {
       };
 
   return (
-    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-4">
+    <div className="flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:gap-4">
       <motion.div {...motionProps} className="w-full sm:w-auto">
         <Link
           to="/projects"

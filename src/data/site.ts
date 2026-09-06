@@ -13,16 +13,17 @@ export const site = {
     "https://www.linkedin.com/in/williammgyasii",
     "https://github.com/williammgyasii",
   ],
-  roles: ["FULL-STACK DEVELOPER", "SOFTWARE ENGINEER", "PRODUCT BUILDER"],
+  roles: [
+    "Full-stack developer",
+    "Maryland",
+    "Software engineer",
+    "Product builder",
+    "Open to work",
+  ],
   availability: "OPEN TO FULL TIME & CONTRACT",
   heroLines: ["Digital experiences", "built with clarity", "& character."],
   heroSummary:
     "Full-stack developer with 6+ years shipping production software across SaaS, web, mobile, desktop, and AI-powered platforms. I design APIs and data models, build responsive interfaces, and take customer-facing features from concept through deployment.",
-  heroStats: [
-    { value: "6", label: "Years shipping" },
-    { value: "15", label: "Churches live" },
-    { value: "200", label: "Schools scaled" },
-  ],
   scrollStatement:
     "Anyone can put a page online. The difference is how it feels — and whether it holds up in production.",
   scrollMarquee: "REACT · NEXT.JS · TYPESCRIPT · .NET · AWS · POSTGRESQL · OPENAI · CLOUDFLARE ·",

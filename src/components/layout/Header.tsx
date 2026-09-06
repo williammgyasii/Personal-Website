@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { site } from "../../data/site";
+import { BrandRobot } from "./BrandRobot";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,16 +29,18 @@ export function Header() {
   }, [pathname]);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-[15px] font-medium tracking-tight transition-colors hover:text-primary ${
+    `rounded-full px-3 py-1.5 text-[14px] font-medium tracking-tight transition-colors hover:text-primary ${
       isActive ? "text-primary" : "text-foreground"
     }`;
 
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-50 px-4 py-4 transition-[background,border,backdrop-filter] duration-300 sm:px-6 ${
+        className={`fixed inset-x-0 top-0 px-4 py-3 transition-[background,border,backdrop-filter,box-shadow] duration-300 sm:px-6 ${
+          menuOpen ? "z-[70]" : "z-50"
+        } ${
           scrolled || !isHome
-            ? "border-b border-border/80 bg-surface/80 backdrop-blur-xl"
+            ? "border-b border-border/80 bg-surface/80 shadow-[0_8px_30px_rgba(17,17,15,0.06)] backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
         initial={{ y: -20, opacity: 0 }}
@@ -47,13 +50,17 @@ export function Header() {
         <div className="mx-auto grid max-w-[1320px] grid-cols-[1fr_auto] items-center lg:grid-cols-[1fr_auto_1fr]">
           <Link
             to="/"
-            className="justify-self-start text-[17px] font-extrabold tracking-tight text-foreground transition hover:text-primary"
+            className="flex items-center gap-2.5 justify-self-start text-[17px] font-extrabold tracking-tight text-foreground transition hover:text-primary"
             aria-label="Home"
           >
+            <BrandRobot />
             WILLIAM
           </Link>
 
-          <nav className="hidden items-center justify-center gap-8 lg:flex" aria-label="Primary">
+          <nav
+            className="hidden items-center justify-center gap-1 rounded-full border border-border/80 bg-surface/80 px-2 py-1 shadow-[0_8px_28px_rgba(17,17,15,0.08)] backdrop-blur-xl lg:flex"
+            aria-label="Primary"
+          >
             {site.nav.map((item) => (
               <NavLink key={item.id} to={item.href} end={item.href === "/"} className={navLinkClass}>
                 {item.label === "HOME" ? "Home" : item.label.charAt(0) + item.label.slice(1).toLowerCase()}
@@ -72,12 +79,13 @@ export function Header() {
 
           <button
             type="button"
-            className="justify-self-end text-sm font-medium tracking-tight lg:hidden"
+            className="justify-self-end p-1.5 text-foreground lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? "Close" : "Menu"}
+            <MenuToggle open={menuOpen} />
           </button>
         </div>
       </motion.header>
@@ -127,5 +135,27 @@ export function Header() {
 
       {!isHome && <div className="h-[72px] sm:h-[80px]" aria-hidden="true" />}
     </>
+  );
+}
+
+function MenuToggle({ open }: { open: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
+      <path
+        d={open ? "M6 6l12 12" : "M4 7h16"}
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <path
+        d={open ? "M18 6L6 18" : "M4 12h16"}
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      {!open && (
+        <path d="M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      )}
+    </svg>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "../../hooks/useMediaQuery";
+import { BrandRobot } from "./BrandRobot";
 
 type PageLoaderProps = {
   onComplete: () => void;
@@ -59,11 +60,8 @@ export function PageLoader({ onComplete }: PageLoaderProps) {
           <span className="loader-ring loader-ring-mid" aria-hidden="true" />
           <span className="loader-ring loader-ring-inner" aria-hidden="true" />
 
-          <div className="loader-core relative z-10 flex h-20 w-20 items-center justify-center rounded-xl border border-border bg-surface shadow-[0_2px_16px_rgba(0,0,0,0.08)] sm:h-24 sm:w-24">
-            <span className="text-xl font-bold tracking-tight text-primary text-glow-primary sm:text-2xl">
-              WG
-            </span>
-            <span className="loader-cursor absolute -right-1 bottom-3 h-5 w-0.5 bg-accent sm:h-6" aria-hidden="true" />
+          <div className="relative z-10">
+            <BrandRobot className="h-24 w-24 sm:h-28 sm:w-28" />
           </div>
 
           <span className="loader-node loader-node-a" aria-hidden="true" />
