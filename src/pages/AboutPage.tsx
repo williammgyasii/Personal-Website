@@ -1,13 +1,12 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronIcon } from "../components/icons/ChevronIcon";
 import { AboutExpertiseSection } from "../components/about/AboutExpertiseSection";
 import { AboutHeroSection } from "../components/about/AboutHeroSection";
 import { AboutValueSection } from "../components/about/AboutValueSection";
+import { Seo } from "../components/layout/Seo";
 import {
   aboutRolePreview,
-  profileInfo,
 } from "../data/about";
 
 function SectionIntro({
@@ -35,20 +34,9 @@ function SectionIntro({
 }
 
 export function AboutPage() {
-  useEffect(() => {
-    document.title = profileInfo.seoTitle;
-
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", profileInfo.seoDescription);
-  }, []);
-
   return (
     <>
+      <Seo path="/about" />
       <AboutHeroSection />
       <AboutExpertiseSection />
       <AboutValueSection />

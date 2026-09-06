@@ -1,8 +1,18 @@
 export const site = {
   name: "WILLIAM",
+  url: "https://www.williammgyasii.com",
   email: "williammgyasii@gmail.com",
   timezone: "EST",
   year: new Date().getFullYear(),
+  fullName: "William Kwabena Gyasi",
+  shortName: "William Gyasi",
+  jobTitle: "Full-Stack Developer",
+  location: "Maryland, USA",
+  ogImage: "/images/projects/kairos-payhub/dashboard.png",
+  sameAs: [
+    "https://www.linkedin.com/in/williammgyasii",
+    "https://github.com/williammgyasii",
+  ],
   roles: ["FULL-STACK DEVELOPER", "SOFTWARE ENGINEER", "PRODUCT BUILDER"],
   availability: "OPEN TO FULL TIME & CONTRACT",
   heroLines: ["Digital experiences", "built with clarity", "& character."],

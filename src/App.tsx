@@ -10,9 +10,10 @@ import { WorkPage } from "./pages/WorkPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { ProjectDetailPage } from "./pages/ProjectDetailPage";
 import { ContactPage } from "./pages/ContactPage";
+import { isSeoCrawler } from "./lib/isSeoCrawler";
 
 function App() {
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(() => isSeoCrawler());
   const handleReady = useCallback(() => setReady(true), []);
 
   return (

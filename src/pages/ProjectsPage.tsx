@@ -5,6 +5,7 @@ import { featuredProject, gridProjects } from "../data/projectDetails";
 import type { ProjectDetail } from "../types/project";
 import { FeaturedProjectSection } from "../components/projects/FeaturedProjectSection";
 import { PageHeader } from "../components/layout/PageHeader";
+import { Seo } from "../components/layout/Seo";
 
 function ProjectGridCard({
   project,
@@ -74,6 +75,7 @@ export function ProjectsPage() {
 
   return (
     <>
+      <Seo path="/projects" />
       <PageHeader
         label="PROJECTS"
         title="Products that ship"

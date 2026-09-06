@@ -12,7 +12,7 @@ type SocialLink = {
 
 const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/williammgyasii", icon: "github" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/williammgyasii", icon: "linkedin" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/williammgyasii", icon: "linkedin" },
   { label: "Email", href: gmailComposeUrl(site.email), icon: "email" },
 ];
 

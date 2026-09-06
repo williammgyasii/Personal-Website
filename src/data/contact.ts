@@ -57,7 +57,7 @@ export const contactChannels: ContactChannel[] = [
     badge: "Background",
     description:
       "Seven years across SaaS, fintech, edtech, worship tech, and healthtech. Roles, dates, and recommendations.",
-    href: "https://linkedin.com/in/williammgyasii",
+    href: "https://www.linkedin.com/in/williammgyasii",
     icon: "linkedin",
     cta: "View LinkedIn",
   },

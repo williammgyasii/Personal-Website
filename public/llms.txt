@@ -1,0 +1,39 @@
+# William Gyasi
+
+> Full-stack developer in Maryland, USA. Personal site: https://www.williammgyasii.com/
+
+- Name: William Kwabena Gyasi (William Gyasi)
+- Role: Full-stack developer / software engineer / product builder
+- Location: Maryland, United States
+- Experience: 6+ years shipping production software
+- Availability: Open to full-time and contract
+- Email: williammgyasii@gmail.com
+- LinkedIn: https://www.linkedin.com/in/williammgyasii
+- GitHub: https://github.com/williammgyasii
+- Site: https://www.williammgyasii.com/
+
+## What I do
+
+I design APIs and data models, build React and Next.js interfaces, and take customer-facing features from concept through deployment. Stack: TypeScript, React, Next.js, Node.js, C# / .NET, PostgreSQL, AWS, Cloudflare, Docker, OpenAI.
+
+Shipped software supporting 37K+ daily orders, 180+ integration configurations, 15+ churches, and 200+ schools.
+
+## Work
+
+- Intuitive Analytica — Full Stack Developer (May 2025 – Present, Maryland)
+- Penny-Pilot — contract
+- KairosHub — contract (Dec 2023 – May 2024)
+- Asquii — May 2021 – Sep 2023
+- Winks — Jan – Dec 2020
+
+## Featured product
+
+KairosPayHub is a multi-tenant church management platform for giving, attendance, and organizational structure. Live at https://app.kairospayhub.com. Case study: https://www.williammgyasii.com/projects/kairos-payhub
+
+## Pages
+
+- Home: https://www.williammgyasii.com/
+- About: https://www.williammgyasii.com/about
+- Work: https://www.williammgyasii.com/work
+- Projects: https://www.williammgyasii.com/projects
+- Contact: https://www.williammgyasii.com/contact

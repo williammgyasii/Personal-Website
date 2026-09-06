@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronIcon } from "../components/icons/ChevronIcon";
+import { Seo } from "../components/layout/Seo";
 import { getProjectBySlug } from "../data/projectDetails";
 import { ProjectDetailContent } from "../components/projects/ProjectDetailContent";
 
@@ -13,6 +14,7 @@ export function ProjectDetailPage() {
 
   return (
     <>
+      <Seo path={`/projects/${project.slug}`} />
       <div className="mx-auto max-w-[1320px] px-4 pt-28 sm:px-6 sm:pt-32">
         <Link
           to="/projects"

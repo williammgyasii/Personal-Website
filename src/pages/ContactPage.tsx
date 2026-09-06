@@ -7,6 +7,7 @@ import {
   contactCardThemes,
   defaultContactCardTheme,
 } from "../components/contact/contactCardThemes";
+import { Seo } from "../components/layout/Seo";
 import { contactChannels, contactInfo, type ContactChannel } from "../data/contact";
 import { usePrefersReducedMotion } from "../hooks/useMediaQuery";
 
@@ -191,20 +192,9 @@ function ContactPricingCard({
 export function ContactPage() {
   const reducedMotion = usePrefersReducedMotion();
 
-  useEffect(() => {
-    document.title = contactInfo.seoTitle;
-
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", contactInfo.seoDescription);
-  }, []);
-
   return (
     <section className="border-b border-border bg-surface">
+      <Seo path="/contact" />
       <ContactHeroSection />
 
       <div

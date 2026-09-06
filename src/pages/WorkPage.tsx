@@ -5,6 +5,7 @@ import { ChevronIcon } from "../components/icons/ChevronIcon";
 import { workExperiences, experienceFilters, type WorkExperience, type WorkType } from "../data/work";
 import { toTechBubbles } from "../data/experience";
 import { PageHeader } from "../components/layout/PageHeader";
+import { Seo } from "../components/layout/Seo";
 import { TechBubbles } from "../components/home/TechBubbles";
 
 export function WorkPage() {
@@ -17,6 +18,7 @@ export function WorkPage() {
 
   return (
     <>
+      <Seo path="/work" />
       <PageHeader
         label="WORK"
         title="Experience that compounds"
